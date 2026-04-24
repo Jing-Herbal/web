@@ -1,11 +1,3 @@
-# Page clean URLs
-/formulary    /formulary.html    200
-/protocols    /protocols.html    200
-/research     /research.html     200
-/about        /about.html        200
-/privacy      /privacy.html      200
-/terms        /terms.html        200
-
 # Herb pages
 /herb/achyranthes    /herb/achyranthes/index.html    200
 /herb/ashwagandha    /herb/ashwagandha/index.html    200
@@ -58,4 +50,3 @@
 /herb/yin-chen    /herb/yin-chen/index.html    200
 
 /herb.html    /formulary    301
-
