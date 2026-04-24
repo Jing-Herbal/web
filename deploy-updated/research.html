@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research Methodology — Jing | How We Grade TCM Evidence</title>
+<meta name="description" content="How Jing reviews and grades clinical evidence for Traditional Chinese Medicine herbs. Our methodology: RCT quality, HPLC standardisation, PMID citations, quarterly review cycle.">
+<link rel="canonical" href="https://jingherbal.com/research.html">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jing">
+<meta property="og:title" content="How We Grade TCM Evidence — Jing Research Methodology">
+<meta property="og:description" content="Jing's evidence review process: primary literature only, RCT quality grading, quarterly updates, and full transparency when the evidence is weak or mixed.">
+<meta property="og:image" content="https://jingherbal.com/og/research.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:url" content="https://jingherbal.com/research.html">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@jingherbal">
+<meta name="twitter:title" content="How We Grade TCM Evidence — Jing Research Methodology">
+<meta name="twitter:description" content="Jing's evidence review process: primary literature only, RCT quality grading, quarterly updates, and full transparency when the evidence is weak or mixed.">
+<meta name="twitter:image" content="https://jingherbal.com/og/research.jpg">
+<link rel="stylesheet" href="shared.css">
+<style>
+.research-hero{background:var(--cream2);border-bottom:0.5px solid var(--border);padding:3.5rem 2rem}
+.rh-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:4rem;align-items:start}
+.content-wrap{max-width:1200px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 340px;gap:3rem;align-items:start}
+.main-content{}
+.sidebar{}
+.section-block{margin-bottom:3rem}
+.section-block h2{font-family:var(--serif);font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--border)}
+.section-block p{font-size:0.88rem;color:var(--ink2);line-height:1.8;margin-bottom:0.75rem}
+.section-block p strong{font-weight:500;color:var(--ink)}
+
+.evidence-tiers{display:flex;flex-direction:column;gap:10px;margin:1.25rem 0}
+.et-row{display:grid;grid-template-columns:70px 1fr;gap:1rem;align-items:start;padding:12px 14px;border-radius:8px;background:var(--white);border:0.5px solid var(--border)}
+.et-grade{font-family:var(--serif);font-size:2rem;line-height:1}
+.et-body h3{font-size:13px;font-weight:500;margin-bottom:3px}
+.et-body p{font-size:12px;color:var(--ink2);line-height:1.6;margin:0}
+
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.25rem 0}
+.ps-card{background:var(--white);border:0.5px solid var(--border);border-radius:8px;padding:1rem 1.1rem}
+.ps-step{font-family:var(--mono);font-size:10px;color:var(--jade);margin-bottom:4px}
+.ps-title{font-weight:500;font-size:13px;margin-bottom:4px}
+.ps-body{font-size:12px;color:var(--ink2);line-height:1.6}
+
+.stats-card{background:var(--white);border:0.5px solid var(--border);border-radius:10px;padding:1.5rem}
+.stats-card h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:0.5rem;letter-spacing:-0.02em}
+.stats-card .sub{font-size:12px;color:var(--ink2);margin-bottom:1rem}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:0.5px solid var(--border);font-size:12px}
+.stat-row:last-child{border-bottom:none}
+.stat-val{font-family:var(--serif);font-size:1.3rem;color:var(--jade-d)}
+
+.coa-explainer{background:var(--jade-d);color:#fff;border-radius:10px;padding:1.5rem;margin:1.25rem 0}
+.coa-explainer h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:0.5rem}
+.coa-explainer p{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:1rem}
+.coa-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.coa-item{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);border-radius:6px;padding:8px 10px}
+.coa-item strong{display:block;color:#9FE1CB;font-family:var(--mono);font-size:10px;margin-bottom:2px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase}
+.coa-item span{font-size:11px;color:rgba(255,255,255,0.5)}
+
+.herb-highlights{margin:1.5rem 0}
+.hh-item{background:var(--white);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px}
+.hh-grade{font-family:var(--serif);font-size:1.4rem;flex-shrink:0;width:36px;color:var(--jade-d)}
+.hh-name{font-weight:500;font-size:13px;margin-bottom:2px}
+.hh-meta{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-bottom:3px}
+.hh-desc{font-size:12px;color:var(--ink2);line-height:1.5}
+
+.not-stocked{margin:1.25rem 0}
+.ns-item{border-left:3px solid var(--red);padding:8px 14px;margin-bottom:8px;background:var(--white);border-radius:0 6px 6px 0}
+.ns-name{font-weight:500;font-size:13px;margin-bottom:2px}
+.ns-reason{font-size:12px;color:var(--ink2);line-height:1.5}
+
+.disclaimer-box{background:var(--cream2);border:0.5px solid var(--border);border-radius:8px;padding:1rem 1.25rem;font-family:var(--mono);font-size:11px;color:var(--ink3);line-height:1.7;margin-top:2rem}
+/* ── RESEARCH RESPONSIVE ── */
+@media (max-width: 900px) {
+  .rh-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .content-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+  .process-grid { grid-template-columns: 1fr; }
+  .coa-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .rh-inner { padding: 2.5rem 1rem 2rem; }
+  .content-wrap { padding: 2rem 1rem; }
+  .et-row { grid-template-columns: 55px 1fr; gap: 0.75rem; }
+}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<div class="research-hero">
+  <div class="rh-inner">
+    <div>
+      <div class="section-label">Methodology</div>
+      <h1 style="font-family:var(--serif);font-size:2.6rem;letter-spacing:-0.03em;line-height:1.08;margin-bottom:1rem">How we review<br>the evidence</h1>
+      <p style="font-size:0.95rem;color:var(--ink2);line-height:1.75;max-width:520px;margin-bottom:1.5rem">We treat Chinese pharmacopoeia the same way a research hospital treats a drug candidate — with scepticism, rigour, and respect for what the data actually says. No appeal to tradition replaces a randomised controlled trial.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a class="btn-primary" href="/formulary">Browse the formulary</a>
+        <a class="btn-outline" href="formulary.html?ev=s">Strong evidence only</a>
+      </div>
+    </div>
+    <div class="stats-card">
+      <h3>Evidence database</h3>
+      <div class="sub">As of Mar '26</div>
+      <div class="stat-row"><span>Studies reviewed</span><span class="stat-val">4,800+</span></div>
+      <div class="stat-row"><span>RCTs included</span><span class="stat-val">847</span></div>
+      <div class="stat-row"><span>Meta-analyses</span><span class="stat-val">312</span></div>
+      <div class="stat-row"><span>Herbs catalogued</span><span class="stat-val">49</span></div>
+      <div class="stat-row"><span>Review cycle</span><span class="stat-val">Quarterly</span></div>
+      <div class="stat-row"><span>Last updated</span><span class="stat-val">Mar 2025</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+  <div class="main-content">
+
+    <div class="section-block">
+      <div class="section-label">Evidence grading</div>
+      <h2>How we rate each outcome</h2>
+      <p>Each herb outcome is graded independently. An herb can have strong evidence for one outcome (immune function) and preliminary evidence for another (anti-cancer). We never aggregate across outcomes — that's how you end up calling something "proven" when one benefit is real and five others are speculative.</p>
+      <p>Our grading adapts the Cochrane risk-of-bias framework for the specific challenges of herbal medicine research: small sample sizes, poor standardisation of extracts between trials, and the predominance of Chinese-language literature in databases that Western meta-analyses frequently miss.</p>
+      <div class="evidence-tiers">
+        <div class="et-row">
+          <div class="et-grade" style="color:var(--jade-d)">A</div>
+          <div class="et-body"><h3>Strong — ≥5 high-quality RCTs, consistent effect, ≥1 meta-analysis</h3><p>Multiple independent double-blind placebo-controlled trials. Adequate statistical power (n>50 per arm). Low Cochrane RoB2 risk. Effect direction consistent across trials. Meta-analysis confirms pooled effect. Examples: Ashwagandha for cortisol reduction, Ginkgo EGb 761 for claudication.</p></div>
+        </div>
+        <div class="et-row">
+          <div class="et-grade" style="color:#5DCAA5">B</div>
+          <div class="et-body"><h3>Moderate — 2–4 RCTs or consistent cohort data with plausible mechanism</h3><p>Some RCT evidence but limited by small sample sizes, industry funding, or effect size inconsistency across trials. Mechanism is characterised and supported by mechanistic studies. Clinical relevance is plausible. Examples: Lion's Mane for MCI, Schisandra for hepatoprotection.</p></div>
+        </div>
+        <div class="et-row">
+          <div class="et-grade" style="color:var(--amber)">C</div>
+          <div class="et-body"><h3>Preliminary — ≤1 RCT, or primarily animal/in vitro evidence</h3><p>Mechanism is biologically plausible. Animal data exists and is internally consistent. Human trial data is absent or limited to a single small pilot. Cannot be recommended with confidence for specific outcomes. We stock these herbs only when they have a strong traditional use record alongside the preliminary data.</p></div>
+        </div>
+        <div class="et-row">
+          <div class="et-grade" style="color:var(--red)">D</div>
+          <div class="et-body"><h3>Insufficient or contradictory — we document and do not stock</h3><p>Studies are contradictory without explanation, methodological quality is consistently poor across all available trials, or the preclinical safety signal is concerning enough that human trials are not yet appropriate. We document these decisions in full.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-label">Process</div>
+      <h2>Our review protocol</h2>
+      <p>Every herb dossier follows the same structured review process, adapted from systematic review methodology used in clinical pharmacology.</p>
+      <div class="process-grid">
+        <div class="ps-card"><div class="ps-step">Step 01</div><div class="ps-title">Systematic literature search</div><div class="ps-body">PubMed, Cochrane Library, Web of Science, and CNKI (Chinese National Knowledge Infrastructure). Date range: all years. Search terms: binomial Latin name + MeSH conditions. No language restriction for RCTs — Chinese-language trials are included and translated.</div></div>
+        <div class="ps-card"><div class="ps-step">Step 02</div><div class="ps-title">Risk-of-bias assessment</div><div class="ps-body">Each RCT assessed using Cochrane RoB 2.0 tool: randomisation, allocation concealment, blinding, outcome reporting, and other biases. Industry-funded trials are flagged. Open-label trials are downgraded by one evidence tier. Animal model data is explicitly labelled as preclinical.</div></div>
+        <div class="ps-card"><div class="ps-step">Step 03</div><div class="ps-title">Effect size extraction</div><div class="ps-body">Primary endpoints extracted with confidence intervals. Cohen's d or standardised mean difference calculated where possible. Clinically meaningful threshold defined per outcome — statistical significance alone is insufficient. We distinguish between a statistically significant effect at p=0.04 and a clinically relevant one.</div></div>
+        <div class="ps-card"><div class="ps-step">Step 04</div><div class="ps-title">Standardisation assessment</div><div class="ps-body">We record which extract form, manufacturer, and standardisation specification was used in each trial. This is critical: a trial using Ashwagandha KSM-66 at 600mg does not validate an unstandardised ashwagandha powder product at the same dose. We only stock products whose standardisation matches the trial evidence.</div></div>
+        <div class="ps-card"><div class="ps-step">Step 05</div><div class="ps-title">Safety data extraction</div><div class="ps-body">Adverse events, drug interactions, and contraindications are extracted from all trials and supplemented with pharmacovigilance case reports, FDA/TGA/MHRA databases, and published toxicology reviews. Safety data is always published regardless of efficacy grade.</div></div>
+        <div class="ps-card"><div class="ps-step">Step 06</div><div class="ps-title">Grading and quarterly update</div><div class="ps-body">Grade is assigned, published, and reviewed quarterly. When a new meta-analysis changes the picture — even if it weakens the case for an herb we sell — the rating is updated. Negative findings receive equal prominence to positive findings. We have downgraded three herbs in the last 12 months.</div></div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-label">Highest-evidence herbs</div>
+      <h2>Our strongest dossiers</h2>
+      <p>These herbs have the most robust clinical evidence bases. Each has been studied in multiple independent RCTs with consistent findings and a characterised mechanism of action.</p>
+      <div class="herb-highlights">
+        <div class="hh-item">
+          <div class="hh-grade">A−</div>
+          <div>
+            <div class="hh-name">Ashwagandha (Withania somnifera, 印度人参)</div>
+            <div class="hh-meta">74 studies · 28 RCTs · 10 meta-analyses</div>
+            <div class="hh-desc">Strongest cortisol-reduction evidence of any adaptogen. 2019 Chandrasekhar et al.: serum cortisol −27.9% vs placebo (p&lt;0.001). Consistent across 8 independent RCTs. KSM-66 and Sensoril are the validated extract forms. Also demonstrated: +14.7% testosterone in healthy men (Wankhede 2015), significant sleep quality improvement (Langade 2019).</div>
+          </div>
+        </div>
+        <div class="hh-item">
+          <div class="hh-grade">A−</div>
+          <div>
+            <div class="hh-name">Panax Ginseng (人参)</div>
+            <div class="hh-meta">112 studies · 38 RCTs · 14 meta-analyses</div>
+            <div class="hh-desc">Most-studied adaptogen globally. 2024 meta-analysis (n=671, 15 RCTs): significant memory improvement SMD=0.19, stronger at high doses. Strong evidence for glucose metabolism (57 RCTs systematic review). Well-characterised ginsenoside mechanisms. G115 extract is the reference preparation.</div>
+          </div>
+        </div>
+        <div class="hh-item">
+          <div class="hh-grade">A</div>
+          <div>
+            <div class="hh-name">Turmeric / Curcumin (姜黄)</div>
+            <div class="hh-meta">96 studies · 34 RCTs · 18 meta-analyses</div>
+            <div class="hh-desc">Strongest anti-inflammatory evidence base of any natural compound. 2018 meta-analysis (n=1,438): significant OA pain reduction comparable to NSAIDs. 2019 meta-analysis (n=531): significant antidepressant effect. Key limitation: bioavailability — piperine or phytosomal formulations required for clinical equivalence to trial doses.</div>
+          </div>
+        </div>
+        <div class="hh-item">
+          <div class="hh-grade">A−</div>
+          <div>
+            <div class="hh-name">Ginkgo biloba (银杏叶)</div>
+            <div class="hh-meta">88 studies · 30 RCTs · 15 meta-analyses</div>
+            <div class="hh-desc">Cochrane 2009 (36 trials): consistent benefit for dementia and cognitive impairment. Gold standard: EGb 761 extract standardised to 24% flavonoid glycosides / 6% terpene lactones. Strong evidence for peripheral arterial disease and tinnitus. Antiplatelet effect is clinically significant — monitor with anticoagulants.</div>
+          </div>
+        </div>
+        <div class="hh-item">
+          <div class="hh-grade">B+</div>
+          <div>
+            <div class="hh-name">Lion's Mane (Hericium erinaceus, 猴头菇)</div>
+            <div class="hh-meta">54 studies · 14 RCTs · 6 meta-analyses</div>
+            <div class="hh-desc">Only natural compound with strong RCT evidence for NGF synthesis in humans. Mori 2009 (n=30): significant improvement on MMSE and ADAS-cog at 16 weeks 3g/day. Effects reverse after cessation — confirming active mechanism. Three additional RCTs replicated findings. Also: anxiety reduction (Nagano 2010), sleep quality improvement (Saitsu 2019).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-label">Transparency</div>
+      <h2>What we don't sell — and why</h2>
+      <p>Our review database includes herbs we've assessed and decided not to stock. These decisions are documented and public. This is not marketing — it is our obligation to users who might otherwise find these herbs sold without safety context.</p>
+      <div class="not-stocked">
+        <div class="ns-item">
+          <div class="ns-name">Raw He Shou Wu (Reynoutria multiflora, 何首乌 — unprocessed)</div>
+          <div class="ns-reason">Clear hepatotoxicity signal in published systematic reviews and case series. The hepatotoxic compounds (anthraquinones including emodin) are substantially reduced in properly processed (prepared/zhi) form. We stock only processed form with strict dose caps (≤6g/day) and explicit liver monitoring guidance. At least 23 WHO-documented cases of liver injury with raw form.</div>
+        </div>
+        <div class="ns-item">
+          <div class="ns-name">Aconite (Aconitum carmichaelii, 附子 — unprocessed)</div>
+          <div class="ns-reason">Aconitine and related alkaloids are potent cardiotoxins. Unprocessed aconite root has a documented fatality record. Processed forms (pao fu zi) reduce alkaloid content significantly but require precise preparation protocols unavailable in standardised supplement manufacturing. We will not stock any aconite preparation until pharmaceutical-grade standardisation is available.</div>
+        </div>
+        <div class="ns-item">
+          <div class="ns-name">Aristolochia species (马兜铃 and related)</div>
+          <div class="ns-reason">Aristolochic acid is a proven nephrotoxin and human carcinogen (IARC Group 1). Causes aristolochic acid nephropathy (AAN) — progressive renal fibrosis leading to dialysis or transplant. Banned by regulatory authorities in Australia, EU, USA, and most of Asia. We will never stock any Aristolochia species regardless of dose or preparation.</div>
+        </div>
+        <div class="ns-item">
+          <div class="ns-name">Ephedra (Ephedra sinica, 麻黄 — high-dose supplements)</div>
+          <div class="ns-reason">Ephedrine and pseudoephedrine have a documented cardiovascular adverse event record at supplement doses (not traditional decoction doses). FDA banned ephedra dietary supplements in 2004 following deaths. We do not stock ephedra-containing products in supplement form. Traditional low-dose decoction use is a different risk context.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-label">Quality control</div>
+      <h2>Certificate of analysis explained</h2>
+      <p>Every product batch is tested by an independent, ISO/IEC 17025-accredited laboratory before release. We require six core test categories.</p>
+      <div class="coa-explainer">
+        <h3>What the COA certifies</h3>
+        <p>Every batch COA is accessible via QR code on the product label. The document is hosted on our server and cannot be printed and reused — the URL is batch-specific and live.</p>
+        <div class="coa-grid">
+          <div class="coa-item"><strong>Identity</strong><span>HPTLC fingerprinting or DNA barcoding confirms correct species. Adulterations with related but different species is a documented problem in TCM supply chains.</span></div>
+          <div class="coa-item"><strong>Potency</strong><span>Active compound percentage declared and verified. Beta-glucans by AOAC 995.16. Ginsenosides by HPLC. Withanolides by HPLC-UV. Curcuminoids by AOAC 2012.24.</span></div>
+          <div class="coa-item"><strong>Heavy metals</strong><span>Arsenic, cadmium, lead, mercury. All below USP &lt;2232&gt; limits. ICP-MS method. Particularly important for herbs grown in Chinese agricultural soil.</span></div>
+          <div class="coa-item"><strong>Microbials</strong><span>Total aerobic plate count, yeast and mould, E. coli, Salmonella, Staphylococcus aureus. USP &lt;2021&gt; and &lt;62&gt; methods.</span></div>
+          <div class="coa-item"><strong>Pesticides</strong><span>Multi-residue screen covering 400+ pesticides by LC-MS/MS and GC-MS/MS. Not-detected required for release. EU MRL limits applied as standard.</span></div>
+          <div class="coa-item"><strong>Aflatoxins</strong><span>B1, B2, G1, G2 by HPLC. Critical for mushroom products. Total aflatoxin limit: &lt;4 ppb (USP). Not detected is our internal standard.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-label">Limitations</div>
+      <h2>Honest caveats</h2>
+      <p>We want to be direct about what the clinical evidence for TCM herbs can and cannot tell you.</p>
+      <p><strong>Most trials are small.</strong> The majority of TCM RCTs have fewer than 100 participants. This limits statistical power and increases the chance of false positives. We note sample sizes explicitly for this reason.</p>
+      <p><strong>Publication bias exists.</strong> Positive trials are more likely to be published than negative ones, particularly in Chinese-language journals. We search Chinese databases specifically but cannot guarantee we have found all negative results.</p>
+      <p><strong>Extract standardisation is inconsistent.</strong> A trial using KSM-66 Ashwagandha does not validate a bulk ashwagandha powder product. We only recommend products whose standardisation matches the evidence we cite — but other vendors may not share this constraint.</p>
+      <p><strong>Long-term human data is limited.</strong> Most trials run 4–16 weeks. Safety data beyond 12 months is sparse for most herbs. Our safety assessments note this limitation explicitly where relevant.</p>
+      <p><strong>We are not physicians.</strong> The information on this site is educational and does not constitute medical advice. Discuss any supplement use with a qualified healthcare provider, especially if you are on prescription medications or have a chronic condition.</p>
+    </div>
+
+  </div>
+
+  <div class="sidebar">
+    <div style="position:sticky;top:1.5rem">
+      <div class="stats-card" style="margin-bottom:1.25rem">
+        <h3>Evidence by grade</h3>
+        <div class="sub">Current formulary</div>
+        <div id="grade-breakdown"></div>
+      </div>
+      <div class="stats-card" style="margin-bottom:1.25rem">
+        <h3>Most studied herbs</h3>
+        <div class="sub">By number of reviewed studies</div>
+        <div id="top-studied"></div>
+      </div>
+      <div class="stats-card">
+        <h3>Quarterly update schedule</h3>
+        <div class="sub">Next review dates</div>
+        <div class="stat-row"><span>Q2 2025</span><span style="font-family:var(--mono);font-size:11px;color:var(--jade-m)">Jun 2025</span></div>
+        <div class="stat-row"><span>Q3 2025</span><span style="font-family:var(--mono);font-size:11px;color:var(--ink3)">Sep 2025</span></div>
+        <div class="stat-row"><span>Q4 2025</span><span style="font-family:var(--mono);font-size:11px;color:var(--ink3)">Dec 2025</span></div>
+        <div class="stat-row"><span>Downgraded this quarter</span><span style="font-family:var(--mono);font-size:11px;color:var(--amber)">3 herbs</span></div>
+        <div class="stat-row"><span>Upgraded this quarter</span><span style="font-family:var(--mono);font-size:11px;color:var(--jade-m)">2 herbs</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--cream2);border-top:0.5px solid var(--border);padding:2rem">
+  <div class="disclaimer-box" style="max-width:1200px;margin:0 auto">
+    <strong style="color:var(--ink);font-family:var(--sans)">Medical disclaimer</strong><br>
+    The information provided on this website is for educational and informational purposes only. It is not intended as and should not be construed as medical advice, diagnosis, or treatment. These statements have not been evaluated by the Therapeutic Goods Administration (TGA), the US Food and Drug Administration (FDA), the Medicines and Healthcare products Regulatory Agency (MHRA), or Health Canada. Always consult a qualified healthcare professional before starting, stopping, or changing any treatment, medication, or supplement regimen. The evidence ratings provided represent our assessment of the published clinical literature and do not constitute endorsement of any specific product or therapeutic claim.
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script src="shared.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML = renderNav('');
+document.getElementById('footer-root').innerHTML = renderFooter();
+initKlaviyo();
+initMegas();
+
+// Grade breakdown
+const grades = {s:0,m:0,p:0};
+HERBS.forEach(h=>grades[h.ev]++);
+document.getElementById('grade-breakdown').innerHTML = [
+  {k:'Strong evidence (A/B+)',v:grades.s,c:'var(--jade-d)'},
+  {k:'Moderate evidence (B/B−)',v:grades.m,c:'#5DCAA5'},
+  {k:'Preliminary (C)',v:grades.p,c:'var(--amber)'}
+].map(r=>`<div class="stat-row"><span>${r.k}</span><span style="font-family:var(--serif);font-size:1.3rem;color:${r.c}">${r.v}</span></div>`).join('');
+
+// Top studied
+const topStudied = [...HERBS].sort((a,b)=>b.studies-a.studies).slice(0,6);
+document.getElementById('top-studied').innerHTML = topStudied.map(h=>`
+  <div class="stat-row">
+    <span><a href="/herb/${h.id}" style="color:var(--ink);text-decoration:none">${h.name}</a></span>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--ink3)">${h.studies} studies</span>
+  </div>`).join('');
+</script>
+</body>
+</html>

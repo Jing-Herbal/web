@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jing — Ancient Formulas, Modern Proof</title>
+<meta name="description" content="A science-backed Traditional Chinese Medicine formulary. 49 herbs reviewed, rated and evidence-graded. Clinical dossiers, mechanisms, dosage and safety — all in one place.">
+<link rel="canonical" href="https://jingherbal.com/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jing">
+<meta property="og:title" content="Jing — Ancient Formulas, Modern Proof">
+<meta property="og:description" content="49 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
+<meta property="og:image" content="https://jingherbal.com/og/homepage.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:url" content="https://jingherbal.com/">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@jingherbal">
+<meta name="twitter:title" content="Jing — Ancient Formulas, Modern Proof">
+<meta name="twitter:description" content="49 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
+<meta name="twitter:image" content="https://jingherbal.com/og/homepage.jpg">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── HERO ── */
+.hero{display:grid;grid-template-columns:1fr 420px;min-height:520px}
+.hero-left{padding:4rem 3rem 4rem 2rem;display:flex;flex-direction:column;justify-content:center;background:var(--cream);max-width:700px}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--jade);margin-bottom:1.25rem}
+.hero-h1{font-family:var(--serif);font-size:3.6rem;line-height:1.04;letter-spacing:-0.04em;color:var(--ink);margin-bottom:1.25rem}
+.hero-h1 em{font-style:italic;color:var(--jade-d)}
+.hero-body{font-size:1rem;color:var(--ink2);line-height:1.75;max-width:440px;margin-bottom:2rem}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.hero-right{background:var(--jade-d);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-bg-rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.05}
+
+/* Featured card — with sketch background */
+.hpc{background:rgba(255,255,255,0.07);border:0.5px solid rgba(255,255,255,0.14);border-radius:10px;width:300px;position:relative;z-index:1;overflow:hidden}
+.hpc-sketch-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.08;pointer-events:none}
+.hpc-sketch-bg svg{width:220px;height:220px;stroke:#fff}
+.hpc-inner{position:relative;z-index:1;padding:1.75rem}
+.hpc-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.6rem}
+.hpc-name{font-family:var(--serif);font-size:1.7rem;color:#fff;line-height:1.1;margin-bottom:2px}
+.hpc-latin{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.35);font-style:italic;margin-bottom:1.25rem}
+.hpc-badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1.25rem}
+.hpc-badge{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:rgba(29,158,117,0.2);color:#9FE1CB}
+.hpc-badge-warn{background:rgba(186,117,23,0.2);color:#FAC775}
+.hpc-ev-label{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:5px}
+.hpc-ev-track{height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:1rem}
+.hpc-ev-fill{height:4px;background:var(--jade);border-radius:2px;width:72%}
+.hpc-refs{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.28)}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--cream2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-cell{padding:1.25rem 2rem;border-right:0.5px solid var(--border)}
+.stat-cell:last-child{border-right:none}
+.stat-num{font-family:var(--serif);font-size:2rem;letter-spacing:-0.03em;color:var(--ink);line-height:1}
+.stat-label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-top:4px}
+a.stat-cell{text-decoration:none;transition:background 0.15s}
+a.stat-cell:hover{background:var(--jade-l)}
+a.stat-cell:hover .stat-num{color:var(--jade-d)}
+a.stat-cell:hover .stat-label{color:var(--jade-d)}
+a.stat-cell .stat-arrow{font-family:var(--mono);font-size:10px;color:var(--jade-d);opacity:0;transition:opacity 0.15s;margin-top:3px}
+a.stat-cell:hover .stat-arrow{opacity:1}
+
+/* ── CAROUSEL ── */
+.carousel-section{padding:4rem 2rem;overflow:hidden}
+.carousel-header{max-width:1200px;margin:0 auto 2rem;display:flex;align-items:flex-end;justify-content:space-between}
+.carousel-controls{display:flex;gap:8px}
+.carousel-btn{width:36px;height:36px;border-radius:50%;border:0.5px solid var(--border-m);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--ink2);transition:all .15s}
+.carousel-btn:hover{border-color:var(--jade);color:var(--jade-d)}
+.carousel-track-wrap{overflow:hidden;max-width:1200px;margin:0 auto}
+.carousel-track{display:flex;gap:1.25rem;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.carousel-track .herb-card{min-width:230px;flex-shrink:0}
+.carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:1.25rem}
+.carousel-dot{width:6px;height:6px;border-radius:50%;background:var(--border-m);cursor:pointer;transition:all .2s}
+.carousel-dot.active{background:var(--jade);width:18px;border-radius:3px}
+
+/* ── HOW ── */
+.how{background:var(--white);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:4rem 2rem}
+.how-inner{max-width:1200px;margin:0 auto}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem}
+.how-step-num{font-family:var(--serif);font-size:2.5rem;color:var(--jade-l);line-height:1;margin-bottom:0.75rem}
+.how-step-title{font-weight:500;font-size:1rem;margin-bottom:0.5rem;color:var(--ink)}
+.how-step-body{font-size:0.88rem;color:var(--ink2);line-height:1.7}
+.how-step-tag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:var(--jade-l);color:var(--jade-d);margin-top:0.75rem}
+
+/* ── GOALS GRID ── */
+.goals-section{padding:4rem 2rem;max-width:1200px;margin:0 auto}
+.goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:2rem}
+.goal-tile{border:0.5px solid var(--border);border-radius:10px;padding:1.25rem;cursor:pointer;transition:all .18s;display:block;text-decoration:none;color:inherit}
+.goal-tile:hover{border-color:var(--jade);background:var(--jade-l)}
+.goal-tile-icon{width:32px;height:32px;background:var(--cream2);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem}
+.goal-tile-icon svg{width:16px;height:16px;stroke:var(--ink2);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.goal-tile-name{font-weight:500;font-size:0.9rem;color:var(--ink);margin-bottom:4px}
+.goal-tile-herbs{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-bottom:8px;line-height:1.5}
+.goal-tile-tags{display:flex;flex-wrap:wrap;gap:4px}
+
+/* ── LOOKSMAX ── */
+.looksmax{background:var(--jade-d);color:#fff;padding:4rem 2rem}
+.looksmax-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.lm-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1rem}
+.lm-title{font-family:var(--serif);font-size:2.4rem;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1rem}
+.lm-title em{font-style:italic;color:#9FE1CB}
+.lm-body{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:1.5rem}
+.lm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2rem}
+.lm-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 9px;border:0.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.45);border-radius:3px}
+.protocol-stack{display:flex;flex-direction:column;gap:10px}
+.ps-item{background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start}
+.ps-num{font-family:var(--serif);font-size:1.6rem;color:var(--jade);line-height:1;flex-shrink:0;width:32px}
+.ps-title{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
+.ps-herbs{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:3px}
+.ps-tag{font-family:var(--mono);font-size:9px;color:var(--jade)}
+
+/* ── TRUST ── */
+.trust{background:var(--ink);padding:3.5rem 2rem}
+.trust-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem}
+.trust-item-badge{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--jade);margin-bottom:0.5rem}
+.trust-item-title{font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:0.5rem;letter-spacing:-0.02em}
+.trust-item-body{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.7}
+/* ── INDEX RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 3rem 1.5rem; max-width: 100%; }
+  .hero-right { min-height: 280px; order: -1; }
+  .hero-h1 { font-size: 2.8rem; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+  .stat-cell:nth-child(2) { border-right: none; }
+  .stat-cell:nth-child(3) { border-top: 0.5px solid var(--border); }
+  .stat-cell:nth-child(4) { border-top: 0.5px solid var(--border); border-right: none; }
+  .how-steps { grid-template-columns: 1fr 1fr; }
+  .goals-grid { grid-template-columns: repeat(2,1fr); }
+  .looksmax-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .trust-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .hero-h1 { font-size: 2.1rem; }
+  .hero-left { padding: 2.5rem 1rem; }
+  .hero-right { min-height: 220px; }
+  .hpc { width: 240px; }
+  .hpc-name { font-size: 1.4rem; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .carousel-section { padding: 2.5rem 1rem; }
+  .carousel-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .carousel-track .herb-card { min-width: 190px; }
+  .how { padding: 3rem 1rem; }
+  .how-steps { grid-template-columns: 1fr; gap: 1.25rem; }
+  .goals-section { padding: 3rem 1rem; }
+  .goals-grid { grid-template-columns: 1fr; }
+  .looksmax { padding: 3rem 1rem; }
+  .lm-title { font-size: 2rem; }
+  .trust { padding: 2.5rem 1rem; }
+  .trust-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+}
+@media (max-width: 400px) {
+  .hero-h1 { font-size: 1.85rem; }
+  .hpc { width: 200px; }
+}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Pharmacopoeia of the East — evidence reviewed</div>
+      <h1 class="hero-h1">Ancient formulas,<br><em>modern proof</em></h1>
+      <p class="hero-body">Every herb. Every compound. Every claim — traced to peer-reviewed research. Chinese medicine without the mysticism.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/formulary">Explore the formulary</a>
+        <a class="btn-outline" href="/research">Read the science →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-bg-rings">
+        <svg width="500" height="500" viewBox="0 0 500 500" fill="none" stroke="#fff" stroke-width="0.5">
+          <circle cx="250" cy="250" r="230"/><circle cx="250" cy="250" r="180"/><circle cx="250" cy="250" r="130"/><circle cx="250" cy="250" r="80"/><circle cx="250" cy="250" r="30"/>
+          <line x1="20" y1="250" x2="480" y2="250"/><line x1="250" y1="20" x2="250" y2="480"/>
+          <line x1="87" y1="87" x2="413" y2="413"/><line x1="413" y1="87" x2="87" y2="413"/>
+        </svg>
+      </div>
+      <!-- Featured herb card with sketch background -->
+      <div class="hpc" id="hero-card">
+        <div class="hpc-sketch-bg" id="hero-sketch"></div>
+        <div class="hpc-inner">
+          <div class="hpc-tag">Featured herb</div>
+          <div class="hpc-name" id="hpc-name">Reishi (灵芝)</div>
+          <div class="hpc-latin" id="hpc-latin">Ganoderma lucidum</div>
+          <div class="hpc-badges" id="hpc-badges">
+            <span class="hpc-badge">Immunomodulatory</span>
+            <span class="hpc-badge">Adaptogen</span>
+            <span class="hpc-badge hpc-badge-warn">Monitor anticoag.</span>
+          </div>
+          <div class="hpc-ev-label">Evidence strength</div>
+          <div class="hpc-ev-track"><div class="hpc-ev-fill" id="hpc-ev-fill"></div></div>
+          <div class="hpc-refs" id="hpc-refs">47 studies · 12 RCTs · updated Mar '26</div>
+          <a id="hpc-link" href="/herb/reishi" style="display:inline-block;margin-top:1rem;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.75);text-decoration:none;border:0.5px solid rgba(255,255,255,0.25);padding:6px 14px;border-radius:4px;transition:all .15s;letter-spacing:0.05em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">View full dossier →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <a class="stat-cell" href="/formulary"><div class="stat-num" id="stat-herb-count">49</div><div class="stat-label">Herbs catalogued</div><div class="stat-arrow">→</div></a>
+      <a class="stat-cell" href="/research"><div class="stat-num">4,800</div><div class="stat-label">Studies reviewed</div><div class="stat-arrow">→</div></a>
+      <a class="stat-cell" href="/protocols"><div class="stat-num">38</div><div class="stat-label">Active protocols</div><div class="stat-arrow">→</div></a>
+      <div class="stat-cell"><div class="stat-num">Mar '26</div><div class="stat-label">Evidence updated</div></div>
+    </div>
+  </div>
+
+  <!-- CAROUSEL -->
+  <section class="carousel-section">
+    <div class="carousel-header">
+      <div>
+        <div class="section-label">Formulary highlights</div>
+        <div class="section-title">Top evidence-rated herbs</div>
+      </div>
+      <div class="carousel-controls">
+        <div class="carousel-btn" onclick="moveCarousel(-1)">←</div>
+        <div class="carousel-btn" onclick="moveCarousel(1)">→</div>
+      </div>
+    </div>
+    <div class="carousel-track-wrap">
+      <div class="carousel-track" id="carousel-track"></div>
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+    <div style="text-align:center;margin-top:1.75rem">
+      <a class="btn-outline" href="/formulary">View all 49 herbs →</a>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="how-inner">
+      <div class="section-label">Our methodology</div>
+      <div class="section-title">No faith required</div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">01</div>
+          <div class="how-step-title">Primary literature only</div>
+          <div class="how-step-body">Every efficacy claim links directly to PubMed. We summarise — you verify. No second-hand sources, no cherry-picking. If the study is weak, we say so.</div>
+          <div class="how-step-tag">PMID citations on every claim</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">02</div>
+          <div class="how-step-title">Live evidence ratings</div>
+          <div class="how-step-body">Evidence tiers are updated quarterly. When a meta-analysis changes the picture — even if it weakens the case — the rating changes. We don't hide unflattering results.</div>
+          <div class="how-step-tag">Quarterly review cycle</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">03</div>
+          <div class="how-step-title">Full safety database</div>
+          <div class="how-step-body">Drug interactions, hepatotoxicity signals, contraindications — all documented. We list herbs we don't sell because the risk profile is unclear. Transparency is the product.</div>
+          <div class="how-step-tag">ISO/IEC 17025 COA on every batch</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEALTH GOALS -->
+  <section class="goals-section">
+    <div class="section-label">Browse by goal</div>
+    <div class="section-title">What are you optimising for?</div>
+    <p class="section-sub">Each goal maps to curated herbs with evidence ratings, dosage guidance, and a complete safety profile.</p>
+    <div class="goals-grid" id="goals-grid"></div>
+  </section>
+
+  <!-- LOOKSMAX -->
+  <section class="looksmax">
+    <div class="looksmax-inner">
+      <div>
+        <div class="lm-eyebrow">For the optimisers</div>
+        <h2 class="lm-title">Your <em>phenotype</em><br>is a protocol</h2>
+        <p class="lm-body">Bone density. Collagen synthesis. DHT modulation. Testosterone-to-cortisol ratio. Chinese medicine has been working on these levers for two thousand years. We've mapped the mechanisms.</p>
+        <div class="lm-tags">
+          <span class="lm-tag">Jawline density</span><span class="lm-tag">Skin clarity</span><span class="lm-tag">Hair thickness</span>
+          <span class="lm-tag">Testosterone support</span><span class="lm-tag">Cortisol management</span><span class="lm-tag">Collagen synthesis</span>
+        </div>
+        <a class="btn-primary" href="/protocols" style="background:var(--jade)">View all protocols →</a>
+      </div>
+      <div class="protocol-stack">
+        <div class="ps-item"><div class="ps-num">01</div><div><div class="ps-title">Androgen support stack</div><div class="ps-herbs">Epimedium · Cistanche · Morinda root · Ashwagandha</div><div class="ps-tag">LH signalling · 5α-reductase · SHBG</div></div></div>
+        <div class="ps-item"><div class="ps-num">02</div><div><div class="ps-title">Collagen & bone mineral</div><div class="ps-herbs">Eucommia · Deer antler · Dipsacus · Epimedium</div><div class="ps-tag">Osteoblast activation · IGF-1 · Collagen cross-linking</div></div></div>
+        <div class="ps-item"><div class="ps-num">03</div><div><div class="ps-title">HPA axis reset</div><div class="ps-herbs">Ashwagandha · Schisandra · Eleuthero</div><div class="ps-tag">Cortisol regulation · Adrenal recovery</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust" style="display:none">
+    <div class="trust-inner">
+      <div>
+        <div class="trust-item-badge">Compliance</div>
+        <div class="trust-item-title">Ships clean, every time</div>
+        <div class="trust-item-body">Every shipment includes a full documentation stack: binomial ingredient declarations, ISO/IEC 17025 COA, GMP certificate, and HS tariff code pre-printed on the outer carton. We've solved the customs problem.</div>
+      </div>
+      <div>
+        <div class="trust-item-badge">Quality</div>
+        <div class="trust-item-title">Standardised extracts only</div>
+        <div class="trust-item-body">We sell standardised extracts — not raw herbs. Every product declares its active compound percentage. You know exactly what you're getting, in exactly the form studied in the clinical trials we cite.</div>
+      </div>
+      <div>
+        <div class="trust-item-badge">Transparency</div>
+        <div class="trust-item-title">We publish what we don't sell</div>
+        <div class="trust-item-body">Our database includes herbs we've reviewed and decided not to stock — Aconite, Aristolochia, raw He Shou Wu. Those decisions are documented and public. Transparency is not marketing — it's the product.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-root"></div>
+<script src="shared.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML = renderNav('');
+// Live herb count
+const sc=document.getElementById('stat-herb-count');if(sc&&typeof HERB_COUNT!=='undefined')sc.textContent=HERB_COUNT;
+document.getElementById('footer-root').innerHTML = renderFooter();
+initKlaviyo();
+initMegas();
+
+/* ── HERO CARD — rotating featured herbs ── */
+const heroHerbs = ['reishi','lions-mane','ashwagandha','saw-palmetto','schisandra'];
+let heroIdx = 0;
+function updateHeroCard(herb) {
+  document.getElementById('hpc-name').textContent = `${herb.name} (${herb.zh})`;
+  document.getElementById('hpc-latin').textContent = herb.latin;
+  document.getElementById('hpc-refs').textContent = `${herb.studies} studies · ${herb.rcts} RCTs · updated Mar '26`;
+  document.getElementById('hpc-ev-fill').style.width = herb.evPct + '%';
+  document.getElementById('hero-sketch').innerHTML = getSketch(herb.id);
+  document.getElementById('hpc-link').href = `/herb/${herb.id}`;
+  const b = document.getElementById('hpc-badges');
+  b.innerHTML = herb.tags.map(t=>`<span class="hpc-badge">${t}</span>`).join('');
+}
+function cycleHero() {
+  heroIdx = (heroIdx + 1) % heroHerbs.length;
+  const h = HERBS.find(x=>x.id===heroHerbs[heroIdx]);
+  if(h) updateHeroCard(h);
+}
+// init
+updateHeroCard(HERBS.find(x=>x.id==='reishi'));
+setInterval(cycleHero, 4000);
+
+/* ── CAROUSEL ── */
+const carouselHerbs = HERBS.filter(h=>h.ev==='s');
+const track = document.getElementById('carousel-track');
+const dotsEl = document.getElementById('carousel-dots');
+const visibleCount = 4;
+let carouselPos = 0;
+
+track.innerHTML = carouselHerbs.map(renderHerbCard).join('');
+
+const totalSlides = Math.max(0, carouselHerbs.length - visibleCount);
+dotsEl.innerHTML = Array.from({length:totalSlides+1},(_,i)=>`<div class="carousel-dot ${i===0?'active':''}" onclick="goCarousel(${i})"></div>`).join('');
+
+function moveCarousel(dir) {
+  carouselPos = Math.max(0, Math.min(totalSlides, carouselPos + dir));
+  applyCarousel();
+}
+function goCarousel(i) {
+  carouselPos = i;
+  applyCarousel();
+}
+function applyCarousel() {
+  const cardW = 230 + 20; // card width + gap
+  track.style.transform = `translateX(-${carouselPos * cardW}px)`;
+  document.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===carouselPos));
+}
+
+/* ── GOALS GRID ── */
+const goalIcons = {
+  immune:`<path d="M8 2L10 6L14 6L11 9L12 13L8 11L4 13L5 9L2 6L6 6Z"/>`,
+  'hair-loss':`<path d="M8 2Q6 4 5 7Q4 10 6 13 M8 2Q10 4 11 7Q12 10 10 13 M8 2L8 13"/>`,
+  testosterone:`<circle cx="8" cy="5" r="3"/><path d="M8 8L8 14 M5 11L11 11"/>`,
+  skin:`<circle cx="8" cy="8" r="5"/><path d="M6 8Q8 6 10 8Q8 10 6 8Z"/>`,
+  stress:`<path d="M4 8Q4 4 8 4Q12 4 12 8Q12 12 8 12Q6 12 5 11"/><path d="M8 7L8 9"/>`,
+  sleep:`<path d="M12 8Q12 12 8 14Q4 12 4 8Q4 4 6 3Q6 8 10 8Q11 6 12 8Z"/>`,
+  'bone-density':`<path d="M5 4L11 12 M5 12L11 4"/><circle cx="5" cy="4" r="2" fill="none"/><circle cx="11" cy="12" r="2" fill="none"/>`,
+  focus:`<path d="M4 8Q4 4 8 2Q12 4 12 8Q11 12 8 14Q5 12 4 8Z"/><circle cx="8" cy="8" r="2"/>`,
+  'liver-detox':`<path d="M3 4Q2 8 4 11Q7 14 10 12Q14 10 13 6Q12 3 9 3Q6 2 3 4Z"/>`,
+  heart:`<path d="M8 13Q2 9 2 5Q2 2 5 2Q7 2 8 4Q9 2 11 2Q14 2 14 5Q14 9 8 13Z"/>`,
+  energy:`<path d="M10 2L6 9L9 9L6 14L12 7L9 7Z"/>`,
+  'gut-health':`<path d="M5 2Q3 4 4 7Q5 10 3 13 M8 2Q10 4 9 7Q8 10 10 13 M11 2Q13 5 12 8Q11 11 13 14"/>`,
+  'anti-ageing':`<circle cx="8" cy="8" r="6"/><path d="M8 5L8 8L10 10"/>`,
+  'eye-health':`<path d="M2 8Q5 4 8 4Q11 4 14 8Q11 12 8 12Q5 12 2 8Z"/><circle cx="8" cy="8" r="2"/>`,
+  respiratory:`<path d="M8 2L8 9 M4 9Q2 10 2 12Q2 14 4 14Q6 14 6 12L6 8 M12 9Q14 10 14 12Q14 14 12 14Q10 14 10 12L10 8"/>`,
+};
+
+const goalIconPaths = {
+  immune:`<path d="M8 2L10 6L14 6L11 9L12 13L8 11L4 13L5 9L2 6L6 6Z"/>`,
+  'hair-loss':`<path d="M8 2Q6 4 5 7Q4 10 6 13 M8 2Q10 4 11 7Q12 10 10 13 M8 2L8 13"/>`,
+  testosterone:`<circle cx="8" cy="5" r="3"/><path d="M8 8L8 14 M5 11L11 11"/>`,
+  skin:`<circle cx="8" cy="8" r="5"/><path d="M6 8Q8 6 10 8Q8 10 6 8Z"/>`,
+  stress:`<path d="M4 8Q4 4 8 4Q12 4 12 8Q12 12 8 12Q6 12 5 11"/><path d="M8 7L8 9"/>`,
+  sleep:`<path d="M12 8Q12 12 8 14Q4 12 4 8Q4 4 6 3Q6 8 10 8Q11 6 12 8Z"/>`,
+  'bone-density':`<path d="M5 4L11 12 M5 12L11 4" stroke-linecap="round"/><circle cx="5" cy="4" r="2" fill="none"/><circle cx="11" cy="12" r="2" fill="none"/>`,
+  focus:`<path d="M4 8Q4 4 8 2Q12 4 12 8Q11 12 8 14Q5 12 4 8Z"/><circle cx="8" cy="8" r="2"/>`,
+  'liver-detox':`<path d="M3 4Q2 8 4 11Q7 14 10 12Q14 10 13 6Q12 3 9 3Q6 2 3 4Z"/>`,
+  heart:`<path d="M8 13Q2 9 2 5Q2 2 5 2Q7 2 8 4Q9 2 11 2Q14 2 14 5Q14 9 8 13Z"/>`,
+  energy:`<path d="M10 2L6 9L9 9L6 14L12 7L9 7Z"/>`,
+  'gut-health':`<path d="M5 2Q3 4 4 7Q5 10 3 13 M8 2Q10 4 9 7Q8 10 10 13 M11 2Q13 5 12 8Q11 11 13 14"/>`,
+  'anti-ageing':`<circle cx="8" cy="8" r="6"/><path d="M8 5L8 8L10 10"/>`,
+  'eye-health':`<path d="M2 8Q5 4 8 4Q11 4 14 8Q11 12 8 12Q5 12 2 8Z"/><circle cx="8" cy="8" r="2"/>`,
+  respiratory:`<path d="M8 2L8 9 M4 9Q2 10 2 12Q2 14 4 14Q6 14 6 12L6 8 M12 9Q14 10 14 12Q14 14 12 14Q10 14 10 12L10 8"/>`,
+};
+
+document.getElementById('goals-grid').innerHTML = GOALS.map(g=>`
+  <a class="goal-tile" href="formulary.html?goal=${g.id}">
+    <div class="goal-tile-icon">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${goalIconPaths[g.id]||'<circle cx="8" cy="8" r="6"/>'}</svg>
+    </div>
+    <div class="goal-tile-name">${g.name}</div>
+    <div class="goal-tile-herbs">${g.herbs}</div>
+    <div class="goal-tile-tags">${g.tags.map(t=>`<span class="tag tag-jade">${t}</span>`).join('')}</div>
+  </a>`).join('');
+</script>
+</body>
+</html>

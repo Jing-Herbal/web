@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Jing — Ancient Formulas, Modern Proof</title>
+<meta name="description" content="Why we spent 12 months reviewing 4,800 studies to build the TCM resource that didn't exist. The story behind Jing's science-backed Traditional Chinese Medicine formulary.">
+<link rel="canonical" href="https://jingherbal.com/about">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Jing">
+<meta property="og:title" content="About Jing — Why We Built the TCM Resource That Didn't Exist">
+<meta property="og:description" content="We reviewed 4,800+ studies to build the most transparent TCM platform on the internet.">
+<meta property="og:image" content="https://jingherbal.com/og/about.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="628">
+<meta property="og:url" content="https://jingherbal.com/about">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@jingherbal">
+<meta name="twitter:title" content="About Jing — Why We Built the TCM Resource That Didn't Exist">
+<meta name="twitter:description" content="We reviewed 4,800+ studies to build the most transparent TCM platform on the internet.">
+<meta name="twitter:image" content="https://jingherbal.com/og/about.jpg">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* HERO */
+.about-hero{background:var(--ink);padding:5rem 2rem 4.5rem;position:relative;overflow:hidden}
+.about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(29,158,117,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:760px;margin:0 auto;text-align:center;position:relative}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--jade);margin-bottom:1.25rem}
+.hero-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);color:#fff;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1.25rem}
+.hero-title em{color:rgba(255,255,255,0.5);font-style:italic}
+.hero-subtitle{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.06em;line-height:1.8;max-width:560px;margin:0 auto 2.25rem}
+.hero-rule{width:40px;height:1px;background:var(--jade);margin:2rem auto 1.75rem;opacity:0.5}
+.hero-cta-row{display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap}
+/* STATS BAR */
+.stats-bar{background:rgba(255,255,255,0.04);border-top:0.5px solid rgba(255,255,255,0.08);border-bottom:0.5px solid rgba(255,255,255,0.08);padding:1.25rem 2rem}
+.stats-bar-inner{max-width:760px;margin:0 auto;display:flex;justify-content:center;gap:0}
+.stat-item{text-align:center;flex:1;padding:0.25rem 0.5rem;text-decoration:none;transition:background 0.15s;border-radius:6px}
+a.stat-item:hover{background:rgba(255,255,255,0.04)}
+.stat-num{font-family:var(--serif);font-size:1.6rem;color:var(--jade);line-height:1;margin-bottom:3px}
+.stat-lbl{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+a.stat-item:hover .stat-lbl{color:rgba(255,255,255,0.5)}
+.stat-arrow{font-family:var(--mono);font-size:9px;color:var(--jade);opacity:0;transition:opacity 0.15s;margin-top:2px}
+a.stat-item:hover .stat-arrow{opacity:1}
+/* CONTENT */
+.about-body{max-width:720px;margin:0 auto;padding:4rem 2rem 5rem}
+.about-section{margin-bottom:3.5rem}
+.about-section-label{font-family:var(--mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--jade);margin-bottom:0.75rem}
+.about-section h2{font-family:var(--serif);font-size:1.75rem;letter-spacing:-0.03em;line-height:1.15;margin-bottom:1.25rem;color:var(--ink)}
+.about-section p{font-size:0.95rem;color:var(--ink2);line-height:1.85;margin-bottom:1rem}
+.about-section p:last-child{margin-bottom:0}
+.about-section strong{color:var(--ink);font-weight:500}
+.lead{font-size:1.05rem;color:var(--ink);line-height:1.8;margin-bottom:1rem}
+.pull-quote{border-left:2px solid var(--jade);padding:0.25rem 0 0.25rem 1.5rem;margin:2rem 0}
+.pull-quote p{font-family:var(--serif);font-size:1.2rem;color:var(--ink);line-height:1.5;letter-spacing:-0.01em;margin:0}
+.evidence-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:1.5rem 0}
+.evidence-list li{display:flex;align-items:flex-start;gap:12px;background:var(--white);border:0.5px solid var(--border);border-radius:8px;padding:12px 14px;font-size:0.88rem;color:var(--ink2);line-height:1.6}
+.evidence-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--jade);flex-shrink:0;margin-top:7px}
+/* HERB SHOWCASE CARDS */
+.herb-showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:1.75rem 0}
+.herb-showcase-card{background:var(--white);border:0.5px solid var(--border);border-radius:10px;padding:1rem;text-decoration:none;display:flex;flex-direction:column;gap:0.6rem;transition:border-color 0.15s,box-shadow 0.15s}
+.herb-showcase-card:hover{border-color:var(--jade);box-shadow:0 2px 12px rgba(29,158,117,0.08)}
+.herb-showcase-sketch{width:60px;height:60px;color:var(--ink3);opacity:0.65;margin:0 auto}
+.herb-showcase-sketch svg{width:100%;height:100%}
+.herb-showcase-name{font-family:var(--serif);font-size:0.9rem;color:var(--ink);font-weight:500;letter-spacing:-0.01em;text-align:center}
+.herb-showcase-zh{font-family:var(--mono);font-size:0.7rem;color:var(--ink4);font-weight:400;display:block;margin-top:1px}
+.herb-showcase-claim{font-size:0.78rem;color:var(--ink2);line-height:1.55;text-align:center}
+.herb-showcase-ev{display:flex;align-items:center;gap:6px;margin-top:auto}
+.herb-showcase-ev-lbl{font-family:var(--mono);font-size:8px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink4);white-space:nowrap}
+.herb-showcase-ev-track{flex:1;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.herb-showcase-ev-fill{height:100%;border-radius:2px}
+.herb-showcase-ev-txt{font-family:var(--mono);font-size:8px;color:var(--jade-d);letter-spacing:0.06em;white-space:nowrap}
+.herb-showcase-cta{font-family:var(--mono);font-size:9px;color:var(--jade);letter-spacing:0.08em;text-align:center}
+/* DIVIDER */
+.section-divider{border:none;border-top:0.5px solid var(--border);margin:3.5rem 0}
+/* PROGRESS BAR */
+.progress-block{background:var(--white);border:0.5px solid var(--border);border-radius:10px;padding:1.5rem 1.75rem;margin:1.75rem 0}
+.progress-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.75rem}
+.progress-title{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink)}
+.progress-fraction{font-family:var(--mono);font-size:10px;color:var(--ink4);letter-spacing:0.06em}
+.progress-fraction strong{color:var(--jade-d);font-weight:600}
+.progress-track{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:0.6rem}
+.progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--jade-d),var(--jade));width:0%;transition:width 1.4s cubic-bezier(0.16,1,0.3,1)}
+.progress-legend{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--ink4);letter-spacing:0.06em}
+.progress-legend .done{color:var(--jade-d);font-weight:500}
+.progress-milestones{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.25rem;padding-top:1.25rem;border-top:0.5px solid var(--border)}
+.milestone{display:flex;flex-direction:column;gap:3px}
+.milestone-num{font-family:var(--serif);font-size:1.3rem;color:var(--jade-d);line-height:1}
+.milestone-num.upcoming{color:var(--ink4)}
+.milestone-label{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink4);line-height:1.4}
+.milestone-status{font-family:var(--mono);font-size:8px;letter-spacing:0.06em;color:var(--jade)}
+.milestone-status.upcoming{color:var(--ink4);opacity:0.6}
+/* TRANSPARENCY BOX */
+.transparency-box{background:var(--jade-d);color:#fff;border-radius:10px;padding:1.75rem 2rem;margin-top:3.5rem}
+.transparency-box .tb-label{font-family:var(--mono);font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.6rem}
+.transparency-box h3{font-family:var(--serif);font-size:1.3rem;color:#fff;letter-spacing:-0.02em;margin-bottom:0.75rem}
+.transparency-box p{font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:0.75rem}
+.transparency-box p:last-child{margin-bottom:0}
+/* CTA ROW */
+.about-cta-row{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
+/* BREADCRUMB */
+.breadcrumb{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;margin-bottom:2rem;display:flex;gap:8px;align-items:center}
+.breadcrumb a{color:rgba(255,255,255,0.4)}.breadcrumb a:hover{color:var(--jade)}
+.breadcrumb span{color:rgba(255,255,255,0.15)}
+@media(max-width:640px){.herb-showcase{grid-template-columns:1fr}.progress-milestones{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+  .stats-bar-inner{flex-wrap:wrap}.stat-item{flex:0 0 50%;padding:0.6rem 0}
+  .about-body{padding:2.5rem 1.25rem 3.5rem}.about-section h2{font-size:1.45rem}
+  .pull-quote p{font-size:1.05rem}.transparency-box{padding:1.25rem}
+  .about-cta-row,.hero-cta-row{flex-direction:column;align-items:center}
+  .about-cta-row a,.hero-cta-row a{text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<section class="about-hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span><span style="color:rgba(255,255,255,0.45)">About</span></div>
+    <div class="hero-eyebrow">Our story</div>
+    <h1 class="hero-title">Ancient Formulas, <em>Modern Proof.</em></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-subtitle">Why we spent 12 months reviewing 4,800 studies to build the TCM resource that didn't exist.</p>
+    <div class="hero-cta-row">
+      <a class="btn-primary" href="/formulary">Explore the formulary &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--ink)"><div class="stats-bar"><div class="stats-bar-inner">
+  <a class="stat-item" href="/research">
+    <div class="stat-num">4,800+</div><div class="stat-lbl">Studies reviewed</div><div class="stat-arrow">&rarr;</div>
+  </a>
+  <a class="stat-item" href="/formulary">
+    <div class="stat-num" id="stat-herb-count">49</div><div class="stat-lbl">Herbs catalogued</div><div class="stat-arrow">&rarr;</div>
+  </a>
+  <a class="stat-item" href="/protocols">
+    <div class="stat-num">10</div><div class="stat-lbl">Protocols</div><div class="stat-arrow">&rarr;</div>
+  </a>
+  <div class="stat-item">
+    <div class="stat-num">Mar '26</div><div class="stat-lbl">Evidence updated</div>
+  </div>
+</div></div></div>
+
+<div class="about-body">
+
+  <div class="about-section">
+    <p class="lead">There's a moment most people have when they first get serious about their health. You start reading labels. You start asking questions. You start noticing that the supplement industry — a market worth more than $60 billion globally — is almost entirely built on blind trust.</p>
+    <p>Vague labelling. Paid anecdotal stories. A founder who spent time in the mountains of China. A claim that references a 3,000-year tradition without a single link to a peer-reviewed study.</p>
+    <p>We had that moment. And instead of gatekeeping the information we discovered, we built a platform for you — the uncompromising optimiser that cares deeply about what goes into their body.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="about-section">
+    <div class="about-section-label">The problem</div>
+    <h2>The supplement industry has a transparency problem.</h2>
+    <p>And it runs deep.</p>
+    <p>Most companies and influencers will tell you <em>what</em> a herb does. Very few will tell you <em>how</em> it does it. Fewer still will tell you how well the evidence actually supports that claim — and almost none will tell you when it doesn't.</p>
+    <p>The result is the opportunity cost of investing time and money into a protocol that is suboptimal, and a market flooded with products that are at their best ineffective and at their worst dangerous.</p>
+    <div class="pull-quote"><p>"Products where 'clinically studied' means a single unpublished pilot study. Where you're paying $80 a month for something that may be no more potent than dried mushroom powder you could buy from a grocery store."</p></div>
+    <p>We're not interested in selling you a product. We're interested in helping you reach your goals.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="about-section">
+    <div class="about-section-label">What Jing is</div>
+    <h2>A science-backed TCM formulary — built for people who read the study before they buy.</h2>
+    <p>Jing is a science-backed Traditional Chinese Medicine formulary. We review the clinical evidence for TCM herbs, rate it honestly, so you can make the most informed decision on your health.</p>
+    <p>Our platform currently covers 49 herbs — each with a full clinical dossier that includes:</p>
+    <ul class="evidence-list">
+      <li>The active compounds and what they do at the molecular level</li>
+      <li>A rated evidence summary based on RCT quality and quantity</li>
+      <li>The mechanism of action, explained in plain language</li>
+      <li>Dosage guidance drawn directly from peer-reviewed studies</li>
+      <li>A complete safety profile, including drug interactions and contraindications</li>
+    </ul>
+    <p>We publish the evidence whether it supports the herb or not. If a study weakens the case for a herb we evaluate, we update the rating. If a meta-analysis changes the picture — even if it's unflattering — we share the data.</p>
+    <p>We built the education platform first because we believe an informed consumer is a better one. If you understand why lion's mane <span style="font-family:var(--mono);font-size:0.82rem;color:var(--ink3)">猴头菇</span> works, you'll take it correctly, you'll notice the effects, and you'll come back. The dossiers exist to close that gap.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="about-section">
+    <div class="about-section-label">Why traditional Chinese medicine</div>
+    <h2>Three millennia of pharmacology. Now with peer-reviewed evidence.</h2>
+    <p>Traditional Chinese medicine has been practised for over three millennia. That's not a marketing claim — it's a fact about the depth and duration of a pharmacological tradition that predates Western medicine by two thousand years.</p>
+    <p>But it's also not a reason to take anything on faith.</p>
+    <p>The interesting thing happening in medicine right now is that the tools of modern pharmacology are being applied to traditional systems for the first time at scale. Randomised controlled trials. HPLC standardisation. Pharmacokinetic studies. And what's emerging is something remarkable: many of the herbs that ancient physicians classified as superior tonics genuinely hold up under scrutiny.</p>
+    <div class="herb-showcase" id="herb-showcase"></div>
+    <p>These are not folk remedies. They're pharmacologically active compounds with growing clinical evidence behind them.</p>
+    <p>The problem was never with the herbs. The problem was the lack of demand for transparency and critical thinking applied to the products we put into our bodies.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="about-section">
+    <div class="about-section-label">Who we're for</div>
+    <h2>Built for the person who reads the study before they buy the supplement.</h2>
+    <p>You know what a double-blind placebo-controlled trial is, and you know the difference between correlation and causation. You're interested in your testosterone panel, your cortisol levels, your sleep architecture, your hair. You've probably spent more time on PubMed than most people spend reading nutrition labels.</p>
+    <p>You're part of a community that has decided to take the human body seriously — not as something that happens to you, but as something you can work on. You're thinking about your phenotype. About bone density and collagen synthesis and DHT modulation. About what you put in your body and why.</p>
+    <p>You've probably tried TCM products before. Maybe you liked the philosophy. Maybe you trusted the source. But you couldn't verify any of it, and that bothered you.</p>
+    <div class="pull-quote"><p>Jing is for you.</p></div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="about-section">
+    <div class="about-section-label">Why now</div>
+    <h2>Two things are converging.</h2>
+    <p>The first is cultural. A generation of men and women are taking their biology seriously in ways that weren't socially acceptable five years ago. Testosterone, cortisol, DHT, sleep quality, skin, jawline density — these are no longer fringe topics. They're mainstream. The biohacking community has mainstreamed the idea that your phenotype is an input, not a fixed output.</p>
+    <p>The second is scientific. The tools of modern clinical research are being applied to TCM at scale for the first time. There are now thousands of peer-reviewed studies on medicinal mushrooms and adaptogenic herbs. The evidence base is growing faster than the supplement industry has been able to respond to it.</p>
+    <p>The opportunity is a platform that bridges both — that takes TCM seriously as a pharmacological tradition, applies modern evidence standards to it, and delivers the results to a market that is finally ready to engage with both.</p>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="about-section">
+    <div class="about-section-label">What's coming</div>
+    <h2>49 down. 1,843 to go.</h2>
+    <p>The Bencao Gangmu — the classical Chinese pharmacopoeia compiled by Li Shizhen in 1596 — contains 1,892 herbs. We've reviewed 49. Every herb we add goes through the same full evidence review process. No shortcuts.</p>
+
+    <div class="progress-block">
+      <div class="progress-header">
+        <div class="progress-title">Bencao Gangmu Coverage</div>
+        <div class="progress-fraction"><strong>49</strong> / 1,892 herbs</div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="bencao-fill"></div>
+      </div>
+      <div class="progress-legend">
+        <span class="done">49 reviewed</span>
+        <span>2.59% complete</span>
+        <span>1,843 remaining</span>
+      </div>
+      <div class="progress-milestones">
+        <div class="milestone">
+          <div class="milestone-num">49</div>
+          <div class="milestone-label">Herbs reviewed</div>
+          <div class="milestone-status">&#10003; Live now</div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-num upcoming">100</div>
+          <div class="milestone-label">Herbs target</div>
+          <div class="milestone-status upcoming">Coming 2026</div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-num upcoming">1,892</div>
+          <div class="milestone-label">Full pharmacopoeia</div>
+          <div class="milestone-status upcoming">Long-term goal</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Over the coming months we'll be expanding the formulary, adding curated protocols for specific health goals — cognitive performance, hormonal balance, skin and hair, longevity — and challenging the products that currently dominate the industry.</p>
+    <div class="about-cta-row">
+      <a class="btn-primary" href="/formulary">Explore the formulary &rarr;</a>
+      <a class="btn-outline" href="/protocols">View protocols &rarr;</a>
+    </div>
+  </div>
+
+  <div class="transparency-box">
+    <div class="tb-label">A note on transparency</div>
+    <h3>We're not doctors. And we'll always say so.</h3>
+    <p>We've spent a year in the literature. We present the clinical data. We explain the mechanisms. We link to the studies. We tell you what the evidence says and how strong it is. What we don't do is make claims we can't substantiate, overstate the certainty of preliminary findings, or pretend that correlation is causation.</p>
+    <p>If you're managing a health condition, talk to a doctor. If you're on medication, check the interactions in our database before adding any herb. If the evidence for something is weak, we'll say so.</p>
+    <p>This is what we mean by <em>modern proof</em>.</p>
+  </div>
+
+</div>
+
+<div id="footer-root"></div>
+<script src="herb-data.js"></script>
+<script src="shared.js"></script>
+<script>
+  document.getElementById('nav-root').innerHTML = renderNav('about');
+  document.getElementById('footer-root').innerHTML = renderFooter();
+  initKlaviyo();
+
+  // Live herb count
+  const sc = document.getElementById('stat-herb-count');
+  if (sc && typeof HERB_COUNT !== 'undefined') sc.textContent = HERB_COUNT;
+
+  // Animate progress bar on scroll into view
+  const fill = document.getElementById('bencao-fill');
+  if (fill) {
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) { fill.style.width = '2.59%'; obs.disconnect(); }
+    }, { threshold: 0.4 });
+    obs.observe(fill.parentElement);
+  }
+
+  // Herb showcase cards
+  const EV_COLOUR = { s: 'var(--jade)', m: '#e6a817', p: '#6ba3be' };
+  const showcaseData = [
+    { id: 'lions-mane',   name: "Lion's Mane",        zh: '猴头菇', claim: 'Activates nerve growth factor synthesis — a mechanism with direct implications for cognitive performance.',                                              ev:'p', evLabel:'Promising', evW:'34%' },
+    { id: 'ashwagandha',  name: 'Ashwagandha KSM-66®', zh: '睡茄',  claim: 'Modulates the HPA axis and reduces cortisol in ways that are measurable, reproducible, and statistically significant.',                                   ev:'s', evLabel:'Strong',   evW:'82%' },
+    { id: 'reishi',       name: 'Reishi',              zh: '灵芝',   claim: 'Triterpene fraction has demonstrated meaningful immunomodulatory activity across multiple independent research groups.', ev:'m', evLabel:'Moderate', evW:'56%' }
+  ];
+
+  document.getElementById('herb-showcase').innerHTML = showcaseData.map(h => `
+    <a class="herb-showcase-card" href="/herb/${h.id}">
+      <div class="herb-showcase-sketch">${getSketch(h.id)}</div>
+      <div class="herb-showcase-name">${h.name}<span class="herb-showcase-zh">${h.zh}</span></div>
+      <div class="herb-showcase-claim">${h.claim}</div>
+      <div class="herb-showcase-ev">
+        <span class="herb-showcase-ev-lbl">Evidence</span>
+        <div class="herb-showcase-ev-track"><div class="herb-showcase-ev-fill" style="width:${h.evW};background:${EV_COLOUR[h.ev]}"></div></div>
+        <span class="herb-showcase-ev-txt">${h.evLabel}</span>
+      </div>
+      <div class="herb-showcase-cta">View dossier &rarr;</div>
+    </a>`).join('');
+</script>
+</body>
+</html>

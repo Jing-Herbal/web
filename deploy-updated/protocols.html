@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TCM Protocols — Jing | Evidence-Based Herb Stacks</title>
+<meta name="description" content="Curated evidence-based TCM protocols for cognitive performance, hormonal balance, sleep, skin and longevity. Each protocol built from peer-reviewed clinical data.">
+<link rel="canonical" href="https://jingherbal.com/protocols.html">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jing">
+<meta property="og:title" content="Evidence-Based TCM Protocols — Jing">
+<meta property="og:description" content="Curated herb stacks for cognitive performance, testosterone support, sleep, hair and longevity. Every protocol backed by peer-reviewed clinical data.">
+<meta property="og:image" content="https://jingherbal.com/og/protocols.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:url" content="https://jingherbal.com/protocols.html">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@jingherbal">
+<meta name="twitter:title" content="Evidence-Based TCM Protocols — Jing">
+<meta name="twitter:description" content="Curated herb stacks for cognitive performance, testosterone support, sleep, hair and longevity. Every protocol backed by peer-reviewed clinical data.">
+<meta name="twitter:image" content="https://jingherbal.com/og/protocols.jpg">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{background:var(--ink);color:#fff;padding:3.5rem 2rem}
+.page-hero-inner{max-width:1200px;margin:0 auto}
+.ph-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--jade);margin-bottom:1rem}
+.ph-title{font-family:var(--serif);font-size:2.6rem;letter-spacing:-0.03em;line-height:1.08;color:#fff;margin-bottom:0.75rem}
+.ph-title em{font-style:italic;color:#9FE1CB}
+.ph-body{font-size:0.9rem;color:rgba(255,255,255,0.5);max-width:560px;line-height:1.7}
+
+.content{max-width:1200px;margin:0 auto;padding:3rem 2rem}
+
+.protocol-card{background:var(--white);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;scroll-margin-top:80px}
+.protocol-card-header{display:grid;grid-template-columns:1fr auto;gap:2rem;padding:1.75rem 2rem;border-bottom:0.5px solid var(--border);cursor:pointer;align-items:start}
+.protocol-card-header:hover{background:var(--cream)}
+.pc-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--jade);margin-bottom:0.5rem}
+.pc-name{font-family:var(--serif);font-size:1.6rem;letter-spacing:-0.02em;color:var(--ink);margin-bottom:0.5rem}
+.pc-summary{font-size:0.88rem;color:var(--ink2);line-height:1.65;max-width:580px}
+.pc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:0.75rem}
+.pc-right{text-align:right;flex-shrink:0}
+.pc-ev-label{font-family:var(--mono);font-size:10px;color:var(--ink4);margin-bottom:4px}
+.pc-ev-grade{font-family:var(--serif);font-size:2rem;color:var(--jade-d);line-height:1}
+.pc-ev-sub{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:2px}
+.pc-toggle{font-family:var(--mono);font-size:11px;color:var(--jade-m);margin-top:1rem;cursor:pointer}
+
+.protocol-card-body{padding:1.75rem 2rem;background:var(--cream);display:none}
+.protocol-card-body.open{display:block}
+.pcb-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+
+.herb-row-title{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:0.6rem;padding-bottom:0.4rem;border-bottom:0.5px solid var(--border)}
+.herb-item{background:var(--white);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;display:block;text-decoration:none}
+.herb-item:hover{border-color:var(--jade);background:var(--jade-l)}
+.hi-name{font-weight:500;font-size:13px;color:var(--ink);margin-bottom:1px}
+.hi-zh{font-family:var(--mono);font-size:10px;color:var(--ink3)}
+.hi-dose{font-family:var(--mono);font-size:10px;color:var(--jade-m);margin-top:5px}
+.hi-role{font-size:11px;color:var(--ink2);margin-top:3px}
+.hi-ev{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:4px}
+
+.mechanism-item{font-size:12px;color:var(--ink2);line-height:1.6;padding:8px 12px 8px 14px;border-left:2px solid var(--jade-l);margin-bottom:8px;background:var(--white);border-radius:0 6px 6px 0}
+.mechanism-item strong{color:var(--ink);font-weight:500;display:block;margin-bottom:2px}
+
+.dosage-item{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:0.5px solid var(--border);font-size:12px}
+.dosage-item:last-child{border-bottom:none}
+.di-key{color:var(--ink3);font-family:var(--mono);font-size:10px}
+.di-val{color:var(--ink);font-weight:500}
+
+.warning-box{background:var(--amber-l);border:0.5px solid rgba(186,117,23,0.2);border-radius:6px;padding:10px 14px;margin-top:1rem;font-size:12px;color:var(--amber-d);line-height:1.6}
+.warning-box strong{display:block;margin-bottom:2px;font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase}
+/* ── PROTOCOLS RESPONSIVE ── */
+@media (max-width: 900px) {
+  .pcb-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .protocol-card-header { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+@media (max-width: 600px) {
+  .pcb-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .pc-right { text-align: left; }
+  .protocols-hero { padding: 2.5rem 1rem 2rem; }
+  .protocols-list { padding: 0 1rem 3rem; }
+}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-eyebrow">Curated stacks</div>
+    <h1 class="ph-title">Science-backed<br><em>protocols</em></h1>
+    <p class="ph-body">Each protocol combines herbs targeting the same physiological pathway. Evidence ratings reflect the overall stack. Always review contraindications before combining herbs with medications.</p>
+  </div>
+</div>
+
+<div class="content" id="protocols-content"></div>
+
+<div id="footer-root"></div>
+<script src="shared.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML = renderNav('');
+document.getElementById('footer-root').innerHTML = renderFooter();
+initKlaviyo();
+initMegas();
+
+const PROTOCOLS = [
+  {
+    id:'androgen', eyebrow:'Hormones · Looksmax', name:'Androgen support stack',
+    ev:'B', evSub:'Moderate', evColor:'var(--jade)',
+    summary:'Targets LH signalling, 5α-reductase activity, and SHBG regulation to support healthy testosterone levels. Mechanisms are well-characterised in vitro; human RCT data is moderate quality.',
+    tags:['DHT modulation','LH signalling','SHBG','Aromatase inhibition'],
+    herbs:[
+      {id:'epimedium',name:'Epimedium',zh:'淫羊藿',dose:'500mg icariin/day',ev:'m',role:'PDE5 inhibition · aromatase modulation'},
+      {id:'cistanche',name:'Cistanche',zh:'肉苁蓉',dose:'500mg extract/day',ev:'m',role:'Supports LH secretion · neuroprotective'},
+      {id:'morinda',name:'Morinda root',zh:'巴戟天',dose:'3g dried/day',ev:'m',role:'Androgen receptor sensitisation · SHBG reduction'},
+      {id:'ashwagandha',name:'Ashwagandha',zh:'印度人参',dose:'300mg KSM-66/day',ev:'s',role:'+14.7% testosterone in RCT vs placebo'},
+    ],
+    mechanisms:[
+      {title:'Aromatase inhibition',body:'Icariin (Epimedium) inhibits aromatase CYP19A1, reducing testosterone-to-estrogen conversion.'},
+      {title:'LH upregulation',body:'Cistanche tubulosa extract increases luteinising hormone pulse amplitude in animal models, supporting testicular production.'},
+      {title:'SHBG & HPA modulation',body:'Morinda reduces sex hormone-binding globulin; Ashwagandha withanolides suppress cortisol and support androgen receptor sensitivity.'},
+    ],
+    dosage:[
+      {k:'Take with food',v:'Morning — all four herbs'},
+      {k:'Duration',v:'8–12 weeks minimum for hormonal effect'},
+      {k:'Cycling',v:'12 weeks on, 4 weeks off'},
+      {k:'Monitor',v:'Testosterone, SHBG, LH at baseline and 12 weeks'},
+    ],
+    warning:'He Shou Wu is sometimes included in androgen stacks — we do not include it here due to hepatotoxicity risk at doses required for androgenic effect.'
+  },
+  {
+    id:'hair', eyebrow:'Skin & hair · Looksmax', name:'Hair loss protocol',
+    ev:'B−', evSub:'Moderate', evColor:'#5DCAA5',
+    summary:'Addresses androgenic alopecia through DHT inhibition, scalp microcirculation improvement, and hair follicle nutrient supply. Most relevant for male-pattern hair loss (androgenic alopecia).',
+    tags:['DHT inhibition','5α-reductase','Scalp circulation','Follicle support'],
+    herbs:[
+      {id:'saw-palmetto',name:'Saw Palmetto',zh:'锯棕榈',dose:'320mg liposterolic extract/day',ev:'s',role:'Strongest DHT inhibitor · type I & II 5α-reductase'},
+      {id:'he-shou-wu',name:'He Shou Wu (processed)',zh:'何首乌',dose:'6g prepared extract/day',ev:'m',role:'DHT modulation · melanin synthesis · Jing tonic'},
+      {id:'eclipta',name:'Eclipta',zh:'墨旱莲',dose:'3g dried/day',ev:'m',role:'5α-reductase inhibition · follicle stimulation'},
+      {id:'black-sesame',name:'Black sesame',zh:'黑芝麻',dose:'15g seeds/day',ev:'m',role:'Melanocyte support · Jing tonic · hair pigmentation'},
+    ],
+    mechanisms:[
+      {title:'5α-reductase type I & II inhibition',body:'Saw Palmetto liposterolic extract inhibits both isoforms of 5α-reductase, reducing DHT at the follicle level — comparable mechanism to finasteride without the side effect profile.'},
+      {title:'Follicle elongation via ginsenosides',body:'Jing tonics in this stack are associated with anagen phase extension in follicle culture models, keeping follicles in the growth phase longer.'},
+      {title:'Melanocyte protection',body:'He Shou Wu stilbene glycosides and black sesame sesamin support melanocyte function — relevant for premature greying alongside hair loss.'},
+    ],
+    dosage:[
+      {k:'He Shou Wu form',v:'Processed (prepared/zhi) root only — never raw'},
+      {k:'Duration',v:'6 months minimum — hair cycle is slow'},
+      {k:'Liver monitoring',v:'ALT/AST at baseline, 3 months, 6 months'},
+      {k:'Topical option',v:'Eclipta oil can be applied directly to scalp'},
+    ],
+    warning:'He Shou Wu (processed form) carries a rare hepatotoxicity risk. Do not exceed 6g/day. Monitor liver enzymes every 3 months. Discontinue if ALT rises >2× baseline.'
+  },
+  {
+    id:'looksmax', eyebrow:'Aesthetics · Performance · Looksmax', name:'Looksmax stack',
+    ev:'B−', evSub:'Moderate', evColor:'#5DCAA5',
+    summary:'Combines bone mineral support, collagen synthesis, androgen optimisation, and skin clarity into a comprehensive phenotype-optimisation protocol. Draws on the strongest TCM evidence for physical appearance outcomes.',
+    tags:['Bone mineral density','Collagen synthesis','DHT','Skin clarity','Testosterone'],
+    herbs:[
+      {id:'eucommia',name:'Eucommia',zh:'杜仲',dose:'2g bark extract/day',ev:'m',role:'Osteoblast activation · bone collagen · Jing tonic'},
+      {id:'epimedium',name:'Epimedium',zh:'淫羊藿',dose:'500mg icariin/day',ev:'m',role:'Dual androgenic & bone-protective · aromatase inhibition'},
+      {id:'tremella',name:'Tremella',zh:'银耳',dose:'2g extract/day',ev:'m',role:'Skin hydration · hyaluronic acid analogue · collagen support'},
+      {id:'goji',name:'Goji Berry',zh:'枸杞子',dose:'15g dried/day',ev:'s',role:'Antioxidant photoprotection · skin clarity · zeaxanthin'},
+      {id:'ashwagandha',name:'Ashwagandha',zh:'印度人参',dose:'300mg KSM-66/day',ev:'s',role:'Cortisol reduction · testosterone support · HPA reset'},
+    ],
+    mechanisms:[
+      {title:'Osteoblast activation',body:'Eucommia iridoids (aucubin) and epimedium icariin upregulate Runx2 and osteocalcin — key transcription factors for bone mineralisation.'},
+      {title:'Collagen & skin matrix',body:'Tremella glucuronoxylomannan acts as a natural hyaluronic acid analogue; goji polysaccharides support fibroblast activity and collagen cross-linking.'},
+      {title:'Hormonal optimisation',body:'Ashwagandha and epimedium together address cortisol excess, SHBG elevation, and aromatase overactivity — the three most common contributors to suboptimal testosterone in healthy men.'},
+    ],
+    dosage:[
+      {k:'Morning',v:'Eucommia + Epimedium + Ashwagandha with breakfast'},
+      {k:'Any time',v:'Tremella + Goji — can be taken as tea or powder'},
+      {k:'Duration',v:'12 weeks for hormonal; 6 months for bone/skin'},
+      {k:'Co-factors',v:'Vitamin D3 + K2 recommended alongside bone herbs'},
+    ],
+    warning:null
+  },
+  {
+    id:'hpa', eyebrow:'Stress · Recovery · Adrenal', name:'HPA axis reset',
+    ev:'A−', evSub:'Strong', evColor:'var(--jade)',
+    summary:'The best-evidenced protocol in our formulary. All three primary herbs have ≥4 RCTs demonstrating cortisol modulation. Designed for chronic stress, burnout recovery, and adrenal fatigue patterns.',
+    tags:['Cortisol reduction','HPA axis','Adaptogen','Adrenal support','Anxiolytic'],
+    herbs:[
+      {id:'ashwagandha',name:'Ashwagandha',zh:'印度人参',dose:'600mg KSM-66/day',ev:'s',role:'Best-evidenced cortisol reducer · −27.9% in RCT'},
+      {id:'schisandra',name:'Schisandra',zh:'五味子',dose:'500mg extract/day',ev:'m',role:'Bidirectional HPA modulation · hepatoprotective'},
+      {id:'eleuthero',name:'Eleuthero',zh:'刺五加',dose:'400mg extract/day',ev:'m',role:'Adrenal support · physical stress resilience'},
+      {id:'magnolia-bark',name:'Magnolia bark',zh:'厚朴',dose:'200mg extract/day',ev:'m',role:'GABA-A modulation · anxiolytic · cortisol reduction'},
+    ],
+    mechanisms:[
+      {title:'HPA axis downregulation',body:'Ashwagandha withanolides reduce hypothalamic CRH expression and pituitary ACTH secretion, resulting in measurably lower serum cortisol — confirmed in 8 independent RCTs.'},
+      {title:'Adrenal cortex support',body:'Eleuthero eleutherosides support adrenal gland function during prolonged stress without suppressing the axis or causing dependency.'},
+      {title:'GABAergic anxiolytic pathway',body:'Magnolia bark honokiol and magnolol bind GABA-A receptors at the benzodiazepine site, producing anxiolytic effects comparable to low-dose diazepam without sedation or dependency.'},
+    ],
+    dosage:[
+      {k:'Morning',v:'Ashwagandha + Eleuthero with breakfast'},
+      {k:'Evening',v:'Schisandra + Magnolia bark 30 min before bed'},
+      {k:'Duration',v:'8 weeks minimum; 12 weeks for full HPA normalisation'},
+      {k:'Expected timeline',v:'Sleep improves week 2–3; cortisol normalises week 6–8'},
+    ],
+    warning:null
+  },
+  {
+    id:'immune', eyebrow:'Immune · Preventive', name:'Immune foundation',
+    ev:'A', evSub:'Strong', evColor:'var(--jade)',
+    summary:'The highest-evidence protocol in the formulary. All three primary herbs have robust RCT data for NK cell activation and innate immune modulation. Suitable for long-term daily maintenance.',
+    tags:['NK cell activation','Beta-glucan','Innate immunity','Macrophage','Adaptogenic'],
+    herbs:[
+      {id:'astragalus',name:'Astragalus',zh:'黄芪',dose:'500mg extract (30% polysaccharides)/day',ev:'s',role:'Adaptive immune support · Wei Qi tonic · T-cell modulation'},
+      {id:'reishi',name:'Reishi',zh:'灵芝',dose:'3g dual extract/day',ev:'s',role:'NK cell activation · NF-κB inhibition · fatigue reduction'},
+      {id:'cordyceps',name:'Cordyceps',zh:'冬虫夏草',dose:'1g CS-4 extract/day',ev:'s',role:'Respiratory immune support · VO₂ max · cordycepin'},
+      {id:'turkey-tail',name:'Turkey Tail',zh:'云芝',dose:'2g extract/day',ev:'m',role:'PSK beta-glucan · only TCM mushroom approved as pharma (Japan)'},
+    ],
+    mechanisms:[
+      {title:'Dectin-1 receptor activation',body:'Beta-glucans from Reishi, Astragalus, and Turkey Tail bind dectin-1 on macrophages, triggering innate immune cascade including IL-12 secretion and NK cell upregulation.'},
+      {title:'NK cell upregulation',body:'Reishi polysaccharides increase NK cell cytotoxic activity 20–40% above baseline across multiple RCTs — the most consistent immune outcome in the TCM evidence base.'},
+      {title:'Adaptive immunity',body:'Astragalosides support T-helper cell differentiation and IgG production without overstimulating the system — making this stack suitable for daily long-term use without immune exhaustion.'},
+    ],
+    dosage:[
+      {k:'With meals',v:'All four — fat aids triterpene absorption (Reishi)'},
+      {k:'Duration',v:'Continuous use safe up to 12 months (studied)'},
+      {k:'Acute illness',v:'Can double Reishi dose during active infection'},
+      {k:'Monitor',v:'CBC if immunocompromised — NK cell counts'},
+    ],
+    warning:'Avoid in organ transplant recipients — immune stimulation may theoretically increase rejection risk. Consult physician if on immunosuppressants (cyclosporine, tacrolimus).'
+  },
+  {
+    id:'bone', eyebrow:'Bone · Joint · Looksmax', name:'Bone density & collagen',
+    ev:'B−', evSub:'Moderate', evColor:'#5DCAA5',
+    summary:'Targets osteoblast activation, collagen cross-linking, and IGF-1 pathways. Relevant for bone density maintenance, joint integrity, and the looksmaxxing interest in facial and skeletal bone structure.',
+    tags:['Osteoblast','IGF-1','Collagen cross-linking','Bone mineral density','Joint health'],
+    herbs:[
+      {id:'eucommia',name:'Eucommia',zh:'杜仲',dose:'2g bark extract/day',ev:'m',role:'Osteoblast activation · Runx2 upregulation · bone collagen'},
+      {id:'epimedium',name:'Epimedium',zh:'淫羊藿',dose:'500mg icariin/day',ev:'m',role:'Bone mineral density · osteoblast + osteoclast balance'},
+      {id:'deer-antler',name:'Deer antler',zh:'鹿茸',dose:'500mg velvet extract/day',ev:'m',role:'IGF-1 precursors · collagen type II · Jing tonic'},
+      {id:'dipsacus',name:'Dipsacus',zh:'续断',dose:'3g dried/day',ev:'p',role:'Traditional bone-knitting herb · asperosides · preliminary data'},
+    ],
+    mechanisms:[
+      {title:'Osteoblast stimulation',body:'Eucommia ulmoides iridoids and epimedium icariin both upregulate Runx2 (the master transcription factor for osteoblast differentiation) and osteocalcin in bone cell lines.'},
+      {title:'IGF-1 pathway activation',body:'Deer antler velvet contains IGF-1 and its precursors. Oral bioavailability remains debated — some formulations use sublingual delivery for improved uptake.'},
+      {title:'Collagen cross-linking',body:'Dipsacus asperosides are associated with increased collagen synthesis and reduced MMP-9 (matrix metalloproteinase) activity in animal fracture healing models.'},
+    ],
+    dosage:[
+      {k:'Duration',v:'6–12 months for bone mineral density changes'},
+      {k:'Co-factors essential',v:'Vitamin D3 (2000–5000 IU) + K2 (MK-7 100mcg) daily'},
+      {k:'Monitoring',v:'DEXA scan at baseline and 12 months if available'},
+      {k:'IGF-1 note',v:'Deer antler oral bioavailability uncertain — consider topical or sublingual'},
+    ],
+    warning:null
+  },
+  {
+    id:'liver', eyebrow:'Liver · Detox · Metabolic', name:'Liver detox & protection',
+    ev:'A−', evSub:'Strong', evColor:'var(--jade)',
+    summary:'Three of the four herbs in this protocol have strong RCT evidence for liver enzyme normalisation. Relevant for elevated ALT/AST, NAFLD, alcohol-related liver stress, and general hepatoprotection.',
+    tags:['Hepatoprotective','ALT/AST normalisation','Bile flow','Glutathione','NF-κB inhibition'],
+    herbs:[
+      {id:'milk-thistle',name:'Milk Thistle',zh:'水飞蓟',dose:'420mg silymarin/day',ev:'s',role:'Most clinically evidenced hepatoprotective compound in natural medicine'},
+      {id:'schisandra',name:'Schisandra',zh:'五味子',dose:'500mg extract/day',ev:'s',role:'Reduces ALT/AST · anti-oxidant · lignans protect hepatocytes'},
+      {id:'yin-chen',name:'Yin Chen',zh:'茵陈',dose:'9g dried or 3g extract/day',ev:'m',role:'Bile secretion stimulation · scoparone · classical jaundice herb'},
+      {id:'bupleurum',name:'Bupleurum',zh:'柴胡',dose:'3g dried/day',ev:'m',role:'Saikosaponins · hepatoprotective · Liver Qi regulation'},
+    ],
+    mechanisms:[
+      {title:'Silybin membrane stabilisation',body:'Silybin (the active constituent of silymarin) binds and stabilises hepatocyte cell membranes, reducing permeability to hepatotoxic compounds. Also inhibits NF-κB and upregulates glutathione synthesis.'},
+      {title:'Bile flow enhancement',body:'Yin Chen scoparone directly stimulates bile secretion and promotes bile acid excretion — important for clearing fat-soluble toxins and reducing intrahepatic cholestasis.'},
+      {title:'Cortisol-liver axis modulation',body:'Bupleurum saikosaponins modulate cortisol metabolism in the liver, reducing cortisol-driven hepatic glucose production and inflammatory signalling (the Xiao Yao San mechanism).'},
+    ],
+    dosage:[
+      {k:'Milk Thistle timing',v:'With fatty meal — silymarin is fat-soluble'},
+      {k:'Duration',v:'8–12 weeks for ALT/AST normalisation'},
+      {k:'Monitoring',v:'LFTs (ALT, AST, GGT, bilirubin) at baseline and 8 weeks'},
+      {k:'Alcohol note',v:'Do not use as a license to drink more — limit alcohol regardless'},
+    ],
+    warning:'If ALT/AST is elevated >3× normal, seek medical evaluation before self-treating with herbal protocols. Serious liver conditions require diagnosis and monitoring by a physician.'
+  },
+  {
+    id:'focus', eyebrow:'Cognition · Nootropic · Brain', name:'Focus & memory stack',
+    ev:'A−', evSub:'Strong', evColor:'var(--jade)',
+    summary:'All four herbs have independent RCT evidence for cognitive outcomes. Lion\'s Mane and Bacopa have the strongest evidence for memory improvement; Ginseng and Ginkgo for attention and cerebral blood flow.',
+    tags:['NGF synthesis','Acetylcholine','Cerebral blood flow','Memory consolidation','Neuroprotection'],
+    herbs:[
+      {id:'lions-mane',name:"Lion's Mane",zh:'猴头菇',dose:'1–3g dual extract/day',ev:'s',role:'NGF synthesis · RCT evidence in MCI · effects reverse on cessation'},
+      {id:'bacopa',name:'Bacopa',zh:'假马齿苋',dose:'300mg 55% bacosides/day',ev:'s',role:'Memory consolidation · dendritic branching · builds over 12 weeks'},
+      {id:'ginseng',name:'Ginseng',zh:'人参',dose:'200–400mg G115/day',ev:'s',role:'Attention · working memory · acute and chronic effects'},
+      {id:'ginkgo',name:'Ginkgo',zh:'银杏叶',dose:'120–240mg EGb 761/day',ev:'s',role:'Cerebral blood flow · PAF inhibition · dementia prevention'},
+    ],
+    mechanisms:[
+      {title:'NGF and BDNF synthesis (Lion\'s Mane)',body:'Hericenones and erinacines from Lion\'s Mane are the only naturally occurring compounds demonstrated to stimulate NGF synthesis in human neural tissue in clinical trials.'},
+      {title:'Acetylcholine modulation (Bacopa)',body:'Bacosides reduce acetylcholinesterase activity and increase muscarinic receptor density, enhancing cholinergic transmission — the primary neurotransmitter system for memory encoding.'},
+      {title:'Cerebral microcirculation (Ginkgo)',body:'EGb 761 ginkgolide B is one of the most potent PAF antagonists in nature, reducing platelet aggregation and improving cerebral blood flow — the substrate for all cognitive activity.'},
+    ],
+    dosage:[
+      {k:'Lion\'s Mane',v:'Morning — must be taken continuously (effects reverse on stopping)'},
+      {k:'Bacopa',v:'Morning with fat — builds over 12 weeks, not acute'},
+      {k:'Ginseng',v:'Morning — acute cognitive effects within hours; sustained over weeks'},
+      {k:'Ginkgo',v:'Split into two doses: morning and afternoon'},
+    ],
+    warning:'Ginkgo has a clinically significant antiplatelet effect — avoid if on warfarin or anticoagulants without physician guidance. Discontinue 36 hours before surgery.'
+  },
+  {
+    id:'skin', eyebrow:'Skin · Collagen · Beauty', name:'Skin & collagen protocol',
+    ev:'B', evSub:'Moderate', evColor:'#5DCAA5',
+    summary:'Addresses skin hydration, melanin regulation, collagen synthesis, and photoprotection from the inside out. Evidence is moderate for most outcomes; Goji has the strongest RCT data for skin health.',
+    tags:['Collagen synthesis','Skin hydration','Melanin regulation','Antioxidant','Photoprotection'],
+    herbs:[
+      {id:'tremella',name:'Tremella',zh:'银耳',dose:'2g extract/day',ev:'m',role:'Natural hyaluronic acid analogue · skin hydration RCTs'},
+      {id:'goji',name:'Goji Berry',zh:'枸杞子',dose:'15g dried or 3g extract/day',ev:'s',role:'Zeaxanthin · photoprotection · antioxidant · skin clarity'},
+      {id:'pearl-powder',name:'Pearl powder',zh:'珍珠粉',dose:'1g/day',ev:'m',role:'Melanin regulation · tyrosinase inhibition · amino acid profile'},
+      {id:'polygonum',name:'Polygonum',zh:'虎杖',dose:'500mg resveratrol extract/day',ev:'m',role:'Resveratrol · anti-ageing · collagen cross-linking · anti-inflammatory'},
+    ],
+    mechanisms:[
+      {title:'Hyaluronic acid synthesis (Tremella)',body:'Tremella glucuronoxylomannan is structurally similar to hyaluronic acid and stimulates hyaluronic acid synthase in fibroblasts, improving skin water retention and reducing transepidermal water loss.'},
+      {title:'Tyrosinase inhibition (Pearl powder)',body:'Pearl amino acid fractions inhibit tyrosinase, the rate-limiting enzyme in melanin synthesis, supporting more even skin tone and reducing hyperpigmentation.'},
+      {title:'Resveratrol & collagen cross-linking',body:'Polygonum resveratrol activates SIRT1 (sirtuin longevity pathway), reduces MMP collagenase activity, and supports collagen type I and III synthesis in dermal fibroblasts.'},
+    ],
+    dosage:[
+      {k:'Pearl powder timing',v:'Morning, on empty stomach for best amino acid absorption'},
+      {k:'Tremella',v:'Can be taken as tea or mixed into food'},
+      {k:'Goji',v:'Eat dried or as tea — or use extract standardised to polysaccharides'},
+      {k:'Synergy tip',v:'Add Vitamin C (500mg) to support collagen synthesis from these substrates'},
+    ],
+    warning:null
+  },
+  {
+    id:'cardiovascular', eyebrow:'Heart · Circulation · Vascular', name:'Cardiovascular support',
+    ev:'A−', evSub:'Strong', evColor:'var(--jade)',
+    summary:'Draws on TCM\'s strongest cardiovascular evidence. Danshen alone has over 40 RCTs for coronary artery disease. This protocol improves microcirculation, reduces platelet aggregation, and supports cardiac output.',
+    tags:['Coronary blood flow','Microcirculation','PAF inhibition','Haemostasis','Cardiac output'],
+    herbs:[
+      {id:'danshen',name:'Danshen',zh:'丹参',dose:'500mg tanshinone extract/day',ev:'s',role:'Over 40 RCTs · coronary artery disease · tanshinones · cardioprotective'},
+      {id:'hawthorn',name:'Hawthorn',zh:'山楂',dose:'500mg extract/day',ev:'s',role:'Cardiac output · blood pressure · flavonoids · PAF inhibition'},
+      {id:'notoginseng',name:'Notoginseng',zh:'三七',dose:'500mg extract/day',ev:'m',role:'Haemostasis · microcirculation · notoginsenosides · Yunnan Baiyao'},
+      {id:'ginkgo',name:'Ginkgo',zh:'银杏叶',dose:'120mg EGb 761/day',ev:'s',role:'Cerebral & peripheral blood flow · PAF antagonism · claudication'},
+    ],
+    mechanisms:[
+      {title:'Tanshinone cardioprotection (Danshen)',body:'Tanshinone IIA and cryptotanshinone from Danshen protect cardiomyocytes against ischaemia-reperfusion injury, reduce inflammatory cytokines in cardiac tissue, and inhibit platelet aggregation via TXA2 inhibition.'},
+      {title:'Cardiac output enhancement (Hawthorn)',body:'Hawthorn oligomeric proanthocyanidins increase myocardial perfusion by vasodilating coronary arteries and improving cardiac contractility — comparable to low-dose digoxin in mild heart failure trials.'},
+      {title:'Microcirculation (Notoginseng + Ginkgo)',body:'Notoginsenosides and ginkgolide B together inhibit platelet activating factor (PAF) and improve red blood cell deformability, reducing viscosity in the microcirculation — particularly relevant in diabetic and peripheral vascular disease.'},
+    ],
+    dosage:[
+      {k:'Danshen timing',v:'With meals — twice daily split recommended'},
+      {k:'Hawthorn',v:'Morning and evening with food'},
+      {k:'Duration',v:'12+ weeks for measurable cardiac output improvement'},
+      {k:'Monitor',v:'Blood pressure, heart rate; adjust antihypertensive medications with physician'},
+    ],
+    warning:'This protocol has significant cardiovascular activity. If you are on anticoagulants, antiplatelets, or antihypertensives, consult your cardiologist before use. Danshen interacts with warfarin (increases anticoagulation). Ginkgo has an additive antiplatelet effect with aspirin.'
+  },
+];
+
+function renderProtocol(p) {
+  return `
+  <div class="protocol-card" id="${p.id}">
+    <div class="protocol-card-header" onclick="toggleProtocol('${p.id}', this)">
+      <div>
+        <div class="pc-eyebrow">${p.eyebrow}</div>
+        <div class="pc-name">${p.name}</div>
+        <div class="pc-summary">${p.summary}</div>
+        <div class="pc-tags">${p.tags.map(t=>`<span class="tag tag-jade">${t}</span>`).join('')}</div>
+        <div class="pc-toggle" id="toggle-${p.id}">Show protocol details ▾</div>
+      </div>
+      <div class="pc-right">
+        <div class="pc-ev-label">Evidence</div>
+        <div class="pc-ev-grade" style="color:${p.evColor}">${p.ev}</div>
+        <div class="pc-ev-sub">${p.evSub}</div>
+      </div>
+    </div>
+    <div class="protocol-card-body" id="body-${p.id}">
+      <div class="pcb-grid">
+        <div>
+          <div class="herb-row-title">Herbs in stack (${p.herbs.length})</div>
+          ${p.herbs.map(h=>`
+          <a class="herb-item" href="/herb/${h.id}">
+            <div style="display:flex;justify-content:space-between;align-items:start">
+              <div>
+                <div class="hi-name">${h.name}</div>
+                <div class="hi-zh">${h.zh}</div>
+              </div>
+              <span class="ev-dot ev-${h.ev}" style="margin-top:4px;flex-shrink:0"></span>
+            </div>
+            <div class="hi-dose">${h.dose}</div>
+            <div class="hi-role">${h.role}</div>
+          </a>`).join('')}
+        </div>
+        <div>
+          <div class="herb-row-title">Mechanisms</div>
+          ${p.mechanisms.map(m=>`<div class="mechanism-item"><strong>${m.title}</strong>${m.body}</div>`).join('')}
+        </div>
+        <div>
+          <div class="herb-row-title">Dosage & timing</div>
+          ${p.dosage.map(d=>`<div class="dosage-item"><span class="di-key">${d.k}</span><span class="di-val">${d.v}</span></div>`).join('')}
+          ${p.warning?`<div class="warning-box"><strong>Safety note</strong>${p.warning}</div>`:''}
+          <a href="/formulary" class="btn-primary" style="display:inline-block;margin-top:1.25rem;font-size:12px;padding:0.6rem 1.25rem">Shop this protocol →</a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleProtocol(id, header) {
+  const body = document.getElementById('body-'+id);
+  const toggle = document.getElementById('toggle-'+id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.textContent = isOpen ? 'Show protocol details ▾' : 'Hide details ▴';
+}
+
+document.getElementById('protocols-content').innerHTML = PROTOCOLS.map(renderProtocol).join('');
+
+// Auto-open if linked directly via hash
+if (location.hash) {
+  const id = location.hash.slice(1);
+  const body = document.getElementById('body-'+id);
+  const toggle = document.getElementById('toggle-'+id);
+  if (body) {
+    body.classList.add('open');
+    if (toggle) toggle.textContent = 'Hide details ▴';
+  }
+}
+</script>
+</body>
+</html>

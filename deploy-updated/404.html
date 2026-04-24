@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page Not Found — Jing</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.error-page {
+  min-height: 100vh;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dot grid background */
+.error-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(29,158,117,0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.error-inner {
+  position: relative;
+  max-width: 540px;
+}
+
+.error-404 {
+  font-family: var(--serif);
+  font-size: clamp(5rem, 18vw, 10rem);
+  color: rgba(255,255,255,0.04);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: -1rem;
+  user-select: none;
+}
+
+.error-logo {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.error-logo .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--jade);
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.error-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--jade);
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.error-body {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  font-family: var(--mono);
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-btn-primary {
+  background: var(--jade);
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background .15s;
+}
+
+.error-btn-primary:hover { background: var(--jade-m); }
+
+.error-btn-outline {
+  border: 0.5px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all .15s;
+}
+
+.error-btn-outline:hover {
+  border-color: var(--jade);
+  color: var(--jade);
+}
+
+.error-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--jade);
+  opacity: 0.3;
+  margin: 2.5rem auto;
+}
+
+.error-suggestions {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  margin-bottom: 0.75rem;
+}
+
+.error-links {
+  display: flex;
+  gap: 0.5rem 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color .15s;
+}
+
+.error-links a:hover { color: var(--jade); }
+
+/* Botanical sketch */
+.error-sketch {
+  position: absolute;
+  opacity: 0.04;
+  pointer-events: none;
+}
+.error-sketch-left { left: -40px; bottom: 80px; transform: rotate(-15deg); }
+.error-sketch-right { right: -40px; top: 80px; transform: rotate(15deg); }
+</style>
+</head>
+<body>
+
+<div class="error-page">
+
+  <!-- Background sketches -->
+  <svg class="error-sketch error-sketch-left" width="200" height="260" fill="none" stroke="white" stroke-width="1" stroke-linecap="round">
+    <ellipse cx="100" cy="100" rx="60" ry="80"/>
+    <line x1="60" y1="95" x2="20" y2="120"/>
+    <line x1="55" y1="110" x2="10" y2="135"/>
+    <line x1="60" y1="125" x2="20" y2="148"/>
+    <line x1="70" y1="138" x2="38" y2="162"/>
+    <line x1="85" y1="148" x2="62" y2="175"/>
+    <line x1="100" y1="152" x2="100" y2="180"/>
+    <line x1="115" y1="148" x2="138" y2="175"/>
+    <line x1="130" y1="138" x2="162" y2="162"/>
+    <line x1="140" y1="125" x2="180" y2="148"/>
+    <line x1="145" y1="110" x2="190" y2="135"/>
+    <line x1="140" y1="95" x2="180" y2="120"/>
+    <line x1="100" y1="180" x2="100" y2="220"/>
+  </svg>
+
+  <svg class="error-sketch error-sketch-right" width="180" height="240" fill="none" stroke="white" stroke-width="1" stroke-linecap="round">
+    <path d="M90 220 Q88 180 90 160 Q94 130 88 108 Q82 86 86 64 Q90 44 94 30"/>
+    <path d="M88 108 Q72 98 62 102 Q54 106 56 116"/>
+    <path d="M90 88 Q104 78 112 82 Q118 86 116 96"/>
+    <path d="M62 102 Q50 90 54 80 Q58 72 68 78"/>
+    <circle cx="88" cy="160" r="10"/>
+    <circle cx="78" cy="150" r="8"/>
+    <circle cx="98" cy="150" r="8"/>
+    <circle cx="84" cy="138" r="7"/>
+    <circle cx="96" cy="138" r="7"/>
+  </svg>
+
+  <div class="error-inner">
+    <div class="error-404">404</div>
+
+    <div class="error-logo">Jing<span class="dot"></span></div>
+
+    <div class="error-eyebrow">Page not found</div>
+
+    <h1 class="error-title">This formula doesn't exist.</h1>
+
+    <p class="error-body">
+      The page you're looking for has either moved,<br>
+      been archived, or never existed.<br>
+      The formulary has 49 herbs — let's find what you need.
+    </p>
+
+    <div class="error-actions">
+      <a href="/" class="error-btn-primary">← Back to home</a>
+      <a href="/formulary.html" class="error-btn-outline">Browse formulary</a>
+    </div>
+
+    <div class="error-rule"></div>
+
+    <div class="error-suggestions">Or go directly to</div>
+    <div class="error-links">
+      <a href="/formulary.html">Formulary</a>
+      <a href="/protocols.html">Protocols</a>
+      <a href="/research.html">Research</a>
+      <a href="/about.html">About</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

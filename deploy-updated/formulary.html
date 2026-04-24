@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TCM Herb Formulary — Jing | 49 Herbs Evidence-Rated</title>
+<meta name="description" content="Browse 49 Traditional Chinese Medicine herbs, each with a full clinical dossier including evidence grade, active compounds, mechanisms of action, dosage and safety profile.">
+<link rel="canonical" href="https://jingherbal.com/formulary.html">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jing">
+<meta property="og:title" content="TCM Herb Formulary — 49 Herbs, Evidence-Rated">
+<meta property="og:description" content="Browse all 49 herbs in the Jing formulary. Every herb has a clinical evidence grade, mechanism of action, dosage guidance and full safety profile.">
+<meta property="og:image" content="https://jingherbal.com/og/formulary.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:url" content="https://jingherbal.com/formulary.html">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@jingherbal">
+<meta name="twitter:title" content="TCM Herb Formulary — 49 Herbs, Evidence-Rated">
+<meta name="twitter:description" content="Browse all 49 herbs in the Jing formulary. Every herb has a clinical evidence grade, mechanism of action, dosage guidance and full safety profile.">
+<meta name="twitter:image" content="https://jingherbal.com/og/formulary.jpg">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{background:var(--white);border-bottom:0.5px solid var(--border);padding:2.5rem 2rem}
+.page-hero-inner{max-width:1200px;margin:0 auto}
+.page-hero-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.search-hero{display:flex;align-items:center;gap:12px;margin-top:1.5rem}
+.search-input{flex:1;max-width:480px;border:0.5px solid var(--border-m);border-radius:8px;padding:10px 16px;font-size:14px;font-family:var(--sans);outline:none;background:var(--white);transition:border-color .15s}
+.search-input:focus{border-color:var(--jade)}
+.search-input::placeholder{color:var(--ink4)}
+
+/* ── DUAL FILTER BARS ── */
+.filter-section{background:var(--white);border-bottom:0.5px solid var(--border);position:sticky;top:52px;z-index:50;box-shadow:0 2px 0 var(--white)}
+
+.filter-row{border-bottom:0.5px solid var(--border)}
+.filter-row:last-child{border-bottom:none}
+.filter-row-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:0;overflow-x:auto}
+.filter-row-label{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);padding:0 14px 0 0;white-space:nowrap;flex-shrink:0;border-right:0.5px solid var(--border);margin-right:4px}
+
+.filter-tab{font-size:11px;font-family:var(--mono);padding:10px 14px;color:var(--ink3);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:5px}
+.filter-tab:hover{color:var(--ink)}
+.filter-tab.active{color:var(--jade-d);border-bottom-color:var(--jade)}
+.filter-tab .count{font-size:9px;background:var(--cream2);color:var(--ink3);padding:1px 5px;border-radius:10px}
+.filter-tab.active .count{background:var(--jade-l);color:var(--jade-d)}
+
+/* Body system pills row */
+.pill-row{max-width:1200px;margin:0 auto;padding:8px 2rem;display:flex;gap:6px;overflow-x:auto}
+.body-pill{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:0.5px solid var(--border-m);color:var(--ink3);cursor:pointer;white-space:nowrap;transition:all .15s;background:var(--white)}
+.body-pill:hover{border-color:var(--jade);color:var(--jade-d)}
+.body-pill.active{background:var(--jade);border-color:var(--jade);color:#fff}
+
+/* Goal pills row */
+.goal-pill{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:0.5px solid var(--border-m);color:var(--ink3);cursor:pointer;white-space:nowrap;transition:all .15s;background:var(--white)}
+.goal-pill:hover{border-color:var(--jade);color:var(--jade-d)}
+.goal-pill.active{background:var(--jade-d);border-color:var(--jade-d);color:#fff}
+
+.active-filters{display:flex;align-items:center;gap:8px;padding:8px 2rem;max-width:1200px;margin:0 auto;font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.active-filter-chip{display:flex;align-items:center;gap:4px;padding:3px 8px;background:var(--jade-l);color:var(--jade-d);border-radius:4px;cursor:pointer}
+.active-filter-chip::after{content:'×';margin-left:2px;font-size:12px}
+
+.content{max-width:1200px;margin:0 auto;padding:2rem}
+.results-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.results-count{font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.sort-select{font-family:var(--mono);font-size:11px;color:var(--ink2);border:0.5px solid var(--border-m);border-radius:5px;padding:5px 10px;background:var(--white);cursor:pointer;outline:none}
+
+.herb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem}
+.no-results{text-align:center;padding:4rem;color:var(--ink3);font-family:var(--mono);font-size:13px}
+
+/* Active filter banner */
+.filter-banner{background:var(--jade-l);border-bottom:0.5px solid rgba(29,158,117,0.2);padding:10px 2rem}
+.filter-banner-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.filter-banner-text{font-family:var(--mono);font-size:11px;color:var(--jade-d)}
+.filter-banner-clear{font-family:var(--mono);font-size:11px;color:var(--jade-m);cursor:pointer;text-decoration:underline}
+/* ── FORMULARY RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page-hero-grid { grid-template-columns: 1fr; }
+  .page-hero { padding: 2.5rem 1.5rem 2rem; }
+}
+@media (max-width: 768px) {
+  .filter-row-inner { padding: 0 1rem; }
+  .filter-section { top: 48px; }
+  .pill-row { padding: 8px 1rem; }
+  .active-filters { padding: 8px 1rem; }
+  .herb-grid { grid-template-columns: repeat(2,1fr); gap: 0.75rem; }
+  .results-wrap { padding: 1.5rem 1rem; }
+  .filter-banner-inner { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .herb-grid { grid-template-columns: 1fr; }
+  .page-hero { padding: 2rem 1rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+<div id="nav-root"></div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-grid">
+      <div>
+        <div class="section-label">Formulary</div>
+        <h1 style="font-family:var(--serif);font-size:2.2rem;letter-spacing:-0.03em;margin-bottom:0.5rem" id="formulary-heading">Browse herbs</h1>
+        <p style="font-size:0.9rem;color:var(--ink2);max-width:500px">Every herb includes a full evidence dossier, active compound list, dosage guide, safety profile, and live COA. Filter by evidence strength, body system, or health goal.</p>
+      </div>
+      <div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--ink4);margin-bottom:6px">Evidence legend</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--ink2)"><span class="ev-dot ev-strong"></span>Strong (≥5 RCTs, consistent)</div>
+          <div style="display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--ink2)"><span class="ev-dot ev-mod"></span>Moderate (2–4 RCTs or mixed)</div>
+          <div style="display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:var(--ink2)"><span class="ev-dot ev-pre"></span>Preliminary (&lt;2 RCTs)</div>
+        </div>
+      </div>
+    </div>
+    <div class="search-hero">
+      <input class="search-input" type="text" id="search-input" placeholder="Search herb name, Chinese name, benefit, body system…" oninput="filterHerbs()">
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BANNER (shown when goal/body filter active) -->
+<div id="filter-banner" style="display:none" class="filter-banner">
+  <div class="filter-banner-inner">
+    <span class="filter-banner-text" id="filter-banner-text"></span>
+    <span class="filter-banner-clear" onclick="clearAllFilters()">Clear filter ×</span>
+  </div>
+</div>
+
+<!-- FILTER SECTION -->
+<div class="filter-section">
+  <!-- Row 1: Evidence + Category -->
+  <div class="filter-row">
+    <div class="filter-row-inner">
+      <span class="filter-row-label">Evidence</span>
+      <div class="filter-tab active" id="ev-all" onclick="setEv('all',this)">All</div>
+      <div class="filter-tab" id="ev-s" onclick="setEv('s',this)">Strong <span class="count" id="count-s"></span></div>
+      <div class="filter-tab" id="ev-m" onclick="setEv('m',this)">Moderate <span class="count" id="count-m"></span></div>
+      <div class="filter-tab" id="ev-p" onclick="setEv('p',this)">Preliminary <span class="count" id="count-p"></span></div>
+      <div style="width:1px;background:var(--border);margin:0 8px;flex-shrink:0;height:16px"></div>
+      <span class="filter-row-label" style="border-right:none;padding-left:0">Category</span>
+      <div class="filter-tab" id="cat-Fungi" onclick="setCat('Fungi',this)">Fungi</div>
+      <div class="filter-tab" id="cat-Root" onclick="setCat('Root',this)">Roots</div>
+      <div class="filter-tab" id="cat-Berry" onclick="setCat('Berry',this)">Berries</div>
+      <div class="filter-tab" id="cat-Bark" onclick="setCat('Bark',this)">Bark</div>
+      <div class="filter-tab" id="cat-Other" onclick="setCat('Other',this)">Other</div>
+    </div>
+  </div>
+  <!-- Row 2: Body system -->
+  <div class="filter-row">
+    <div class="filter-row-inner" style="padding:6px 2rem">
+      <span class="filter-row-label" style="padding-right:10px">Body system</span>
+      <div class="body-pill active" id="body-all" onclick="setBody('all',this)">All systems</div>
+      <div class="body-pill" id="body-brain" onclick="setBody('brain',this)">Brain</div>
+      <div class="body-pill" id="body-immune" onclick="setBody('immune',this)">Immune</div>
+      <div class="body-pill" id="body-liver" onclick="setBody('liver',this)">Liver</div>
+      <div class="body-pill" id="body-kidney" onclick="setBody('kidney',this)">Kidney</div>
+      <div class="body-pill" id="body-hormones" onclick="setBody('hormones',this)">Hormones</div>
+      <div class="body-pill" id="body-skin" onclick="setBody('skin',this)">Skin & hair</div>
+      <div class="body-pill" id="body-heart" onclick="setBody('heart',this)">Heart</div>
+      <div class="body-pill" id="body-lung" onclick="setBody('lung',this)">Lung</div>
+      <div class="body-pill" id="body-gut" onclick="setBody('gut',this)">Gut</div>
+      <div class="body-pill" id="body-bone" onclick="setBody('bone',this)">Bone & joint</div>
+      <div class="body-pill" id="body-eye" onclick="setBody('eye',this)">Eye health</div>
+    </div>
+  </div>
+  <!-- Row 3: Health goal -->
+  <div class="filter-row">
+    <div class="filter-row-inner" style="padding:6px 2rem">
+      <span class="filter-row-label" style="padding-right:10px">Health goal</span>
+      <div class="goal-pill active" id="goal-all" onclick="setGoal('all',this)">All goals</div>
+      <div class="goal-pill" id="goal-immune" onclick="setGoal('immune',this)">Immune</div>
+      <div class="goal-pill" id="goal-hair-loss" onclick="setGoal('hair-loss',this)">Hair loss</div>
+      <div class="goal-pill" id="goal-testosterone" onclick="setGoal('testosterone',this)">Testosterone</div>
+      <div class="goal-pill" id="goal-skin" onclick="setGoal('skin',this)">Skin</div>
+      <div class="goal-pill" id="goal-stress" onclick="setGoal('stress',this)">Stress</div>
+      <div class="goal-pill" id="goal-sleep" onclick="setGoal('sleep',this)">Sleep</div>
+      <div class="goal-pill" id="goal-bone-density" onclick="setGoal('bone-density',this)">Bone density</div>
+      <div class="goal-pill" id="goal-focus" onclick="setGoal('focus',this)">Focus</div>
+      <div class="goal-pill" id="goal-liver-detox" onclick="setGoal('liver-detox',this)">Liver</div>
+      <div class="goal-pill" id="goal-heart" onclick="setGoal('heart',this)">Heart</div>
+      <div class="goal-pill" id="goal-energy" onclick="setGoal('energy',this)">Energy</div>
+      <div class="goal-pill" id="goal-gut-health" onclick="setGoal('gut-health',this)">Gut</div>
+      <div class="goal-pill" id="goal-anti-ageing" onclick="setGoal('anti-ageing',this)">Anti-ageing</div>
+      <div class="goal-pill" id="goal-eye-health" onclick="setGoal('eye-health',this)">Eye health</div>
+      <div class="goal-pill" id="goal-respiratory" onclick="setGoal('respiratory',this)">Respiratory</div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="results-meta">
+    <div class="results-count" id="results-count">Loading herbs…</div>
+    <select class="sort-select" onchange="sortHerbs(this.value)">
+      <option value="ev">Sort by evidence strength</option>
+      <option value="studies">Sort by studies (most)</option>
+      <option value="name">Sort A–Z</option>
+    </select>
+  </div>
+  <div class="herb-grid" id="herb-grid"></div>
+  <div class="no-results" id="no-results" style="display:none">
+    No herbs match your filters.<br>Try adjusting or <span style="color:var(--jade-d);cursor:pointer;text-decoration:underline" onclick="clearAllFilters()">clearing all filters</span>.
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script src="shared.js"></script>
+<script>
+document.getElementById('nav-root').innerHTML = renderNav('formulary');
+document.getElementById('footer-root').innerHTML = renderFooter();
+initKlaviyo();
+initMegas();
+
+let evFilter='all', catFilter=null, bodyFilter='all', goalFilter='all', sortBy='ev';
+
+// ── Read URL params ──
+const params = new URLSearchParams(location.search);
+const urlQ = params.get('q');
+const urlGoal = params.get('goal');
+const urlBody = params.get('body');
+
+if (urlQ) document.getElementById('search-input').value = urlQ;
+if (urlGoal) { goalFilter = urlGoal; }
+if (urlBody) { bodyFilter = urlBody; }
+
+// ── Populate evidence counts ──
+function updateCounts() {
+  ['s','m','p'].forEach(e => {
+    const el = document.getElementById('count-'+e);
+    if(el) el.textContent = HERBS.filter(h=>h.ev===e).length;
+  });
+}
+updateCounts();
+
+// ── Activate pre-selected filters from URL ──
+function activateURLFilters() {
+  if (urlGoal && urlGoal !== 'all') {
+    const el = document.getElementById('goal-'+urlGoal);
+    if (el) { document.querySelectorAll('.goal-pill').forEach(p=>p.classList.remove('active')); el.classList.add('active'); }
+    document.getElementById('goal-all').classList.remove('active');
+  }
+  if (urlBody && urlBody !== 'all') {
+    const el = document.getElementById('body-'+urlBody);
+    if (el) { document.querySelectorAll('.body-pill').forEach(p=>p.classList.remove('active')); el.classList.add('active'); }
+    document.getElementById('body-all').classList.remove('active');
+  }
+}
+activateURLFilters();
+
+// ── Filter setters ──
+function setEv(v, el) {
+  evFilter = v; catFilter = null;
+  document.querySelectorAll('.filter-tab[id^="ev-"]').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.filter-tab[id^="cat-"]').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  filterHerbs();
+}
+function setCat(v, el) {
+  const cats = ['Fungi','Root','Berry','Bark'];
+  const isOther = v === 'Other';
+  catFilter = v;
+  evFilter = 'all';
+  document.querySelectorAll('.filter-tab[id^="ev-"]').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.filter-tab[id^="cat-"]').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  filterHerbs();
+}
+function setBody(v, el) {
+  bodyFilter = v;
+  document.querySelectorAll('.body-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  updateFilterBanner();
+  filterHerbs();
+}
+function setGoal(v, el) {
+  goalFilter = v;
+  document.querySelectorAll('.goal-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  updateFilterBanner();
+  filterHerbs();
+}
+function sortHerbs(v) { sortBy = v; filterHerbs(); }
+
+function clearAllFilters() {
+  evFilter='all'; catFilter=null; bodyFilter='all'; goalFilter='all';
+  document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('ev-all').classList.add('active');
+  document.querySelectorAll('.body-pill').forEach(p=>p.classList.remove('active'));
+  document.getElementById('body-all').classList.add('active');
+  document.querySelectorAll('.goal-pill').forEach(p=>p.classList.remove('active'));
+  document.getElementById('goal-all').classList.add('active');
+  document.getElementById('search-input').value = '';
+  updateFilterBanner();
+  filterHerbs();
+}
+
+function updateFilterBanner() {
+  const banner = document.getElementById('filter-banner');
+  const text = document.getElementById('filter-banner-text');
+  const parts = [];
+  if (bodyFilter !== 'all') parts.push(`Body system: ${bodyFilter}`);
+  if (goalFilter !== 'all') {
+    const g = GOALS.find(x=>x.id===goalFilter);
+    if(g) parts.push(`Goal: ${g.name}`);
+  }
+  if (parts.length > 0) {
+    banner.style.display = '';
+    text.textContent = 'Filtering by — ' + parts.join(' · ');
+  } else {
+    banner.style.display = 'none';
+  }
+}
+
+function filterHerbs() {
+  const q = (document.getElementById('search-input').value||'').toLowerCase();
+  let list = [...HERBS];
+
+  if (evFilter !== 'all') list = list.filter(h=>h.ev===evFilter);
+  if (catFilter) {
+    if (catFilter === 'Other') list = list.filter(h=>!['Fungi','Root','Berry','Bark'].includes(h.category));
+    else list = list.filter(h=>h.category===catFilter);
+  }
+  if (bodyFilter !== 'all') list = list.filter(h=>(h.body||[]).includes(bodyFilter));
+  if (goalFilter !== 'all') list = list.filter(h=>(h.goals||[]).includes(goalFilter));
+  if (q) list = list.filter(h=>`${h.name}${h.zh}${h.latin}${h.tags.join()}${h.summary}${(h.body||[]).join()}${(h.goals||[]).join()}`.toLowerCase().includes(q));
+
+  if (sortBy==='ev') list.sort((a,b)=>(['s','m','p'].indexOf(a.ev))-(['s','m','p'].indexOf(b.ev)));
+  if (sortBy==='studies') list.sort((a,b)=>b.studies-a.studies);
+  if (sortBy==='name') list.sort((a,b)=>a.name.localeCompare(b.name));
+
+  const grid = document.getElementById('herb-grid');
+  const none = document.getElementById('no-results');
+  const count = document.getElementById('results-count');
+
+  if (list.length===0) { grid.innerHTML=''; none.style.display=''; }
+  else { none.style.display='none'; grid.innerHTML=list.map(renderHerbCard).join(''); }
+
+  let countStr = `Showing ${list.length} herb${list.length!==1?'s':''}`;
+  if (bodyFilter!=='all'||goalFilter!=='all') countStr += ` (filtered)`;
+  count.textContent = countStr;
+}
+
+updateFilterBanner();
+document.getElementById('formulary-heading').textContent = `Browse ${HERBS.length} herbs`;
+filterHerbs();
+</script>
+</body>
+</html>
