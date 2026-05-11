@@ -55,12 +55,5 @@
 /herb/white-peony    /herb/white-peony/index.html    200
 /herb/yin-chen    /herb/yin-chen/index.html    200
 
-# Clean URLs for top-level pages
-/formulary    /formulary.html    200
-/protocols    /protocols.html    200
-/research     /research.html     200
-/about        /about.html        200
-/privacy      /privacy.html      200
-/terms        /terms.html        200
 
 /herb.html    /formulary    301
