@@ -387,7 +387,6 @@ function renderProtocol(p) {
           <div class="herb-row-title">Dosage & timing</div>
           ${p.dosage.map(d=>`<div class="dosage-item"><span class="di-key">${d.k}</span><span class="di-val">${d.v}</span></div>`).join('')}
           ${p.warning?`<div class="warning-box"><strong>Safety note</strong>${p.warning}</div>`:''}
-          <a href="/formulary" class="btn-primary" style="display:inline-block;margin-top:1.25rem;font-size:12px;padding:0.6rem 1.25rem">Shop this protocol →</a>
         </div>
       </div>
     </div>

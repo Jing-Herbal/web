@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jing — Ancient Formulas, Modern Proof</title>
-<meta name="description" content="A science-backed Traditional Chinese Medicine formulary. 49 herbs reviewed, rated and evidence-graded. Clinical dossiers, mechanisms, dosage and safety — all in one place.">
+<meta name="description" content="A science-backed Traditional Chinese Medicine formulary. 55 herbs reviewed, rated and evidence-graded. Clinical dossiers, mechanisms, dosage and safety — all in one place.">
 <link rel="canonical" href="https://jingherbal.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jing">
 <meta property="og:title" content="Jing — Ancient Formulas, Modern Proof">
-<meta property="og:description" content="49 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
+<meta property="og:description" content="55 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
 <meta property="og:image" content="https://jingherbal.com/og/homepage.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="628">
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@jingherbal">
 <meta name="twitter:title" content="Jing — Ancient Formulas, Modern Proof">
-<meta name="twitter:description" content="49 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
+<meta name="twitter:description" content="55 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
 <meta name="twitter:image" content="https://jingherbal.com/og/homepage.jpg">
 <link rel="stylesheet" href="shared.css">
 <style>
@@ -86,7 +86,8 @@ a.stat-cell:hover .stat-arrow{opacity:1}
 .how-step-tag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:var(--jade-l);color:var(--jade-d);margin-top:0.75rem}
 
 /* ── GOALS GRID ── */
-.goals-section{padding:4rem 2rem;max-width:1200px;margin:0 auto}
+.goals-section{padding:4rem 2rem}
+.goals-section-inner{max-width:1200px;margin:0 auto}
 .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:2rem}
 .goal-tile{border:0.5px solid var(--border);border-radius:10px;padding:1.25rem;cursor:pointer;transition:all .18s;display:block;text-decoration:none;color:inherit}
 .goal-tile:hover{border-color:var(--jade);background:var(--jade-l)}
@@ -207,7 +208,7 @@ a.stat-cell:hover .stat-arrow{opacity:1}
     <div class="stats-inner">
       <a class="stat-cell" href="/formulary"><div class="stat-num" id="stat-herb-count">49</div><div class="stat-label">Herbs catalogued</div><div class="stat-arrow">→</div></a>
       <a class="stat-cell" href="/research"><div class="stat-num">4,800</div><div class="stat-label">Studies reviewed</div><div class="stat-arrow">→</div></a>
-      <a class="stat-cell" href="/protocols"><div class="stat-num">38</div><div class="stat-label">Active protocols</div><div class="stat-arrow">→</div></a>
+      <a class="stat-cell" href="/protocols"><div class="stat-num">10</div><div class="stat-label">Active protocols</div><div class="stat-arrow">→</div></a>
       <div class="stat-cell"><div class="stat-num">Mar '26</div><div class="stat-label">Evidence updated</div></div>
     </div>
   </div>
@@ -229,7 +230,7 @@ a.stat-cell:hover .stat-arrow{opacity:1}
     </div>
     <div class="carousel-dots" id="carousel-dots"></div>
     <div style="text-align:center;margin-top:1.75rem">
-      <a class="btn-outline" href="/formulary">View all 49 herbs →</a>
+      <a class="btn-outline" href="/formulary">View all 55 herbs →</a>
     </div>
   </section>
 
@@ -263,10 +264,12 @@ a.stat-cell:hover .stat-arrow{opacity:1}
 
   <!-- HEALTH GOALS -->
   <section class="goals-section">
-    <div class="section-label">Browse by goal</div>
-    <div class="section-title">What are you optimising for?</div>
-    <p class="section-sub">Each goal maps to curated herbs with evidence ratings, dosage guidance, and a complete safety profile.</p>
-    <div class="goals-grid" id="goals-grid"></div>
+    <div class="goals-section-inner">
+      <div class="section-label">Browse by goal</div>
+      <div class="section-title">What are you optimising for?</div>
+      <p class="section-sub">Each goal maps to curated herbs with evidence ratings, dosage guidance, and a complete safety profile.</p>
+      <div class="goals-grid" id="goals-grid"></div>
+    </div>
   </section>
 
   <!-- LOOKSMAX -->

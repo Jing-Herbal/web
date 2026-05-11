@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TCM Herb Formulary — Jing | 49 Herbs Evidence-Rated</title>
-<meta name="description" content="Browse 49 Traditional Chinese Medicine herbs, each with a full clinical dossier including evidence grade, active compounds, mechanisms of action, dosage and safety profile.">
+<title>TCM Herb Formulary — Jing | 55 Herbs Evidence-Rated</title>
+<meta name="description" content="Browse 55 Traditional Chinese Medicine herbs, each with a full clinical dossier including evidence grade, active compounds, mechanisms of action, dosage and safety profile.">
 <link rel="canonical" href="https://jingherbal.com/formulary.html">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jing">
-<meta property="og:title" content="TCM Herb Formulary — 49 Herbs, Evidence-Rated">
-<meta property="og:description" content="Browse all 49 herbs in the Jing formulary. Every herb has a clinical evidence grade, mechanism of action, dosage guidance and full safety profile.">
+<meta property="og:title" content="TCM Herb Formulary — 55 Herbs, Evidence-Rated">
+<meta property="og:description" content="Browse all 55 herbs in the Jing formulary. Every herb has a clinical evidence grade, mechanism of action, dosage guidance and full safety profile.">
 <meta property="og:image" content="https://jingherbal.com/og/formulary.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="628">
@@ -17,8 +17,8 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@jingherbal">
-<meta name="twitter:title" content="TCM Herb Formulary — 49 Herbs, Evidence-Rated">
-<meta name="twitter:description" content="Browse all 49 herbs in the Jing formulary. Every herb has a clinical evidence grade, mechanism of action, dosage guidance and full safety profile.">
+<meta name="twitter:title" content="TCM Herb Formulary — 55 Herbs, Evidence-Rated">
+<meta name="twitter:description" content="Browse all 55 herbs in the Jing formulary. Every herb has a clinical evidence grade, mechanism of action, dosage guidance and full safety profile.">
 <meta name="twitter:image" content="https://jingherbal.com/og/formulary.jpg">
 <link rel="stylesheet" href="shared.css">
 <style>
@@ -79,12 +79,16 @@
 }
 @media (max-width: 768px) {
   .filter-row-inner { padding: 0 1rem; }
-  .filter-section { top: 48px; }
+  .filter-section { top: 51px; }
   .pill-row { padding: 8px 1rem; }
   .active-filters { padding: 8px 1rem; }
   .herb-grid { grid-template-columns: repeat(2,1fr); gap: 0.75rem; }
   .results-wrap { padding: 1.5rem 1rem; }
   .filter-banner-inner { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+  /* Ensure evidence-grade row scrolls horizontally without clipping when sticky */
+  .filter-row-inner::-webkit-scrollbar { display: none; }
+  .filter-row-inner { scrollbar-width: none; -ms-overflow-style: none; }
+  .filter-tab { padding: 10px 12px; }
 }
 @media (max-width: 480px) {
   .herb-grid { grid-template-columns: 1fr; }
@@ -321,7 +325,7 @@ function filterHerbs() {
   }
   if (bodyFilter !== 'all') list = list.filter(h=>(h.body||[]).includes(bodyFilter));
   if (goalFilter !== 'all') list = list.filter(h=>(h.goals||[]).includes(goalFilter));
-  if (q) list = list.filter(h=>`${h.name}${h.zh}${h.latin}${h.tags.join()}${h.summary}${(h.body||[]).join()}${(h.goals||[]).join()}`.toLowerCase().includes(q));
+  if (q) list = list.filter(h=>`${h.name}${h.zh}${h.latin}${h.tags.join()}${h.summary}${(h.body||[]).join()}${(h.goals||[]).join()}${(h.alt||[]).join()}`.toLowerCase().includes(q));
 
   if (sortBy==='ev') list.sort((a,b)=>(['s','m','p'].indexOf(a.ev))-(['s','m','p'].indexOf(b.ev)));
   if (sortBy==='studies') list.sort((a,b)=>b.studies-a.studies);

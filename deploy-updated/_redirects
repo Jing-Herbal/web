@@ -24,13 +24,17 @@
 /herb/ginkgo    /herb/ginkgo/index.html    200
 /herb/ginseng    /herb/ginseng/index.html    200
 /herb/goji    /herb/goji/index.html    200
+/herb/gotu-kola    /herb/gotu-kola/index.html    200
 /herb/hawthorn    /herb/hawthorn/index.html    200
 /herb/he-shou-wu    /herb/he-shou-wu/index.html    200
+/herb/huang-lian    /herb/huang-lian/index.html    200
 /herb/jujube    /herb/jujube/index.html    200
 /herb/licorice    /herb/licorice/index.html    200
 /herb/ligustrum    /herb/ligustrum/index.html    200
 /herb/lions-mane    /herb/lions-mane/index.html    200
+/herb/long-yan-rou    /herb/long-yan-rou/index.html    200
 /herb/magnolia-bark    /herb/magnolia-bark/index.html    200
+/herb/mai-men-dong    /herb/mai-men-dong/index.html    200
 /herb/milk-thistle    /herb/milk-thistle/index.html    200
 /herb/morinda    /herb/morinda/index.html    200
 /herb/notoginseng    /herb/notoginseng/index.html    200
@@ -40,13 +44,23 @@
 /herb/poria    /herb/poria/index.html    200
 /herb/rehmannia    /herb/rehmannia/index.html    200
 /herb/reishi    /herb/reishi/index.html    200
+/herb/rhodiola    /herb/rhodiola/index.html    200
 /herb/saw-palmetto    /herb/saw-palmetto/index.html    200
 /herb/schisandra    /herb/schisandra/index.html    200
 /herb/tangerine-peel    /herb/tangerine-peel/index.html    200
+/herb/tongkat-ali    /herb/tongkat-ali/index.html    200
 /herb/tremella    /herb/tremella/index.html    200
 /herb/turkey-tail    /herb/turkey-tail/index.html    200
 /herb/turmeric    /herb/turmeric/index.html    200
 /herb/white-peony    /herb/white-peony/index.html    200
 /herb/yin-chen    /herb/yin-chen/index.html    200
+
+# Clean URLs for top-level pages
+/formulary    /formulary.html    200
+/protocols    /protocols.html    200
+/research     /research.html     200
+/about        /about.html        200
+/privacy      /privacy.html      200
+/terms        /terms.html        200
 
 /herb.html    /formulary    301
