@@ -6,7 +6,8 @@
     "enabled": true
   },
   "assets": {
-    "directory": "deploy-updated"
+    "directory": "deploy-updated",
+    "not_found_handling": "404-page"
   },
   "compatibility_flags": [
     "nodejs_compat"

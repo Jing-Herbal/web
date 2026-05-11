@@ -58,5 +58,5 @@
 
 /herb.html    /formulary    301
 
-  # Catch-all 404 for any URL that didn't match above
-   /*    /404.html    404
+# Catch-all 404 for any URL that didn't match above
+/*    /404.html    404
