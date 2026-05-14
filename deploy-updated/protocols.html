@@ -20,6 +20,15 @@
 <meta name="twitter:title" content="Evidence-Based TCM Protocols — Jing">
 <meta name="twitter:description" content="Curated herb stacks for cognitive performance, testosterone support, sleep, hair and longevity. Every protocol backed by peer-reviewed clinical data.">
 <meta name="twitter:image" content="https://jingherbal.com/og/protocols.jpg">
+<!-- Favicons — light/dark adaptive -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="shortcut icon" href="/favicon.ico">
 <link rel="stylesheet" href="shared.css">
 <style>
 .page-hero{background:var(--ink);color:#fff;padding:3.5rem 2rem}
@@ -32,6 +41,9 @@
 .content{max-width:1200px;margin:0 auto;padding:3rem 2rem}
 
 .protocol-card{background:var(--white);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;scroll-margin-top:80px}
+.protocol-card-link{display:block;text-decoration:none;color:inherit;border-color:var(--jade);transition:border-color .2s, transform .2s}
+.protocol-card-link:hover{border-color:var(--jade-d);transform:translateY(-1px)}
+.protocol-card-link .pc-toggle{color:var(--jade-d);font-weight:500}
 .protocol-card-header{display:grid;grid-template-columns:1fr auto;gap:2rem;padding:1.75rem 2rem;border-bottom:0.5px solid var(--border);cursor:pointer;align-items:start}
 .protocol-card-header:hover{background:var(--cream)}
 .pc-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--jade);margin-bottom:0.5rem}
@@ -102,6 +114,14 @@ initKlaviyo();
 initMegas();
 
 const PROTOCOLS = [
+  {
+    id:'skin-hydration-mesh', eyebrow:'Flagship Protocol · The Full Jing System',
+    name:'Jing Skin Hydration Mesh',
+    ev:'A−', evSub:'Strong', evColor:'var(--jade)',
+    summary:'Four pathways the body uses to hold water in skin — matrix, inflammation, oxidation, cortisol — addressed by four hero products across two daily orals and two topicals. Every other Jing protocol is downstream of this one.',
+    tags:['Matrix','Inflammation','Oxidation','Cortisol'],
+    detailLink:'/protocols/skin-hydration-mesh',
+  },
   {
     id:'androgen', eyebrow:'Hormones · Looksmax', name:'Androgen support stack',
     ev:'B', evSub:'Moderate', evColor:'var(--jade)',
@@ -346,6 +366,26 @@ const PROTOCOLS = [
 ];
 
 function renderProtocol(p) {
+  if (p.detailLink) {
+    // Flagship/standalone protocol — link out to a dedicated page instead of expanding inline
+    return `
+    <a class="protocol-card protocol-card-link" id="${p.id}" href="${p.detailLink}">
+      <div class="protocol-card-header">
+        <div>
+          <div class="pc-eyebrow">${p.eyebrow}</div>
+          <div class="pc-name">${p.name}</div>
+          <div class="pc-summary">${p.summary}</div>
+          <div class="pc-tags">${p.tags.map(t=>`<span class="tag tag-jade">${t}</span>`).join('')}</div>
+          <div class="pc-toggle">Read the full protocol →</div>
+        </div>
+        <div class="pc-right">
+          <div class="pc-ev-label">Evidence</div>
+          <div class="pc-ev-grade" style="color:${p.evColor}">${p.ev}</div>
+          <div class="pc-ev-sub">${p.evSub}</div>
+        </div>
+      </div>
+    </a>`;
+  }
   return `
   <div class="protocol-card" id="${p.id}">
     <div class="protocol-card-header" onclick="toggleProtocol('${p.id}', this)">
