@@ -668,7 +668,7 @@
     <a href="/protocols" class="shm-back">← All protocols</a>
     <div class="shm-eyebrow">Flagship Protocol · The full Jing system</div>
     <h1 class="shm-title">Jing Skin <em>Hydration</em> Mesh</h1>
-    <p class="shm-lede">Four pathways the body uses to hold water in skin — matrix, inflammation, oxidation, cortisol — addressed by four hero products across two daily orals and two topicals. Every other Jing protocol is downstream of this one.</p>
+    <p class="shm-lede">Four pathways the body uses to hold water in skin — matrix, inflammation, oxidation, cortisol — addressed by four hero products across two daily orals and two topicals.</p>
 
     <div class="shm-stats">
       <div class="shm-stat">
@@ -708,7 +708,7 @@
 <section class="shm-section">
   <div class="shm-section-eyebrow">02 · Herbs in stack</div>
   <h2 class="shm-section-title">Eight herbs, <em>four roles</em></h2>
-  <p class="shm-section-intro">Each herb earns its place by addressing one of the four pathways with at least moderate clinical evidence. Tier A evidence (Astragalus, Reishi, Goji) carries the strongest RCT support; Tier B (Centella, Schisandra, Tremella, Jujube seed, Pearl) is moderate.</p>
+  <p class="shm-section-intro">Each herb earns its place by addressing one of the four pathways with at least moderate clinical evidence.</p>
 
   <div class="shm-herbs-grid" id="herbs-grid"></div>
 </section>
@@ -717,7 +717,7 @@
 <section class="shm-section">
   <div class="shm-section-eyebrow">03 · Mechanisms</div>
   <h2 class="shm-section-title">How each pathway <em>works</em></h2>
-  <p class="shm-section-intro">Four pathways, four mechanism stories. This is the science layer most TCM brands don't bother with — it's also the one most likely to convince a sceptic.</p>
+  <p class="shm-section-intro">Each pathway has a measurable mechanism — the molecular reason the herb stack works. These are the studies, enzymes, and signalling pathways behind the protocol.</p>
 
   <div class="shm-mechs" id="mechs"></div>
 </section>
@@ -744,10 +744,10 @@
       <div class="shm-tier-sub">3 of 4 pathways · 3 touchpoints/day</div>
       <div class="shm-tier-includes">Includes</div>
       <ul>
-        <li><span><strong>Jing Hydration Powder</strong> — 4g in water with breakfast. Matrix + oxidation orals.</span></li>
-        <li><span><strong>Dew Serum</strong> — 2 pumps to clean dry skin, AM + PM. Inflammation topical.</span></li>
+        <li><span><strong>Dawn</strong> — 4g in water with breakfast. Matrix + oxidation orals.</span></li>
+        <li><span><strong>Meridian</strong> — 2 pumps to clean dry skin, AM + PM. Inflammation topical.</span></li>
       </ul>
-      <div class="shm-tier-foot">Covers matrix, inflammation, and oxidation pathways. Cortisol layer is the explicit upgrade trigger.</div>
+      <div class="shm-tier-foot">Built for the consistent ritualist: someone who shows up daily, has a stable routine, and wants the foundational matrix-inflammation-oxidation work done well. No cortisol layer yet — add it when results plateau.</div>
     </div>
 
     <div class="shm-tier featured">
@@ -756,10 +756,10 @@
       <div class="shm-tier-sub">All 4 pathways · Full mesh coverage</div>
       <div class="shm-tier-includes">Everything in Essentials, plus</div>
       <ul>
-        <li><span><strong>Jing Calm Caps</strong> — 2 caps 60–90 min pre-sleep. Cortisol-axis oral.</span></li>
-        <li><span><strong>Dew Mask</strong> — 20 minutes, Sunday and Wednesday evenings. Intensive topical.</span></li>
+        <li><span><strong>Dusk</strong> — 2 caps 60–90 min pre-sleep. Cortisol-axis oral.</span></li>
+        <li><span><strong>Sabbath</strong> — 20 minutes, Sunday and Wednesday evenings. Intensive topical.</span></li>
       </ul>
-      <div class="shm-tier-foot">For dehydrated, reactive, or stress-affected skin that hasn't responded to topical-only routines.</div>
+      <div class="shm-tier-foot">Built for the high-output professional with reactive, stress-affected, or chronically dehydrated skin. Anyone whose cortisol curve is the missing piece — light sleepers, late-night workers, overthinkers.</div>
     </div>
   </div>
 </section>
@@ -928,9 +928,9 @@ const MESH_HERBS = [
   { id:'goji', name:'Goji Berry', zh:'枸杞', dose:'500mg LBP/day', pathway:'matrix', tier:'A', role:'AQP3 upregulation · SOD +6.4% in 30-day RCT' },
   { id:'astragalus', name:'Astragalus', zh:'黄芪', dose:'500mg (≥40% astragalosides)/day', pathway:'oxidation', tier:'A', role:'AGE inhibition · astragaloside IV · PRISMA 2026 review' },
   { id:'schisandra', name:'Schisandra', zh:'五味子', dose:'500mg (≥2% schisandrin)/day', pathway:'oxidation', tier:'B', role:'Liver-glutathione axis · supporting role' },
-  { id:'reishi', name:'Reishi', zh:'灵芝', dose:'1g (≥4% triterpenes + ≥20% β-glucans)/day', pathway:'cortisol', tier:'A', role:'HPA modulation · 2023 Frontiers Insomnia meta-analysis · Tier A' },
+  { id:'reishi', name:'Reishi', zh:'灵芝', dose:'1g (≥4% triterpenes + ≥20% β-glucans)/day', pathway:'cortisol', tier:'A', role:'HPA modulation · 2023 Frontiers Insomnia meta-analysis' },
   { id:'jujube', name:'Jujube seed (Suan Zao Ren)', zh:'酸枣仁', dose:'500mg (≥2% spinosin)/day', pathway:'cortisol', tier:'B', role:'GABA-A modulation · 1,800+ years TCM use · 2026 RCT' },
-  { id:'pearl-powder', name:'Pearl protein', zh:'珍珠粉', dose:'Topical (Dew Mask)', pathway:'matrix', tier:'B', role:'Sensory ingredient · conchiolin luminescence · weekly intensive only' },
+  { id:'pearl-powder', name:'Pearl protein', zh:'珍珠粉', dose:'Topical (Sabbath)', pathway:'matrix', tier:'B', role:'Sensory ingredient · conchiolin luminescence · weekly intensive only' },
 ];
 
 const MECHS = [
@@ -949,12 +949,12 @@ const MECHS = [
 ];
 
 const DOSAGE = [
-  { k:'AM oral', v:'Jing Hydration Powder — 4g in water with breakfast' },
-  { k:'AM + PM topical', v:'Dew Serum — two pumps to clean dry skin' },
-  { k:'PM oral', v:'Jing Calm Caps — 2 capsules 60–90 min pre-sleep' },
-  { k:'Twice weekly', v:'Dew Mask — 20 minutes, Sunday and Wednesday evenings' },
-  { k:'Bundle entry', v:'Essentials (Powder + Serum) for first 30 days' },
-  { k:'Upgrade trigger', v:'Add Calm Caps + Mask when results plateau — cortisol is the pathway most brands miss' },
+  { k:'AM oral', v:'Dawn — 4g in water with breakfast' },
+  { k:'AM + PM topical', v:'Meridian — two pumps to clean dry skin' },
+  { k:'PM oral', v:'Dusk — 2 capsules 60–90 min pre-sleep' },
+  { k:'Twice weekly', v:'Sabbath — 20 minutes, Sunday and Wednesday evenings' },
+  { k:'Bundle entry', v:'Essentials (Dawn + Meridian) for first 30 days' },
+  { k:'Upgrade trigger', v:'Add Dusk + Sabbath when results plateau — cortisol is the pathway most brands miss' },
   { k:'Expected timeline', v:'Topical hydration week 2 · matrix density week 6 · full mesh week 12' },
 ];
 
