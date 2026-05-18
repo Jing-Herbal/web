@@ -149,7 +149,7 @@ a.stat-item:hover .stat-arrow{opacity:1}
     <div class="stat-num">4,800+</div><div class="stat-lbl">Studies reviewed</div><div class="stat-arrow">&rarr;</div>
   </a>
   <a class="stat-item" href="/formulary">
-    <div class="stat-num" id="stat-herb-count">49</div><div class="stat-lbl">Herbs catalogued</div><div class="stat-arrow">&rarr;</div>
+    <div class="stat-num" id="stat-herb-count">55</div><div class="stat-lbl">Herbs catalogued</div><div class="stat-arrow">&rarr;</div>
   </a>
   <a class="stat-item" href="/protocols">
     <div class="stat-num">10</div><div class="stat-lbl">Protocols</div><div class="stat-arrow">&rarr;</div>
@@ -185,7 +185,7 @@ a.stat-item:hover .stat-arrow{opacity:1}
     <div class="about-section-label">What Jing is</div>
     <h2>A science-backed TCM formulary — built for people who read the study before they buy.</h2>
     <p>Jing is a science-backed Traditional Chinese Medicine formulary. We review the clinical evidence for TCM herbs, rate it honestly, so you can make the most informed decision on your health.</p>
-    <p>Our platform currently covers 55 herbs — each with a full clinical dossier that includes:</p>
+    <p>Our platform currently covers <span class="js-herb-count">55</span> herbs — each with a full clinical dossier that includes:</p>
     <ul class="evidence-list">
       <li>The active compounds and what they do at the molecular level</li>
       <li>A rated evidence summary based on RCT quality and quantity</li>
@@ -235,25 +235,25 @@ a.stat-item:hover .stat-arrow{opacity:1}
 
   <div class="about-section">
     <div class="about-section-label">What's coming</div>
-    <h2>49 down. 1,843 to go.</h2>
-    <p>The Bencao Gangmu — the classical Chinese pharmacopoeia compiled by Li Shizhen in 1596 — contains 1,892 herbs. We've reviewed 49. Every herb we add goes through the same full evidence review process. No shortcuts.</p>
+    <h2><span class="js-herb-count">55</span> down. <span class="js-herb-remaining">1,837</span> to go.</h2>
+    <p>The Bencao Gangmu — the classical Chinese pharmacopoeia compiled by Li Shizhen in 1596 — contains 1,892 herbs. We've reviewed <span class="js-herb-count">55</span>. Every herb we add goes through the same full evidence review process. No shortcuts.</p>
 
     <div class="progress-block">
       <div class="progress-header">
         <div class="progress-title">Bencao Gangmu Coverage</div>
-        <div class="progress-fraction"><strong>49</strong> / 1,892 herbs</div>
+        <div class="progress-fraction"><strong class="js-herb-count">55</strong> / 1,892 herbs</div>
       </div>
       <div class="progress-track">
         <div class="progress-fill" id="bencao-fill"></div>
       </div>
       <div class="progress-legend">
-        <span class="done">49 reviewed</span>
-        <span>2.59% complete</span>
-        <span>1,843 remaining</span>
+        <span class="done"><span class="js-herb-count">55</span> reviewed</span>
+        <span><span class="js-herb-pct">2.91</span>% complete</span>
+        <span><span class="js-herb-remaining">1,837</span> remaining</span>
       </div>
       <div class="progress-milestones">
         <div class="milestone">
-          <div class="milestone-num">49</div>
+          <div class="milestone-num js-herb-count">55</div>
           <div class="milestone-label">Herbs reviewed</div>
           <div class="milestone-status">&#10003; Live now</div>
         </div>
@@ -295,17 +295,26 @@ a.stat-item:hover .stat-arrow{opacity:1}
   document.getElementById('footer-root').innerHTML = renderFooter();
   initKlaviyo();
 
-  // Live herb count
-  const sc = document.getElementById('stat-herb-count');
-  if (sc && typeof HERB_COUNT !== 'undefined') sc.textContent = HERB_COUNT;
+  // Live herb count — drives every reference on the page
+  const BENCAO_TOTAL = 1892;
+  if (typeof HERB_COUNT !== 'undefined') {
+    const pct = (HERB_COUNT / BENCAO_TOTAL) * 100;
+    const remaining = BENCAO_TOTAL - HERB_COUNT;
+    document.querySelectorAll('.js-herb-count').forEach(el => el.textContent = HERB_COUNT);
+    document.querySelectorAll('.js-herb-remaining').forEach(el => el.textContent = remaining.toLocaleString());
+    document.querySelectorAll('.js-herb-pct').forEach(el => el.textContent = pct.toFixed(2));
+    // stats bar (legacy id)
+    const sc = document.getElementById('stat-herb-count');
+    if (sc) sc.textContent = HERB_COUNT;
 
-  // Animate progress bar on scroll into view
-  const fill = document.getElementById('bencao-fill');
-  if (fill) {
-    const obs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) { fill.style.width = '2.59%'; obs.disconnect(); }
-    }, { threshold: 0.4 });
-    obs.observe(fill.parentElement);
+    // Animate progress bar on scroll into view
+    const fill = document.getElementById('bencao-fill');
+    if (fill) {
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) { fill.style.width = pct.toFixed(2) + '%'; obs.disconnect(); }
+      }, { threshold: 0.4 });
+      obs.observe(fill.parentElement);
+    }
   }
 
   // Herb showcase cards
