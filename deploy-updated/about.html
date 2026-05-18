@@ -293,7 +293,22 @@ a.stat-item:hover .stat-arrow{opacity:1}
 <script>
   document.getElementById('nav-root').innerHTML = renderNav('about');
   document.getElementById('footer-root').innerHTML = renderFooter();
+  initMegas();
   initKlaviyo();
+
+  // Tile botanical-name rows across any viewport width (handles ultra-wide)
+  function fillBotanical() {
+    document.querySelectorAll('.hero-botanical > div').forEach(row => {
+      const seed = row.dataset.seed || (row.dataset.seed = row.textContent.trim() + ' · ');
+      row.textContent = seed;
+      const target = window.innerWidth * 1.6;
+      let safety = 12;
+      while (row.scrollWidth < target && safety-- > 0) row.textContent += seed;
+    });
+  }
+  fillBotanical();
+  let _bFillT;
+  window.addEventListener('resize', () => { clearTimeout(_bFillT); _bFillT = setTimeout(fillBotanical, 120); });
 
   // Live herb count — drives every reference on the page
   const BENCAO_TOTAL = 1892;
