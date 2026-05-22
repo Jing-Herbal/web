@@ -288,6 +288,114 @@
   color: var(--ink2);
 }
 
+/* ── protocol ritual cards ── */
+.shm-rituals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.shm-ritual {
+  background: var(--cream, #F5F2EC);
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.shm-ritual.is-jing {
+  background: var(--ink, #1C2620);
+  color: var(--cream, #F5F2EC);
+  border-color: var(--ink);
+}
+.shm-ritual-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.shm-ritual-when {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+.shm-ritual.is-jing .shm-ritual-when { color: rgba(245,242,236,0.55); }
+.shm-ritual-badge {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 100px;
+  background: var(--jade, #4BC89E);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.shm-ritual-badge.is-routine {
+  background: rgba(28,38,32,0.06);
+  color: var(--ink2);
+}
+.shm-ritual-name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+}
+.shm-ritual.is-jing .shm-ritual-name { color: var(--cream); }
+.shm-ritual-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink3);
+  margin: 0;
+}
+.shm-ritual.is-jing .shm-ritual-sub { color: rgba(245,242,236,0.55); }
+.shm-ritual-body {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink2);
+  border-top: 0.5px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+.shm-ritual.is-jing .shm-ritual-body {
+  color: rgba(245,242,236,0.78);
+  border-top-color: rgba(245,242,236,0.12);
+}
+.shm-ritual-body strong {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+.shm-ritual.is-jing .shm-ritual-body strong { color: rgba(245,242,236,0.5); }
+.shm-ritual-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.shm-ritual-body li {
+  padding: 3px 0 3px 14px;
+  position: relative;
+}
+.shm-ritual-body li::before {
+  content: '·';
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: var(--jade-m, #1A7A5E);
+}
+.shm-ritual.is-jing .shm-ritual-body li::before { color: var(--jade, #4BC89E); }
+.shm-ritual-body p { margin: 0; }
+
 /* ── herbs grid ── */
 .shm-herbs-grid {
   display: grid;
@@ -537,10 +645,25 @@
 .shm-waitlist {
   background: var(--cream2, #EFEBE3);
   border-radius: 12px;
-  padding: 3rem 2.5rem;
-  text-align: center;
-  max-width: 640px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  max-width: 920px;
   margin: 0 auto;
+}
+.shm-waitlist-image {
+  align-self: center;
+}
+.shm-waitlist-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.shm-waitlist-content {
+  min-width: 0;
 }
 .shm-waitlist-eyebrow {
   font-family: var(--mono);
@@ -563,14 +686,11 @@
   color: var(--ink2);
   margin-bottom: 1.75rem;
   max-width: 48ch;
-  margin-left: auto;
-  margin-right: auto;
 }
 .shm-waitlist-form {
   display: flex;
   gap: 8px;
   max-width: 440px;
-  margin: 0 auto;
 }
 .shm-waitlist-input {
   flex: 1;
@@ -650,13 +770,21 @@
   .shm-pathway-head { grid-template-columns: 60px 1fr; gap: 1rem; }
   .shm-pathway-graphic { width: 60px; height: 60px; }
   .shm-pathway-name { font-size: 1.25rem; }
+  .shm-rituals { grid-template-columns: 1fr; }
   .shm-herbs-grid { grid-template-columns: 1fr; }
   .shm-mechs { grid-template-columns: 1fr; }
   .shm-tiers { grid-template-columns: 1fr; }
   .shm-dose-row { grid-template-columns: 1fr; gap: 4px; }
   .shm-dose-v { font-size: 14px; }
-  .shm-waitlist { padding: 2.5rem 1.5rem; }
-  .shm-waitlist-form { flex-direction: column; }
+  .shm-waitlist {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .shm-waitlist-image { max-width: 200px; margin: 0 auto; }
+  .shm-waitlist-body { margin-left: auto; margin-right: auto; }
+  .shm-waitlist-form { flex-direction: column; margin-left: auto; margin-right: auto; }
 }
 </style>
 </head>
@@ -705,9 +833,89 @@
   <div class="shm-pathways" id="pathways"></div>
 </section>
 
+<!-- ─────────────────────── THE PROTOCOL ─────────────────────── -->
+<section class="shm-section">
+  <div class="shm-section-eyebrow">02 · The protocol</div>
+  <h2 class="shm-section-title">The daily and weekly <em>ritual</em></h2>
+  <p class="shm-section-intro">A complete hydration protocol moves on two rhythms — a daily ritual you keep and a weekly ritual you layer in. Jing makes one product in this protocol; the rest is yours. The notes below are what to look for when you choose.</p>
+
+  <div class="shm-rituals">
+    <div class="shm-ritual is-jing">
+      <div class="shm-ritual-head">
+        <span class="shm-ritual-when">Daily · AM oral</span>
+        <span class="shm-ritual-badge">Jing</span>
+      </div>
+      <h3 class="shm-ritual-name">Skin Hydration Mix</h3>
+      <p class="shm-ritual-sub">Matrix + Oxidation · ingestible</p>
+      <div class="shm-ritual-body">
+        <strong>The one Jing product</strong>
+        4g scoop dissolved in water, tea, smoothie, or warm milk with breakfast. Builds the dermal water-holding matrix from the inside — Tremella, Goji, Astragalus, Schisandra. One 120g pouch is a 30-day course.
+      </div>
+    </div>
+
+    <div class="shm-ritual">
+      <div class="shm-ritual-head">
+        <span class="shm-ritual-when">Daily · AM + PM topical</span>
+        <span class="shm-ritual-badge is-routine">Your routine</span>
+      </div>
+      <h3 class="shm-ritual-name">A hydrating daily serum</h3>
+      <p class="shm-ritual-sub">Inflammation pathway · topical</p>
+      <div class="shm-ritual-body">
+        <strong>What to look for</strong>
+        <ul>
+          <li>Multi-MW hyaluronic acid — high for surface hold, low for penetration</li>
+          <li>Glycerin or panthenol as a humectant base</li>
+          <li>Ceramides (NP, AP, EOP) for barrier-lipid repair</li>
+          <li>Niacinamide at 3–5% for tight-junction support</li>
+          <li>Apply to damp skin morning and evening, before moisturiser</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shm-ritual">
+      <div class="shm-ritual-head">
+        <span class="shm-ritual-when">Weekly · 1–2× evenings</span>
+        <span class="shm-ritual-badge is-routine">Your routine</span>
+      </div>
+      <h3 class="shm-ritual-name">A barrier-repair face mask</h3>
+      <p class="shm-ritual-sub">Inflammation pathway · weekly intensive</p>
+      <div class="shm-ritual-body">
+        <strong>What to look for</strong>
+        <ul>
+          <li>Centella asiatica (cica), panthenol, or colloidal oat for soothing</li>
+          <li>Hyaluronic acid for a hydration push</li>
+          <li>Beta-glucan or madecassoside for stratum-corneum repair</li>
+          <li>Skip clay or exfoliating masks on barrier-repair nights</li>
+          <li>10–20 minutes on cleansed skin; ideally evenings before sleep</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shm-ritual">
+      <div class="shm-ritual-head">
+        <span class="shm-ritual-when">Weekly · evenings, pre-sleep</span>
+        <span class="shm-ritual-badge is-routine">Your routine</span>
+      </div>
+      <h3 class="shm-ritual-name">Stress-management caps</h3>
+      <p class="shm-ritual-sub">Cortisol pathway · ingestible</p>
+      <div class="shm-ritual-body">
+        <strong>What to look for</strong>
+        <ul>
+          <li>Reishi (≥4% triterpenes, ≥20% β-glucans) for HPA-axis modulation</li>
+          <li>Magnesium glycinate at 200–400mg for sleep onset</li>
+          <li>L-theanine at 100–200mg — calming without sedation</li>
+          <li>Jujube seed (≥2% spinosin) — TCM sleep support, 2026 RCT</li>
+          <li>Avoid daily melatonin — it's a hormone, not a habit-forming sleep aid</li>
+          <li>Take 60–90 minutes pre-sleep; more frequently if sleep is chronically poor</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─────────────────────────── HERBS IN THE STACK ─────────────────────────── -->
 <section class="shm-section">
-  <div class="shm-section-eyebrow">02 · Actives in the Mix</div>
+  <div class="shm-section-eyebrow">03 · Actives in the Mix</div>
   <h2 class="shm-section-title">Four actives, <em>two pathways</em></h2>
   <p class="shm-section-intro">Each active in the Skin Hydration Mix is included at a dose chosen to be defensible against the literature — addressing the two pathways an ingestible can genuinely move, Matrix and Oxidation. Doses are stated per the 4g daily serve.</p>
 
@@ -716,7 +924,7 @@
 
 <!-- ─────────────────────────── MECHANISMS ─────────────────────────── -->
 <section class="shm-section">
-  <div class="shm-section-eyebrow">03 · Mechanisms</div>
+  <div class="shm-section-eyebrow">04 · Mechanisms</div>
   <h2 class="shm-section-title">How each pathway <em>works</em></h2>
   <p class="shm-section-intro">Each pathway has a measurable mechanism. For Matrix and Oxidation, the Mix is the input — three sub-mechanisms across four actives. For Inflammation and Cortisol, an oral powder is the wrong tool, and we say so plainly.</p>
 
@@ -725,7 +933,7 @@
 
 <!-- ─────────────────────────── DOSAGE & TIMING ─────────────────────────── -->
 <section class="shm-section">
-  <div class="shm-section-eyebrow">04 · Dosage & timing</div>
+  <div class="shm-section-eyebrow">05 · Dosage & timing</div>
   <h2 class="shm-section-title">When to take <em>the Mix</em></h2>
   <p class="shm-section-intro">One scoop, once a day. Dissolves in water, tea, smoothie, or warm milk. Add it to your morning — it works alongside your skincare and supplements, not instead of them.</p>
 
@@ -734,7 +942,7 @@
 
 <!-- ─────────────────────────── FITS INTO YOUR ROUTINE ─────────────────────────── -->
 <section class="shm-section">
-  <div class="shm-section-eyebrow">05 · Fits into your routine</div>
+  <div class="shm-section-eyebrow">06 · Fits into your routine</div>
   <h2 class="shm-section-title">One product, <em>not</em> a regimen</h2>
   <p class="shm-section-intro">The Mix is built to slot into the routine you already own — not replace it. It earns its place by doing one job well: hydration from the inside, every day. Most hydration products put water on your skin. Jing helps your skin hold its own.</p>
 
@@ -768,15 +976,20 @@
 <!-- ─────────────────────────── WAITLIST ─────────────────────────── -->
 <section class="shm-section">
   <div class="shm-waitlist">
-    <div class="shm-waitlist-eyebrow">Notify me when it launches</div>
-    <h3 class="shm-waitlist-title">Be first to try the <em>Skin Hydration Mix</em></h3>
-    <p class="shm-waitlist-body">The Mix is in final formulation. Drop your email and we'll let you know the moment it launches — with introductory pricing for early subscribers.</p>
-    <form class="shm-waitlist-form" id="waitlist-form">
-      <input type="email" class="shm-waitlist-input" id="waitlist-email" placeholder="you@example.com" required>
-      <button type="submit" class="shm-waitlist-btn" id="waitlist-btn">Join waitlist →</button>
-    </form>
-    <div class="shm-waitlist-msg" id="waitlist-msg"></div>
-    <div class="shm-waitlist-fineprint">By subscribing you agree to our <a href="/privacy">privacy policy</a>. You'll be added to the Jing mailing list and notified the moment the protocol launches. Unsubscribe anytime.</div>
+    <div class="shm-waitlist-image">
+      <img src="/images/products/hydration-powder.jpg" alt="Jing Hydration Powder — 120g pouch, 30-day course" loading="lazy" width="900" height="1117">
+    </div>
+    <div class="shm-waitlist-content">
+      <div class="shm-waitlist-eyebrow">Notify me when it launches</div>
+      <h3 class="shm-waitlist-title">Be first to try the <em>Skin Hydration Mix</em></h3>
+      <p class="shm-waitlist-body">The Mix is in final formulation — a 120g pouch, 30-day course, four actives at full clinical doses. Drop your email and we'll let you know the moment it launches, with introductory pricing for early subscribers.</p>
+      <form class="shm-waitlist-form" id="waitlist-form">
+        <input type="email" class="shm-waitlist-input" id="waitlist-email" placeholder="you@example.com" required>
+        <button type="submit" class="shm-waitlist-btn" id="waitlist-btn">Join waitlist →</button>
+      </form>
+      <div class="shm-waitlist-msg" id="waitlist-msg"></div>
+      <div class="shm-waitlist-fineprint">By subscribing you agree to our <a href="/privacy">privacy policy</a>. You'll be added to the Jing mailing list and notified the moment the Mix launches. Unsubscribe anytime.</div>
+    </div>
   </div>
 
   <p class="shm-safety-note">Astragalus is immunomodulating — speak to your doctor if you take immunosuppressants. Consult your physician before use if pregnant, breastfeeding, or on prescription medication. Discontinue 36 hours before any scheduled surgery.</p>
