@@ -60,4 +60,9 @@
 /protocols/skin-hydration-mesh    /protocols/skin-hydration-mesh/index.html    200
 
 
+# Blog / Journal
+/blog    /blog.html    200
+/blog/monash-sine-co-incubation    /blog/monash-sine-co-incubation/index.html    200
+
+
 /herb.html    /formulary    301

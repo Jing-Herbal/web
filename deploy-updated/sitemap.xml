@@ -36,6 +36,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Journal / blog -->
+  <url>
+    <loc>https://jingherbal.com/blog</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jingherbal.com/blog/monash-sine-co-incubation</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
   <!-- Individual herb dossiers -->
   <url><loc>https://jingherbal.com/herb.html?id=reishi</loc><lastmod>2026-04-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://jingherbal.com/herb.html?id=lions-mane</loc><lastmod>2026-04-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
