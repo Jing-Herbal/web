@@ -61,7 +61,8 @@
 
 
 # Blog / Journal
-/blog    /blog.html    200
+# (no /blog -> /blog.html rule: Cloudflare serves clean URLs automatically;
+#  an explicit rewrite here causes a redirect loop with /blog.html -> /blog)
 /blog/monash-sine-co-incubation    /blog/monash-sine-co-incubation/index.html    200
 
 
