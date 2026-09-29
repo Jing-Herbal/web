@@ -1483,3 +1483,13 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 /* Inline sign-up message (footer forms) */
 .form-msg { margin: 10px 0 0; color: var(--clay-300); }
 .form-msg.is-ok { color: var(--cream-50); }
+
+/* Coming soon: the footer sits on its own band so it reads over the darker bench in the video */
+.soon__foot { background: rgba(246, 241, 232, .9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: .5px solid var(--line); color: var(--ink-900); }
+.soon__foot a { color: var(--ink-900); text-underline-offset: 3px; }
+@media (max-width: 560px) {
+  .soon__foot { gap: 10px; padding: 18px var(--gutter) 22px; }
+  .soon__foot > span:last-child { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .soon__foot > span:last-child { font-size: 0; }
+  .soon__foot > span:last-child a { font-size: 11px; padding: 6px 0; }
+}
