@@ -313,9 +313,10 @@
       const li = document.createElement('li');
       li.className = 'fbox';
       const n = 30;
-      const gift = b in GIFTS ? (GIFTS[b] || '<svg class="fbox__lock" viewBox="0 0 12 14" aria-hidden="true"><rect x="1.5" y="6" width="9" height="7" rx="1"/><path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2"/></svg>Soon') : '';
+      const GIFT_ICON = '<svg class="fbox__icon" viewBox="0 0 20 20" aria-hidden="true"><g class="fbox__lid"><rect x="2.5" y="6" width="15" height="3.5" rx="1"/><path d="M10 6C8.8 3.2 5.6 2.6 5.6 4.6 5.6 5.8 8 6 10 6zM10 6c1.2-2.8 4.4-3.4 4.4-1.4 0 1.2-2.4 1.4-4.4 1.4z"/></g><rect x="3.5" y="9.5" width="13" height="8" rx="1"/><path d="M10 9.5v8"/></svg>';
+      const gift = b in GIFTS ? GIFT_ICON + (GIFTS[b] || 'Mystery gift') : '';
       li.innerHTML = `<span class="fbox__label label">Box ${b}</span><span class="fbox__dots"></span>` +
-        (gift ? `<span class="fbox__gift${GIFTS[b] ? '' : ' is-locked'}">${gift}</span>` : '');
+        (gift ? `<span class="fbox__gift${GIFTS[b] ? '' : ' is-mystery'}">${gift}</span>` : '');
       const holder = li.querySelector('.fbox__dots');
       for (let i = 0; i < n; i++, day++) {
         const d = document.createElement('i');
