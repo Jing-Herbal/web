@@ -62,6 +62,5 @@
   }
 
   try { const n = (JSON.parse(localStorage.getItem('aura-cart')) || []).reduce((s, l) => s + l.qty, 0); $$('[data-cart-count]').forEach((c) => (c.textContent = n)); } catch { /* storage unavailable */ }
-  const news = $('#news');
-  if (news) news.addEventListener('submit', (e) => e.preventDefault());
+  if (window.auraWireSignup) window.auraWireSignup($('#news'), $('#newsEmail'), 'footer');
 })();

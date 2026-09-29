@@ -581,29 +581,13 @@
   });
   renderCart();
 
-  // Newsletter: nothing is sent from this draft
-  // Closing section sign-up: same behaviour as the footer field
-  const fin = $('#finalNews');
-  if (fin) fin.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const v = $('#finalEmail').value.trim();
-    if (/^\S+@\S+\.\S+$/.test(v)) auraTrack('sign_up', { method: 'closing' });
-    toast(/^\S+@\S+\.\S+$/.test(v) ? 'Noted. Sign-up is not connected in this draft' : "That email doesn't look right");
-  });
-  // bloom card: same list as the footer, tagged so bloom interest can be told apart later
-  const bloomNews = $('#bloomNews');
-  if (bloomNews) bloomNews.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const v = $('#bloomEmail').value.trim();
-    if (/^\S+@\S+\.\S+$/.test(v)) auraTrack('sign_up', { method: 'bloom' });
-    toast(/^\S+@\S+\.\S+$/.test(v) ? "Noted. We'll tell you when bloom is ready. Sign-up is not connected in this draft" : "That email doesn't look right");
-  });
-  $('#news').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const v = $('#newsEmail').value.trim();
-    if (/^\S+@\S+\.\S+$/.test(v)) auraTrack('sign_up', { method: 'footer' });
-    toast(/^\S+@\S+\.\S+$/.test(v) ? 'Noted. Sign-up is not connected in this draft' : 'That email doesn\'t look right');
-  });
+  // Newsletter: every email field posts to Brevo (js/signup.js)
+  if (window.auraWireSignup) {
+    const say = (t) => toast(t);
+    auraWireSignup($('#finalNews'), $('#finalEmail'), 'closing', say);
+    auraWireSignup($('#bloomNews'), $('#bloomEmail'), 'bloom', say);
+    auraWireSignup($('#news'), $('#newsEmail'), 'footer', say);
+  }
 
   // ---------------------------------------------------------------------------
   // Reviews: real, verified Trustpilot reviews (au.trustpilot.com/review/jingherbal.com), quoted

@@ -129,10 +129,5 @@
   }
 
   try { const n = (JSON.parse(localStorage.getItem('aura-cart')) || []).reduce((s, l) => s + l.qty, 0); $$('[data-cart-count]').forEach((c) => (c.textContent = n)); } catch { /* storage unavailable */ }
-  const news = $('#news');
-  if (news) news.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const v = (($('#newsEmail') || {}).value || '').trim();
-    if (/^\S+@\S+\.\S+$/.test(v) && window.auraTrack) window.auraTrack('sign_up', { method: 'footer' });
-  });
+  if (window.auraWireSignup) window.auraWireSignup($('#news'), $('#newsEmail'), 'footer');
 })();

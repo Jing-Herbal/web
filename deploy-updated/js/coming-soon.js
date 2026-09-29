@@ -9,15 +9,9 @@
   const safeNext = /^[\w\-]+(\.html)?(#[\w\-]*)?$/.test(next) ? next : 'index.html';
   const say = (el, text, ok) => { el.textContent = text; el.classList.toggle('is-ok', !!ok); el.hidden = !text; };
 
-  // Launch notify. Nothing is sent from this draft: connect to the email platform (TBC).
-  $('#notify').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const v = $('#notifyEmail').value.trim();
-    const msg = $('#notifyMsg');
-    if (!/^\S+@\S+\.\S+$/.test(v)) { say(msg, 'That email doesn’t look right.'); return; }
-    if (window.auraTrack) window.auraTrack('sign_up', { method: 'waitlist' });
-    say(msg, 'Thank you. We’ll email you the day aura is ready. (Sign-up is not connected in this draft.)', true);
-    e.target.reset();
+  // Launch notify: posts to Brevo (js/signup.js)
+  window.auraWireSignup($('#notify'), $('#notifyEmail'), 'waitlist', (t, ok) => {
+    say($('#notifyMsg'), ok ? 'Thank you. We’ll email you the day aura is ready.' : t, ok);
   });
 
   // Early access

@@ -1479,3 +1479,7 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 .soon { grid-template-columns: minmax(0, 1fr); }
 .soon__main { grid-template-columns: minmax(0, 1fr); }
 .soon__main > * { max-width: 100%; }
+
+/* Inline sign-up message (footer forms) */
+.form-msg { margin: 10px 0 0; color: var(--clay-300); }
+.form-msg.is-ok { color: var(--cream-50); }
