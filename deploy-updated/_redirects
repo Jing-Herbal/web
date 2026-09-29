@@ -1,5 +1,8 @@
 # jingherbal.com: addresses from the research-platform site (archived 2026-09-29,
 # git tag archive/research-platform-2026-09-29) now point to their nearest new page.
+# Specific addresses first: Cloudflare applies the first rule that matches
+/blog/monash-sine-co-incubation    /journal-monash-sine-co-incubation   301
+/blog/monash-sine-co-incubation/   /journal-monash-sine-co-incubation   301
 /formulary              /science      301
 /formulary.html         /science      301
 /research               /science      301
@@ -14,5 +17,4 @@
 /about.html             /our-story    301
 /blog                   /journal      301
 /blog.html              /journal      301
-/blog/monash-sine-co-incubation   /journal-monash-sine-co-incubation   301
 /blog/*                 /journal      301
