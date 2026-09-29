@@ -1,69 +1,18 @@
-# Herb pages
-/herb/achyranthes    /herb/achyranthes/index.html    200
-/herb/ashwagandha    /herb/ashwagandha/index.html    200
-/herb/astragalus    /herb/astragalus/index.html    200
-/herb/atractylodes    /herb/atractylodes/index.html    200
-/herb/bacopa    /herb/bacopa/index.html    200
-/herb/black-sesame    /herb/black-sesame/index.html    200
-/herb/bupleurum    /herb/bupleurum/index.html    200
-/herb/chinese-skullcap    /herb/chinese-skullcap/index.html    200
-/herb/chrysanthemum    /herb/chrysanthemum/index.html    200
-/herb/cinnamon    /herb/cinnamon/index.html    200
-/herb/cistanche    /herb/cistanche/index.html    200
-/herb/codonopsis    /herb/codonopsis/index.html    200
-/herb/cordyceps    /herb/cordyceps/index.html    200
-/herb/danshen    /herb/danshen/index.html    200
-/herb/deer-antler    /herb/deer-antler/index.html    200
-/herb/dipsacus    /herb/dipsacus/index.html    200
-/herb/dong-quai    /herb/dong-quai/index.html    200
-/herb/eclipta    /herb/eclipta/index.html    200
-/herb/eleuthero    /herb/eleuthero/index.html    200
-/herb/epimedium    /herb/epimedium/index.html    200
-/herb/eucommia    /herb/eucommia/index.html    200
-/herb/ginger    /herb/ginger/index.html    200
-/herb/ginkgo    /herb/ginkgo/index.html    200
-/herb/ginseng    /herb/ginseng/index.html    200
-/herb/goji    /herb/goji/index.html    200
-/herb/gotu-kola    /herb/gotu-kola/index.html    200
-/herb/hawthorn    /herb/hawthorn/index.html    200
-/herb/he-shou-wu    /herb/he-shou-wu/index.html    200
-/herb/huang-lian    /herb/huang-lian/index.html    200
-/herb/jujube    /herb/jujube/index.html    200
-/herb/licorice    /herb/licorice/index.html    200
-/herb/ligustrum    /herb/ligustrum/index.html    200
-/herb/lions-mane    /herb/lions-mane/index.html    200
-/herb/long-yan-rou    /herb/long-yan-rou/index.html    200
-/herb/magnolia-bark    /herb/magnolia-bark/index.html    200
-/herb/mai-men-dong    /herb/mai-men-dong/index.html    200
-/herb/milk-thistle    /herb/milk-thistle/index.html    200
-/herb/morinda    /herb/morinda/index.html    200
-/herb/notoginseng    /herb/notoginseng/index.html    200
-/herb/pearl-powder    /herb/pearl-powder/index.html    200
-/herb/polygala    /herb/polygala/index.html    200
-/herb/polygonum    /herb/polygonum/index.html    200
-/herb/poria    /herb/poria/index.html    200
-/herb/rehmannia    /herb/rehmannia/index.html    200
-/herb/reishi    /herb/reishi/index.html    200
-/herb/rhodiola    /herb/rhodiola/index.html    200
-/herb/saw-palmetto    /herb/saw-palmetto/index.html    200
-/herb/schisandra    /herb/schisandra/index.html    200
-/herb/tangerine-peel    /herb/tangerine-peel/index.html    200
-/herb/tongkat-ali    /herb/tongkat-ali/index.html    200
-/herb/tremella    /herb/tremella/index.html    200
-/herb/turkey-tail    /herb/turkey-tail/index.html    200
-/herb/turmeric    /herb/turmeric/index.html    200
-/herb/white-peony    /herb/white-peony/index.html    200
-/herb/yin-chen    /herb/yin-chen/index.html    200
-
-
-# Protocols subdirectory
-/protocols/skin-hydration-mesh    /protocols/skin-hydration-mesh/index.html    200
-
-
-# Blog / Journal
-# (no /blog -> /blog.html rule: Cloudflare serves clean URLs automatically;
-#  an explicit rewrite here causes a redirect loop with /blog.html -> /blog)
-/blog/monash-sine-co-incubation    /blog/monash-sine-co-incubation/index.html    200
-
-
-/herb.html    /formulary    301
+# jingherbal.com: addresses from the research-platform site (archived 2026-09-29,
+# git tag archive/research-platform-2026-09-29) now point to their nearest new page.
+/formulary              /science      301
+/formulary.html         /science      301
+/research               /science      301
+/research.html          /science      301
+/protocols              /science      301
+/protocols.html         /science      301
+/protocols/*            /science      301
+/herb                   /science      301
+/herb.html              /science      301
+/herb/*                 /science      301
+/about                  /our-story    301
+/about.html             /our-story    301
+/blog                   /journal      301
+/blog.html              /journal      301
+/blog/monash-sine-co-incubation   /journal-monash-sine-co-incubation   301
+/blog/*                 /journal      301

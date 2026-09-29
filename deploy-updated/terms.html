@@ -1,404 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Terms of Use — Jing</title>
-<meta name="description" content="Jing's terms of use. The terms and conditions governing use of jingherbal.com and Jing's services.">
-<link rel="canonical" href="https://jingherbal.com/terms.html">
-<meta property="og:title" content="Terms of Use — Jing">
-<meta property="og:description" content="The terms and conditions governing use of jingherbal.com.">
-<meta property="og:url" content="https://jingherbal.com/terms.html">
-<!-- Favicons — light/dark adaptive -->
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="stylesheet" href="shared.css">
-<style>
-.policy-hero {
-  background: var(--ink);
-  padding: 3.5rem 2rem 3rem;
-  border-bottom: 0.5px solid rgba(255,255,255,0.08);
-}
-.policy-hero-inner { max-width: 760px; margin: 0 auto; }
-.policy-eyebrow {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--jade);
-  margin-bottom: 0.75rem;
-}
-.policy-title {
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  color: #fff;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.75rem;
-}
-.policy-meta {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.06em;
-}
-.policy-body {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 3rem 2rem 5rem;
-}
-.toc {
-  background: var(--cream2);
-  border: 0.5px solid var(--border);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 3rem;
-}
-.toc-title {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink3);
-  margin-bottom: 0.75rem;
-}
-.toc-links {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  counter-reset: toc;
-}
-.toc-links a {
-  font-size: 13px;
-  color: var(--ink2);
-  text-decoration: none;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  transition: color .15s;
-}
-.toc-links a:hover { color: var(--jade-m); }
-.toc-links a::before {
-  counter-increment: toc;
-  content: counter(toc, decimal-leading-zero);
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--ink4);
-  flex-shrink: 0;
-}
-.policy-section {
-  margin-bottom: 3rem;
-  scroll-margin-top: 80px;
-}
-.policy-section-num {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--jade);
-  margin-bottom: 0.5rem;
-}
-.policy-section h2 {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 0.5px solid var(--border);
-}
-.policy-section p {
-  font-size: 0.9rem;
-  color: var(--ink2);
-  line-height: 1.85;
-  margin-bottom: 0.85rem;
-}
-.policy-section p:last-child { margin-bottom: 0; }
-.policy-section strong { color: var(--ink); font-weight: 500; }
-.policy-section ul {
-  margin: 0.5rem 0 0.85rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.policy-section ul li {
-  font-size: 0.9rem;
-  color: var(--ink2);
-  line-height: 1.7;
-}
-.policy-section a { color: var(--jade-m); text-decoration: underline; text-decoration-color: rgba(15,110,86,0.3); }
-.policy-section a:hover { text-decoration-color: var(--jade-m); }
-.info-box {
-  background: var(--cream2);
-  border: 0.5px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 3rem;
-}
-.info-box p {
-  font-size: 0.875rem;
-  color: var(--ink2);
-  line-height: 1.75;
-  margin: 0;
-}
-.warning-box {
-  background: var(--amber-l);
-  border: 0.5px solid rgba(186,117,23,0.25);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin: 1.25rem 0;
-}
-.warning-box p {
-  font-size: 0.875rem !important;
-  color: var(--amber-d) !important;
-  margin: 0 !important;
-  line-height: 1.7;
-}
-.contact-box {
-  background: var(--ink);
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-top: 3rem;
-}
-.contact-box h3 {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
-}
-.contact-box p {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.7;
-  margin-bottom: 0.5rem;
-}
-.contact-box p:last-child { margin-bottom: 0; }
-.contact-box a { color: var(--jade) !important; text-decoration: none; }
-.contact-box a:hover { text-decoration: underline; }
-@media (max-width: 600px) {
-  .policy-body { padding: 2rem 1.25rem 3.5rem; }
-  .policy-section h2 { font-size: 1.2rem; }
-}
-</style>
+<meta charset="utf-8">
+<script src="js/gate.js?v=2"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of sale — Jing</title>
+<meta name="description" content="The terms that apply when you buy aura from this site.">
+<meta name="theme-color" content="#A3512F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400&display=swap">
+<link rel="stylesheet" href="css/site.css?v=66">
+<!-- meta:share -->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jing">
+<meta property="og:title" content="Terms of sale — Jing">
+<meta property="og:description" content="The terms that apply when you buy aura from this site.">
+<meta property="og:image" content="https://jingherbal.com/img/og-image.jpg">
+<meta property="og:url" content="https://jingherbal.com/terms">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /meta:share -->
 </head>
 <body>
 
-<div id="topbar-mount"></div>
-<div id="nav-mount"></div>
-
-<div class="policy-hero">
-  <div class="policy-hero-inner">
-    <div class="policy-eyebrow">Legal</div>
-    <h1 class="policy-title">Terms of Use</h1>
-    <p class="policy-meta">Last updated: April 2026 · Mereo Consultants Pty Ltd (trading as Jing) · ABN 15 677 842 723</p>
+<!-- Announcement -->
+<div class="announce label" aria-live="polite">
+  <div class="announce__track" id="announce">
+    <div class="announce__item">Every dose printed on the box, to the milligram</div>
+    <div class="announce__item">Free AU shipping over A$70</div>
+    <div class="announce__item">Not for you? Your first box is refunded in full</div>
   </div>
 </div>
 
-<div class="policy-body">
-
-  <div class="info-box">
-    <p><strong>Plain English summary:</strong> Jing is an educational platform about Traditional Chinese Medicine. We provide information, not medical advice. Nothing on this site should be used to diagnose or treat a health condition. Our content is for general informational purposes only. Use the site at your own discretion, and always consult a qualified health professional for medical decisions.</p>
-  </div>
-
-  <div class="toc">
-    <div class="toc-title">Contents</div>
-    <div class="toc-links">
-      <a href="#acceptance">Acceptance of terms</a>
-      <a href="#who-we-are">Who we are</a>
-      <a href="#use-of-site">Use of this website</a>
-      <a href="#not-medical-advice">Not medical advice</a>
-      <a href="#content-accuracy">Content accuracy and evidence ratings</a>
-      <a href="#products">Products and purchases</a>
-      <a href="#intellectual-property">Intellectual property</a>
-      <a href="#third-party">Third-party links and services</a>
-      <a href="#disclaimer">Disclaimer of warranties</a>
-      <a href="#limitation">Limitation of liability</a>
-      <a href="#indemnity">Indemnity</a>
-      <a href="#governing-law">Governing law</a>
-      <a href="#changes">Changes to these terms</a>
-      <a href="#contact">Contact us</a>
+<!-- Nav -->
+<header class="nav" id="nav">
+  <nav class="nav__bar" aria-label="Main">
+    <div class="nav__links">
+      <a href="science.html">Science</a>
+      <a href="journal.html">Journal</a>
+      <a href="our-story.html">Our story</a>
     </div>
-  </div>
-
-  <!-- 1 -->
-  <div class="policy-section" id="acceptance">
-    <div class="policy-section-num">01</div>
-    <h2>Acceptance of terms</h2>
-    <p>By accessing or using the website at <a href="https://jingherbal.com">jingherbal.com</a> (the "Site") or purchasing products from <a href="https://shop.jingherbal.com">shop.jingherbal.com</a> (the "Store"), you agree to be bound by these Terms of Use ("Terms").</p>
-    <p>If you do not agree to these Terms, please do not use our Site or Store. These Terms apply to all visitors, users, and customers.</p>
-    <p>These Terms should be read alongside our <a href="/privacy">Privacy Policy</a>, which governs how we handle your personal information.</p>
-  </div>
-
-  <!-- 2 -->
-  <div class="policy-section" id="who-we-are">
-    <div class="policy-section-num">02</div>
-    <h2>Who we are</h2>
-    <p>This Site is operated by <strong>Mereo Consultants Pty Ltd</strong> (ABN 15 677 842 723), trading as <strong>Jing</strong> ("we", "us", "our"). We are an Australian company based in Melbourne, Victoria.</p>
-    <p>Our contact email is <a href="mailto:hello@jingherbal.com">hello@jingherbal.com</a>.</p>
-  </div>
-
-  <!-- 3 -->
-  <div class="policy-section" id="use-of-site">
-    <div class="policy-section-num">03</div>
-    <h2>Use of this website</h2>
-    <p>You may use this Site for lawful personal and non-commercial purposes only. You agree not to:</p>
-    <ul>
-      <li>Use the Site in any way that violates applicable laws or regulations</li>
-      <li>Reproduce, distribute, or commercially exploit any content from this Site without our written permission</li>
-      <li>Attempt to gain unauthorised access to any part of the Site or its related systems</li>
-      <li>Use automated tools, scrapers, or bots to extract content from the Site without our express written consent</li>
-      <li>Post or transmit any content that is false, misleading, defamatory, or harmful</li>
-      <li>Impersonate Jing, our staff, or any other person or entity</li>
-    </ul>
-    <p>We reserve the right to restrict or terminate your access to the Site at any time, without notice, if we reasonably believe you have breached these Terms.</p>
-  </div>
-
-  <!-- 4 -->
-  <div class="policy-section" id="not-medical-advice">
-    <div class="policy-section-num">04</div>
-    <h2>Not medical advice</h2>
-    <div class="warning-box">
-      <p><strong>Important:</strong> The information on this Site — including herb dossiers, evidence ratings, dosage guidance, safety profiles, and protocols — is provided for general informational and educational purposes only. It is not intended to constitute medical advice, diagnosis, or treatment.</p>
+    <a href="index.html" class="wordmark" aria-label="aura, back to top">aura</a>
+    <div class="nav__right">
+      <button type="button" class="nav__menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <a class="nav__cart" href="index.html#shop">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <a href="index.html#shop" class="btn nav__cta">Shop aura</a>
     </div>
-    <p>Nothing on this Site should be used as a substitute for professional medical advice from a qualified healthcare provider. Always seek the advice of your doctor, pharmacist, or other qualified health professional before starting, stopping, or changing any supplement, herb, or health regimen.</p>
-    <p>If you are pregnant, breastfeeding, taking prescription medication, or managing a health condition, you must consult a qualified health professional before using any herbal supplement.</p>
-    <p>These statements have not been evaluated by the Therapeutic Goods Administration (TGA), the Food and Drug Administration (FDA), the Medicines and Healthcare products Regulatory Agency (MHRA), or Health Canada. Our products are not intended to diagnose, treat, cure, or prevent any disease.</p>
-    <p>In the event of a medical emergency, call your local emergency services immediately.</p>
-  </div>
+  </nav>
+</header>
 
-  <!-- 5 -->
-  <div class="policy-section" id="content-accuracy">
-    <div class="policy-section-num">05</div>
-    <h2>Content accuracy and evidence ratings</h2>
-    <p>We make every reasonable effort to ensure that the clinical information on this Site is accurate, current, and based on peer-reviewed research. Our evidence ratings and dossiers are reviewed periodically by our team and updated when new research becomes available.</p>
-    <p>However, we cannot guarantee that all content is complete, accurate, or up to date at all times. The science of herbal medicine is evolving, and individual research findings may conflict. You should not rely solely on our evidence ratings when making health decisions.</p>
-    <p>We reserve the right to update, correct, or remove any content at any time without notice. Where we become aware of an error, we will endeavour to correct it promptly.</p>
-    <p>References to specific studies, meta-analyses, and clinical trials are provided for transparency. We do not endorse any particular study or research group, and citation of a study does not imply that we agree with all of its conclusions.</p>
-  </div>
-
-  <!-- 6 -->
-  <div class="policy-section" id="products">
-    <div class="policy-section-num">06</div>
-    <h2>Products and purchases</h2>
-    <p>Products sold through our Store at <a href="https://shop.jingherbal.com">shop.jingherbal.com</a> are subject to separate terms presented at the time of purchase, including our refund and shipping policies.</p>
-    <p>Product descriptions, ingredient specifications, and batch information are provided to the best of our knowledge and are verified by third-party Certificate of Analysis (COA) testing. However, we cannot guarantee that any product will achieve a particular health outcome for any individual.</p>
-    <p>Supplement products are not a substitute for a balanced diet or healthy lifestyle. Individual responses to herbal supplements vary and results are not guaranteed.</p>
-    <p>If you experience any adverse reaction to a product, discontinue use immediately and seek medical advice.</p>
-  </div>
-
-  <!-- 7 -->
-  <div class="policy-section" id="intellectual-property">
-    <div class="policy-section-num">07</div>
-    <h2>Intellectual property</h2>
-    <p>All content on this Site — including but not limited to text, herb dossiers, evidence ratings, dosage protocols, botanical illustrations, logo, brand identity, and design — is the intellectual property of Mereo Consultants Pty Ltd (trading as Jing) or is used under licence.</p>
-    <p>You may not reproduce, republish, distribute, sell, or commercially exploit any content from this Site without our prior written permission. You may share links to our content and quote brief excerpts for non-commercial purposes, provided you attribute the source clearly as "Jing (jingherbal.com)".</p>
-    <p>The Jing name, logo, and brand are trademarks of Mereo Consultants Pty Ltd. KSM-66® is a registered trademark of Ixoreal Biomed Inc., used with reference only.</p>
-  </div>
-
-  <!-- 8 -->
-  <div class="policy-section" id="third-party">
-    <div class="policy-section-num">08</div>
-    <h2>Third-party links and services</h2>
-    <p>Our Site may contain links to third-party websites, including PubMed citations, research institutions, and partner services. These links are provided for convenience and informational purposes only.</p>
-    <p>We do not control, endorse, or accept responsibility for the content of any third-party website. Accessing third-party websites is at your own risk and subject to their respective terms and privacy policies.</p>
-    <p>We use third-party services including Klaviyo (email marketing), Shopify (e-commerce), and Netlify (hosting). Your use of these services when interacting with our Site is also subject to their respective terms.</p>
-  </div>
-
-  <!-- 9 -->
-  <div class="policy-section" id="disclaimer">
-    <div class="policy-section-num">09</div>
-    <h2>Disclaimer of warranties</h2>
-    <p>To the maximum extent permitted by applicable law, this Site and all content, products, and services are provided <strong>"as is"</strong> and <strong>"as available"</strong>, without any warranty of any kind, either express or implied.</p>
-    <p>We do not warrant that:</p>
-    <ul>
-      <li>The Site will be uninterrupted, error-free, or free from viruses or other harmful components</li>
-      <li>Any information on the Site is complete, accurate, reliable, or suitable for your particular purpose</li>
-      <li>Any product will produce a specific health outcome for any individual</li>
-    </ul>
-    <p>Nothing in these Terms excludes, restricts, or modifies any consumer guarantee or other right or remedy under the <strong>Australian Consumer Law</strong> (Schedule 2 of the Competition and Consumer Act 2010 (Cth)) that cannot be excluded, restricted, or modified.</p>
-  </div>
-
-  <!-- 10 -->
-  <div class="policy-section" id="limitation">
-    <div class="policy-section-num">10</div>
-    <h2>Limitation of liability</h2>
-    <p>To the maximum extent permitted by applicable law, Mereo Consultants Pty Ltd (trading as Jing) and its directors, employees, and agents will not be liable for any direct, indirect, incidental, consequential, special, or exemplary damages arising from:</p>
-    <ul>
-      <li>Your use of or inability to use this Site or our products</li>
-      <li>Reliance on any information provided on this Site</li>
-      <li>Any health outcome resulting from using or not using a herbal supplement</li>
-      <li>Any interruption, error, or virus affecting the Site</li>
-    </ul>
-    <p>Where our liability cannot be excluded under Australian Consumer Law, our liability is limited, to the extent permitted by law, to: (a) re-supplying the relevant goods or services; or (b) the cost of replacing or repairing the goods, at our discretion.</p>
-  </div>
-
-  <!-- 11 -->
-  <div class="policy-section" id="indemnity">
-    <div class="policy-section-num">11</div>
-    <h2>Indemnity</h2>
-    <p>You agree to indemnify, defend, and hold harmless Mereo Consultants Pty Ltd (trading as Jing), its directors, employees, and agents from and against any claims, damages, losses, costs, and expenses (including reasonable legal fees) arising from:</p>
-    <ul>
-      <li>Your use of the Site in breach of these Terms</li>
-      <li>Your violation of any applicable law or regulation</li>
-      <li>Any content you submit or transmit through the Site</li>
-    </ul>
-  </div>
-
-  <!-- 12 -->
-  <div class="policy-section" id="governing-law">
-    <div class="policy-section-num">12</div>
-    <h2>Governing law</h2>
-    <p>These Terms are governed by the laws of the State of Victoria, Australia. Any dispute arising in connection with these Terms or your use of the Site shall be subject to the exclusive jurisdiction of the courts of Victoria.</p>
-    <p>If you access this Site from outside Australia, you are responsible for compliance with all applicable local laws. We make no representation that the content on this Site is appropriate or lawful in all jurisdictions.</p>
-  </div>
-
-  <!-- 13 -->
-  <div class="policy-section" id="changes">
-    <div class="policy-section-num">13</div>
-    <h2>Changes to these terms</h2>
-    <p>We may update these Terms at any time to reflect changes in our services, legal requirements, or business practices. When we make changes, we will update the "Last updated" date at the top of this page.</p>
-    <p>Your continued use of the Site after any changes constitutes acceptance of the updated Terms. We encourage you to review these Terms periodically.</p>
-  </div>
-
-  <!-- 14 -->
-  <div class="policy-section" id="contact">
-    <div class="policy-section-num">14</div>
-    <h2>Contact us</h2>
-    <p>If you have any questions about these Terms, please contact us:</p>
-  </div>
-
-  <div class="contact-box">
-    <h3>Mereo Consultants Pty Ltd (trading as Jing)</h3>
-    <p>
-      Melbourne VIC 3000, Australia<br>
-      ABN: 15 677 842 723
-    </p>
-    <p>
-      Email: <a href="mailto:hello@jingherbal.com">hello@jingherbal.com</a><br>
-      Website: <a href="https://jingherbal.com">jingherbal.com</a>
-    </p>
-    <p style="font-size:0.8rem;color:rgba(255,255,255,0.3);margin-top:1rem">
-      These Terms of Use were last reviewed in April 2026 and are governed by the laws of Victoria, Australia.
-    </p>
-  </div>
-
+<!-- Phone menu: the page links the nav bar has no room for -->
+<div class="menu" id="menu" hidden data-lenis-prevent>
+  <nav class="menu__inner" aria-label="Menu">
+    <a class="menu__link" href="index.html#shop">Shop aura</a>
+    <a class="menu__link" href="science.html">Science</a>
+    <a class="menu__link" href="journal.html">Journal</a>
+    <a class="menu__link" href="our-story.html">Our story</a>
+    <div class="menu__small label">
+      <a href="index.html#faq">Questions</a>
+      <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">Contact us</a>
+    </div>
+  </nav>
 </div>
 
-<div id="footer-mount"></div>
+<main id="top" class="legal">
+<section class="post-head" data-nav="dark">
+  <div class="wrap post-wrap">
+    <span class="label">Help · Terms of sale</span>
+    <h1 class="display d-lg">Terms of sale</h1>
+    <p class="lede">The terms that apply when you buy aura from this site.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap post-wrap">
+    <p class="legal__draft label">Draft for legal review · Items marked TBC need a decision before launch</p>
+    <div class="post-body legal__body">
 
-<script src="herb-data.js"></script>
-<script src="shared.js"></script>
-<script>
-  document.getElementById('topbar-mount').innerHTML = renderTopbar();
-  document.getElementById('nav-mount').innerHTML = renderNav('');
-  document.getElementById('footer-mount').innerHTML = renderFooter();
-  initMegas();
-</script>
+<h2>Who we are</h2>
+<p>This site is run by Apothecary Labs Pty Ltd (ABN 15 677 842 723), trading as Jing, of Suite 116, 6/399 Belmore Road, Balwyn VIC 3103. In these terms, "we" and "us" means Apothecary Labs Pty Ltd.</p>
+
+<h2>About the product</h2>
+<p>aura is a food, not a medicine, and not a substitute for a varied and balanced diet. Take one 5 g stick daily, stirred into at least 250 mL of water or other liquid. Not recommended for pregnant women. If you are pregnant or breastfeeding, or have a medical condition, consult your healthcare professional before use.</p>
+<p>Product descriptions, ingredients and doses on this site match the label. If the label and the site ever differ, the label on your box applies.</p>
+
+<h2>Prices and payment</h2>
+<ul>
+  <li>Prices are in Australian dollars. Whether prices include GST: <span class="tbc">TBC</span></li>
+  <li>The price shown at checkout when you place your order is the price you pay. We may change prices for future orders.</li>
+  <li>Accepted payment methods: <span class="tbc">TBC</span>. Card details are handled by our payment provider (<span class="tbc">TBC</span>); we don't see or store them.</li>
+</ul>
+
+<h2>Your order</h2>
+<p>When you place an order, we'll email you to confirm we've received it. Our contract with you is formed when <span class="tbc">TBC</span>. If an item is unavailable, or a price on the site is clearly wrong, we'll contact you before dispatch and you can choose a refund.</p>
+
+<h2>Delivery, refunds and returns</h2>
+<p>See <a href="shipping-returns.html">Shipping &amp; returns</a> for where we ship, costs, timing, and the first-box refund.</p>
+
+<h2>Your rights under Australian law</h2>
+<p>Our goods come with guarantees that cannot be excluded under the Australian Consumer Law. You are entitled to a replacement or refund for a major failure and compensation for any other reasonably foreseeable loss or damage. You are also entitled to have the goods repaired or replaced if the goods fail to be of acceptable quality and the failure does not amount to a major failure.</p>
+<p>Nothing in these terms limits any right you have under the Australian Consumer Law or any other law that can't be excluded.</p>
+
+<h2>Our liability</h2>
+<p>To the extent the law allows, and apart from the guarantees above, we are not liable for indirect or consequential loss arising from the use of this site or our products. Wording of this clause: <span class="tbc">TBC</span> (legal review)</p>
+
+<h2>Subscriptions</h2>
+<p>Subscriptions are coming soon. Their terms will be added here before they launch.</p>
+
+<h2>Governing law</h2>
+<p>These terms are governed by the laws of Victoria, Australia.</p>
+
+<h2>Changes and contact</h2>
+<p>We may update these terms; the version on this page when you order applies to that order. Questions: <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">our contact form</a>.</p>
+
+      <p class="legal__updated label">Last updated 29 September 2026</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer" data-nav="dark">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__col">
+        <img src="img/jing-logo-white.png" alt="Jing" style="width:64px;margin-bottom:12px" loading="lazy">
+        <p style="margin:0;max-width:340px;opacity:.8">Skin nutrition rooted in Traditional Chinese Medicine, held to a Western evidence standard.<span class="footer__origin">Developed and designed in Australia.</span></p>
+      </div>
+      <div class="footer__col">
+        <span class="label">Shop</span>
+        <a href="index.html#shop">aura · 30 sticks</a>
+        <a href="index.html#footer-news">bloom · in development</a>
+      </div>
+      <div class="footer__col">
+        <span class="label">Learn</span>
+        <a href="index.html#formula">The formula</a>
+        <a href="science.html">The science</a>
+        <a href="journal.html">Journal</a>
+        <a href="our-story.html">Our story</a>
+        <a href="index.html#expect">What to expect</a>
+        <a href="index.html#faq">Questions</a>
+        <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">Contact us</a>
+      </div>
+      <div class="footer__col" id="footer-news">
+        <span class="label">Keep up to date</span>
+        <p style="margin:0;opacity:.8">Launches, recipes and the research we’re reading.</p>
+        <a class="footer__join link-arrow" href="index.html#newsletter">Sign up above <span>↑</span></a>
+        <form class="news" id="news" novalidate>
+          <label for="newsEmail" class="sr-only">Email</label>
+          <input id="newsEmail" type="email" placeholder="Email address" autocomplete="email">
+          <button class="btn btn--light" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__big" aria-hidden="true">aura</div>
+    <div class="footer__legal">
+      <p>aura is a food, not a medicine, and not a substitute for a varied and balanced diet. Vitamin C contributes to normal collagen formation for the normal function of skin. Botanicals are described by traditional use and carry no skin claims. Astragalus is included at the level permitted for foods. If you are pregnant or breastfeeding, consult your healthcare professional before use.</p>
+      <p>© 2026 Apothecary Labs Pty Ltd · Balwyn VIC 3103<br><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of sale</a> · <a href="shipping-returns.html">Shipping &amp; returns</a> · <a href="index.html#" data-cookie-settings>Cookie settings</a><br><a href="https://www.instagram.com/jingherbal/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@jingherbal" target="_blank" rel="noopener">TikTok</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/journal.js?v=8"></script>
+<script src="js/analytics.js?v=6"></script>
+<script src="js/menu.js?v=2"></script>
 </body>
 </html>

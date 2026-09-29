@@ -1,433 +1,644 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jing — Ancient Formulas, Modern Proof</title>
-<meta name="description" content="A science-backed Traditional Chinese Medicine formulary. 55 herbs reviewed, rated and evidence-graded. Clinical dossiers, mechanisms, dosage and safety — all in one place.">
-<link rel="canonical" href="https://jingherbal.com/">
-<!-- Open Graph -->
+<meta charset="utf-8">
+<script src="js/gate.js?v=2"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aura · Botanical Daily Blend — Jing</title>
+<meta name="description" content="Six botanicals and 60 mg of vitamin C from acerola, in one unflavoured 5 g stick. Every dose printed on the label.">
+<meta name="theme-color" content="#A3512F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400&display=swap">
+<link rel="stylesheet" href="css/site.css?v=66">
+<!-- meta:share -->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jing">
-<meta property="og:title" content="Jing — Ancient Formulas, Modern Proof">
-<meta property="og:description" content="55 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
-<meta property="og:image" content="https://jingherbal.com/og/homepage.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="628">
+<meta property="og:title" content="aura · Botanical Daily Blend — Jing">
+<meta property="og:description" content="Six botanicals and 60 mg of vitamin C from acerola, in one unflavoured 5 g stick. Every dose printed on the label.">
+<meta property="og:image" content="https://jingherbal.com/img/og-image.jpg">
 <meta property="og:url" content="https://jingherbal.com/">
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@jingherbal">
-<meta name="twitter:title" content="Jing — Ancient Formulas, Modern Proof">
-<meta name="twitter:description" content="55 TCM herbs reviewed and evidence-rated. Full clinical dossiers, mechanisms, dosage and safety profiles — built for the person who reads the study before they buy.">
-<meta name="twitter:image" content="https://jingherbal.com/og/homepage.jpg">
-<!-- Favicons — light/dark adaptive -->
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="stylesheet" href="shared.css">
-<style>
-/* ── HERO ── */
-.hero{display:grid;grid-template-columns:1fr 420px;min-height:520px}
-.hero-left{padding:4rem 3rem 4rem 2rem;display:flex;flex-direction:column;justify-content:center;background:var(--cream);max-width:700px}
-.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--jade);margin-bottom:1.25rem}
-.hero-h1{font-family:var(--serif);font-size:3.6rem;line-height:1.04;letter-spacing:-0.04em;color:var(--ink);margin-bottom:1.25rem}
-.hero-h1 em{font-style:italic;color:var(--jade-d)}
-.hero-body{font-size:1rem;color:var(--ink2);line-height:1.75;max-width:440px;margin-bottom:2rem}
-.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.hero-right{background:var(--jade-d);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.hero-bg-rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.05}
-
-/* Featured card — with sketch background */
-.hpc{background:rgba(255,255,255,0.07);border:0.5px solid rgba(255,255,255,0.14);border-radius:10px;width:300px;position:relative;z-index:1;overflow:hidden}
-.hpc-sketch-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.08;pointer-events:none}
-.hpc-sketch-bg svg{width:220px;height:220px;stroke:#fff}
-.hpc-inner{position:relative;z-index:1;padding:1.75rem}
-.hpc-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:0.6rem}
-.hpc-name{font-family:var(--serif);font-size:1.7rem;color:#fff;line-height:1.1;margin-bottom:2px}
-.hpc-latin{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.35);font-style:italic;margin-bottom:1.25rem}
-.hpc-badges{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1.25rem}
-.hpc-badge{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:rgba(29,158,117,0.2);color:#9FE1CB}
-.hpc-badge-warn{background:rgba(186,117,23,0.2);color:#FAC775}
-.hpc-ev-label{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:5px}
-.hpc-ev-track{height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:1rem}
-.hpc-ev-fill{height:4px;background:var(--jade);border-radius:2px;width:72%}
-.hpc-refs{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.28)}
-
-/* ── STATS BAR ── */
-.stats-bar{background:var(--cream2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
-.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat-cell{padding:1.25rem 2rem;border-right:0.5px solid var(--border)}
-.stat-cell:last-child{border-right:none}
-.stat-num{font-family:var(--serif);font-size:2rem;letter-spacing:-0.03em;color:var(--ink);line-height:1}
-.stat-label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-top:4px}
-a.stat-cell{text-decoration:none;transition:background 0.15s}
-a.stat-cell:hover{background:var(--jade-l)}
-a.stat-cell:hover .stat-num{color:var(--jade-d)}
-a.stat-cell:hover .stat-label{color:var(--jade-d)}
-a.stat-cell .stat-arrow{font-family:var(--mono);font-size:10px;color:var(--jade-d);opacity:0;transition:opacity 0.15s;margin-top:3px}
-a.stat-cell:hover .stat-arrow{opacity:1}
-
-/* ── CAROUSEL ── */
-.carousel-section{padding:4rem 2rem;overflow:hidden}
-.carousel-header{max-width:1200px;margin:0 auto 2rem;display:flex;align-items:flex-end;justify-content:space-between}
-.carousel-controls{display:flex;gap:8px}
-.carousel-btn{width:36px;height:36px;border-radius:50%;border:0.5px solid var(--border-m);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--ink2);transition:all .15s}
-.carousel-btn:hover{border-color:var(--jade);color:var(--jade-d)}
-.carousel-track-wrap{overflow:hidden;max-width:1200px;margin:0 auto}
-.carousel-track{display:flex;gap:1.25rem;transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.carousel-track .herb-card{min-width:230px;flex-shrink:0}
-.carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:1.25rem}
-.carousel-dot{width:6px;height:6px;border-radius:50%;background:var(--border-m);cursor:pointer;transition:all .2s}
-.carousel-dot.active{background:var(--jade);width:18px;border-radius:3px}
-
-/* ── HOW ── */
-.how{background:var(--white);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:4rem 2rem}
-.how-inner{max-width:1200px;margin:0 auto}
-.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem}
-.how-step-num{font-family:var(--serif);font-size:2.5rem;color:var(--jade-l);line-height:1;margin-bottom:0.75rem}
-.how-step-title{font-weight:500;font-size:1rem;margin-bottom:0.5rem;color:var(--ink)}
-.how-step-body{font-size:0.88rem;color:var(--ink2);line-height:1.7}
-.how-step-tag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:var(--jade-l);color:var(--jade-d);margin-top:0.75rem}
-
-/* ── GOALS GRID ── */
-.goals-section{padding:4rem 2rem}
-.goals-section-inner{max-width:1200px;margin:0 auto}
-.goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:2rem}
-.goal-tile{border:0.5px solid var(--border);border-radius:10px;padding:1.25rem;cursor:pointer;transition:all .18s;display:block;text-decoration:none;color:inherit}
-.goal-tile:hover{border-color:var(--jade);background:var(--jade-l)}
-.goal-tile-icon{width:32px;height:32px;background:var(--cream2);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem}
-.goal-tile-icon svg{width:16px;height:16px;stroke:var(--ink2);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.goal-tile-name{font-weight:500;font-size:0.9rem;color:var(--ink);margin-bottom:4px}
-.goal-tile-herbs{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-bottom:8px;line-height:1.5}
-.goal-tile-tags{display:flex;flex-wrap:wrap;gap:4px}
-
-/* ── LOOKSMAX ── */
-.looksmax{background:var(--jade-d);color:#fff;padding:4rem 2rem}
-.looksmax-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.lm-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1rem}
-.lm-title{font-family:var(--serif);font-size:2.4rem;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1rem}
-.lm-title em{font-style:italic;color:#9FE1CB}
-.lm-body{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:1.5rem}
-.lm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2rem}
-.lm-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 9px;border:0.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.45);border-radius:3px}
-.protocol-stack{display:flex;flex-direction:column;gap:10px}
-.ps-item{background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start}
-.ps-num{font-family:var(--serif);font-size:1.6rem;color:var(--jade);line-height:1;flex-shrink:0;width:32px}
-.ps-title{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
-.ps-herbs{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:3px}
-.ps-tag{font-family:var(--mono);font-size:9px;color:var(--jade)}
-
-/* ── TRUST ── */
-.trust{background:var(--ink);padding:3.5rem 2rem}
-.trust-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem}
-.trust-item-badge{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--jade);margin-bottom:0.5rem}
-.trust-item-title{font-family:var(--serif);font-size:1.2rem;color:#fff;margin-bottom:0.5rem;letter-spacing:-0.02em}
-.trust-item-body{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.7}
-/* ── INDEX RESPONSIVE ── */
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 3rem 1.5rem; max-width: 100%; }
-  .hero-right { min-height: 280px; order: -1; }
-  .hero-h1 { font-size: 2.8rem; }
-  .stats-inner { grid-template-columns: repeat(2,1fr); }
-  .stat-cell:nth-child(2) { border-right: none; }
-  .stat-cell:nth-child(3) { border-top: 0.5px solid var(--border); }
-  .stat-cell:nth-child(4) { border-top: 0.5px solid var(--border); border-right: none; }
-  .how-steps { grid-template-columns: 1fr 1fr; }
-  .goals-grid { grid-template-columns: repeat(2,1fr); }
-  .looksmax-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .trust-inner { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-  .hero-h1 { font-size: 2.1rem; }
-  .hero-left { padding: 2.5rem 1rem; }
-  .hero-right { min-height: 220px; }
-  .hpc { width: 240px; }
-  .hpc-name { font-size: 1.4rem; }
-  .stats-inner { grid-template-columns: 1fr 1fr; }
-  .carousel-section { padding: 2.5rem 1rem; }
-  .carousel-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .carousel-track .herb-card { min-width: 190px; }
-  .how { padding: 3rem 1rem; }
-  .how-steps { grid-template-columns: 1fr; gap: 1.25rem; }
-  .goals-section { padding: 3rem 1rem; }
-  .goals-grid { grid-template-columns: 1fr; }
-  .looksmax { padding: 3rem 1rem; }
-  .lm-title { font-size: 2rem; }
-  .trust { padding: 2.5rem 1rem; }
-  .trust-inner { grid-template-columns: 1fr; gap: 1.75rem; }
-}
-@media (max-width: 400px) {
-  .hero-h1 { font-size: 1.85rem; }
-  .hpc { width: 200px; }
-}
-</style>
+<!-- /meta:share -->
 </head>
 <body>
-<div id="nav-root"></div>
 
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Pharmacopoeia of the East — evidence reviewed</div>
-      <h1 class="hero-h1">Ancient formulas,<br><em>modern proof</em></h1>
-      <p class="hero-body">Every herb. Every compound. Every claim — traced to peer-reviewed research. Chinese medicine without the mysticism.</p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="/formulary">Explore the formulary</a>
-        <a class="btn-outline" href="/research">Read the science →</a>
+<!-- Announcement -->
+<div class="announce label" aria-live="polite">
+  <div class="announce__track" id="announce">
+    <div class="announce__item">Every dose printed on the box, to the milligram</div>
+    <div class="announce__item">Free AU shipping over A$70</div>
+    <div class="announce__item">Not for you? Your first box is refunded in full</div>
+  </div>
+</div>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <nav class="nav__bar" aria-label="Main">
+    <div class="nav__links">
+      <a href="science.html">Science</a>
+      <a href="journal.html">Journal</a>
+      <a href="our-story.html">Our story</a>
+    </div>
+    <a href="#top" class="wordmark" aria-label="aura, back to top">aura</a>
+    <div class="nav__right">
+      <button type="button" class="nav__menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <button class="nav__cart" data-open-cart>Cart <span class="cart-count" data-cart-count>0</span></button>
+      <a href="#shop" class="btn nav__cta">Shop aura</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Phone menu: the page links the nav bar has no room for -->
+<div class="menu" id="menu" hidden data-lenis-prevent>
+  <nav class="menu__inner" aria-label="Menu">
+    <a class="menu__link" href="#shop">Shop aura</a>
+    <a class="menu__link" href="science.html">Science</a>
+    <a class="menu__link" href="journal.html">Journal</a>
+    <a class="menu__link" href="our-story.html">Our story</a>
+    <div class="menu__small label">
+      <a href="#faq">Questions</a>
+      <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">Contact us</a>
+    </div>
+  </nav>
+</div>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="hero" data-nav="dark">
+  <div class="hero__copy">
+    <span class="label" data-reveal style="--d:120ms">AU–01 · Botanical Daily Blend</span>
+    <div class="hero__main">
+      <h1 class="display d-xl" data-split>
+        <span class="split-line"><span>A daily</span></span>
+        <span class="split-line"><span>ritual, built</span></span>
+        <span class="split-line"><span><em>for your skin.</em></span></span>
+      </h1>
+      <p class="lede" data-reveal style="--d:420ms">Six botanicals and 60 mg of vitamin C, in one unflavoured 5 g stick. Vitamin C contributes to normal collagen formation for the normal function of skin.</p>
+      <div class="hero__ctas" data-reveal style="--d:520ms">
+        <a href="#shop" class="btn btn--light">Shop aura · <span data-price="single"></span> <span class="arr">→</span></a>
+        <a href="science.html" class="btn btn--ghost-light">Read the science <span class="arr">→</span></a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-bg-rings">
-        <svg width="500" height="500" viewBox="0 0 500 500" fill="none" stroke="#fff" stroke-width="0.5">
-          <circle cx="250" cy="250" r="230"/><circle cx="250" cy="250" r="180"/><circle cx="250" cy="250" r="130"/><circle cx="250" cy="250" r="80"/><circle cx="250" cy="250" r="30"/>
-          <line x1="20" y1="250" x2="480" y2="250"/><line x1="250" y1="20" x2="250" y2="480"/>
-          <line x1="87" y1="87" x2="413" y2="413"/><line x1="413" y1="87" x2="87" y2="413"/>
-        </svg>
-      </div>
-      <!-- Featured herb card with sketch background -->
-      <div class="hpc" id="hero-card">
-        <div class="hpc-sketch-bg" id="hero-sketch"></div>
-        <div class="hpc-inner">
-          <div class="hpc-tag">Featured herb</div>
-          <div class="hpc-name" id="hpc-name">Reishi (灵芝)</div>
-          <div class="hpc-latin" id="hpc-latin">Ganoderma lucidum</div>
-          <div class="hpc-badges" id="hpc-badges">
-            <span class="hpc-badge">Immunomodulatory</span>
-            <span class="hpc-badge">Adaptogen</span>
-            <span class="hpc-badge hpc-badge-warn">Monitor anticoag.</span>
-          </div>
-          <div class="hpc-ev-label">Evidence strength</div>
-          <div class="hpc-ev-track"><div class="hpc-ev-fill" id="hpc-ev-fill"></div></div>
-          <div class="hpc-refs" id="hpc-refs">47 studies · 12 RCTs · updated Mar '26</div>
-          <a id="hpc-link" href="/herb/reishi" style="display:inline-block;margin-top:1rem;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.75);text-decoration:none;border:0.5px solid rgba(255,255,255,0.25);padding:6px 14px;border-radius:4px;transition:all .15s;letter-spacing:0.05em" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">View full dossier →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <a class="stat-cell" href="/formulary"><div class="stat-num" id="stat-herb-count">49</div><div class="stat-label">Herbs catalogued</div><div class="stat-arrow">→</div></a>
-      <a class="stat-cell" href="/research"><div class="stat-num">4,800</div><div class="stat-label">Studies reviewed</div><div class="stat-arrow">→</div></a>
-      <a class="stat-cell" href="/protocols"><div class="stat-num">10</div><div class="stat-label">Active protocols</div><div class="stat-arrow">→</div></a>
-      <div class="stat-cell"><div class="stat-num">Mar '26</div><div class="stat-label">Evidence updated</div></div>
+    <div class="hero__meta label" data-reveal style="--d:620ms">
+      <span>One stick a day</span><span>Scroll ↓</span>
     </div>
   </div>
+  <div class="hero__media">
+    <video class="hero__video" src="img/hero-loop.mp4?v=2" poster="img/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="The aura box, clay coloured, on a plaster plinth as daylight moves across it." data-parallax="0.12"></video>
+    <div class="hero__badge" aria-hidden="true">
+      <svg viewBox="0 0 132 132"><defs><path id="circ" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs><text font-family="DM Mono, monospace" font-size="8.6" letter-spacing="2.6" fill="currentColor"><textPath href="#circ">EVERY DOSE DISCLOSED · NO PROPRIETARY BLEND · </textPath></text></svg>
+      <span><strong>5 g</strong><span class="label" style="font-size:9px">per stick</span></span>
+    </div>
+  </div>
+</section>
 
-  <!-- CAROUSEL -->
-  <section class="carousel-section">
-    <div class="carousel-header">
-      <div>
-        <div class="section-label">Formulary highlights</div>
-        <div class="section-title">Top evidence-rated herbs</div>
-      </div>
-      <div class="carousel-controls">
-        <div class="carousel-btn" onclick="moveCarousel(-1)">←</div>
-        <div class="carousel-btn" onclick="moveCarousel(1)">→</div>
-      </div>
-    </div>
-    <div class="carousel-track-wrap">
-      <div class="carousel-track" id="carousel-track"></div>
-    </div>
-    <div class="carousel-dots" id="carousel-dots"></div>
-    <div style="text-align:center;margin-top:1.75rem">
-      <a class="btn-outline" href="/formulary">View all 55 herbs →</a>
-    </div>
-  </section>
+<!-- Dose marquee -->
+<div class="marquee" data-nav="dark" aria-label="Doses per stick">
+  <div class="marquee__track" id="marquee"></div>
+</div>
 
-  <!-- HOW IT WORKS -->
-  <section class="how">
-    <div class="how-inner">
-      <div class="section-label">Our methodology</div>
-      <div class="section-title">No faith required</div>
-      <div class="how-steps">
-        <div class="how-step">
-          <div class="how-step-num">01</div>
-          <div class="how-step-title">Primary literature only</div>
-          <div class="how-step-body">Every efficacy claim links directly to PubMed. We summarise — you verify. No second-hand sources, no cherry-picking. If the study is weak, we say so.</div>
-          <div class="how-step-tag">PMID citations on every claim</div>
+<!-- Statement -->
+<section class="section">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>00 · Why aura</span><span class="rule__line"></span><span>Every dose on the label.</span></div>
+    <div class="statement">
+      <p class="display" data-words>Skincare stops at the surface.<br>Skin is built <em>from within.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- Range -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="range">
+      <a href="#shop" class="card card--clay" data-reveal>
+        <div class="card__media" data-wipe><img src="img/au-card.jpg" alt="An aura stick standing in a glass of water beside the aura box on a plaster plinth." loading="lazy" style="object-position:50% 62%"></div>
+        <div class="card__top">
+          <div>
+            <div class="card__sku">AU–01</div>
+            <div class="label" style="margin-top:10px">Botanical Daily Blend</div>
+          </div>
+          <span class="pill"><span class="dot dot--live"></span>New</span>
         </div>
-        <div class="how-step">
-          <div class="how-step-num">02</div>
-          <div class="how-step-title">Live evidence ratings</div>
-          <div class="how-step-body">Evidence tiers are updated quarterly. When a meta-analysis changes the picture — even if it weakens the case — the rating changes. We don't hide unflattering results.</div>
-          <div class="how-step-tag">Quarterly review cycle</div>
+        <div class="card__bottom card__bottom--stack">
+          <div class="wordmark" style="font-size:72px">aura</div>
+          <div class="card__desc label">6 botanicals · 60&nbsp;mg vitamin&nbsp;C · 5&nbsp;g</div>
+          <div class="card__action"><span class="btn btn--light">Shop <span class="arr">→</span></span></div>
         </div>
-        <div class="how-step">
-          <div class="how-step-num">03</div>
-          <div class="how-step-title">Full safety database</div>
-          <div class="how-step-body">Drug interactions, hepatotoxicity signals, contraindications — all documented. We list herbs we don't sell because the risk profile is unclear. Transparency is the product.</div>
-          <div class="how-step-tag">ISO/IEC 17025 COA on every batch</div>
+      </a>
+      <div class="card" data-reveal style="--d:120ms">
+        <div class="card__media card__media--bloom" data-wipe><video src="img/bloom-spin.mp4" poster="img/bloom-spin-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+        <div class="bloom-art" aria-hidden="true"><span>bloom</span></div>
+        <div class="card__top">
+          <div>
+            <div class="card__sku">BL–01</div>
+            <div class="label" style="margin-top:10px">Botanical Daily Blend</div>
+          </div>
+          <span class="pill pill--line">In development</span>
+        </div>
+        <div class="card__bottom card__bottom--stack">
+          <div class="wordmark" style="font-size:72px">bloom</div>
+          <p class="card__desc body">A soothing botanical blend for hair.</p>
+          <form class="hearfirst card__action" id="bloomNews" novalidate>
+            <label for="bloomEmail" class="sr-only">Email address, to hear first about bloom</label>
+            <input id="bloomEmail" type="email" required placeholder="Email address" autocomplete="email">
+            <button class="btn" type="submit">Hear first</button>
+          </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- HEALTH GOALS -->
-  <section class="goals-section">
-    <div class="goals-section-inner">
-      <div class="section-label">Browse by goal</div>
-      <div class="section-title">What are you optimising for?</div>
-      <p class="section-sub">Each goal maps to curated herbs with evidence ratings, dosage guidance, and a complete safety profile.</p>
-      <div class="goals-grid" id="goals-grid"></div>
-    </div>
-  </section>
-
-  <!-- LOOKSMAX -->
-  <section class="looksmax">
-    <div class="looksmax-inner">
-      <div>
-        <div class="lm-eyebrow">For the optimisers</div>
-        <h2 class="lm-title">Your <em>phenotype</em><br>is a protocol</h2>
-        <p class="lm-body">Bone density. Collagen synthesis. DHT modulation. Testosterone-to-cortisol ratio. Chinese medicine has been working on these levers for two thousand years. We've mapped the mechanisms.</p>
-        <div class="lm-tags">
-          <span class="lm-tag">Jawline density</span><span class="lm-tag">Skin clarity</span><span class="lm-tag">Hair thickness</span>
-          <span class="lm-tag">Testosterone support</span><span class="lm-tag">Cortisol management</span><span class="lm-tag">Collagen synthesis</span>
+<!-- Unboxing: a frame sequence scrubbed by scroll -->
+<section class="unbox" id="unbox" aria-label="Unboxing aura: the sleeve comes off, the lid lifts, thirty sticks stand in the liner.">
+  <div class="unbox__sticky">
+    <div class="expand__frame" id="expand">
+      <div class="unbox__media">
+        <img class="unbox__poster" id="unboxPoster" src="img/unbox/f_001.webp" alt="">
+        <canvas class="unbox__canvas" id="unboxCanvas" aria-hidden="true"></canvas>
+        <div class="unbox__steps label" aria-hidden="true">
+          <span class="is-active">01 Sleeve</span><span>02 Lid</span><span>03 Sticks</span>
+          <span class="unbox__bar"><span id="unboxBar"></span></span>
         </div>
-        <a class="btn-primary" href="/protocols" style="background:var(--jade)">View all protocols →</a>
       </div>
-      <div class="protocol-stack">
-        <div class="ps-item"><div class="ps-num">01</div><div><div class="ps-title">Androgen support stack</div><div class="ps-herbs">Epimedium · Cistanche · Morinda root · Ashwagandha</div><div class="ps-tag">LH signalling · 5α-reductase · SHBG</div></div></div>
-        <div class="ps-item"><div class="ps-num">02</div><div><div class="ps-title">Collagen & bone mineral</div><div class="ps-herbs">Eucommia · Deer antler · Dipsacus · Epimedium</div><div class="ps-tag">Osteoblast activation · IGF-1 · Collagen cross-linking</div></div></div>
-        <div class="ps-item"><div class="ps-num">03</div><div><div class="ps-title">HPA axis reset</div><div class="ps-herbs">Ashwagandha · Schisandra · Eleuthero</div><div class="ps-tag">Cortisol regulation · Adrenal recovery</div></div></div>
+      <div class="expand__caption">
+        <div class="unbox__captions">
+          <div class="unbox__cap is-active"><h2 class="display d-md">One box. <em>One month.</em></h2><span class="label">30 sticks · one a day</span></div>
+          <div class="unbox__cap"><h2 class="display d-md">Disappears into <em>your drink.</em></h2><span class="label">Unflavoured · stir into at least 250 mL of liquid</span></div>
+          <div class="unbox__cap"><h2 class="display d-md">At home on the counter. <em>Ready to go in your bag.</em></h2><span class="label">Sealed single serves</span></div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRUST -->
-  <section class="trust" style="display:none">
-    <div class="trust-inner">
-      <div>
-        <div class="trust-item-badge">Compliance</div>
-        <div class="trust-item-title">Ships clean, every time</div>
-        <div class="trust-item-body">Every shipment includes a full documentation stack: binomial ingredient declarations, ISO/IEC 17025 COA, GMP certificate, and HS tariff code pre-printed on the outer carton. We've solved the customs problem.</div>
+<!-- Formula (pinned) -->
+<section class="section formula" id="formula" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>01 · Inside one 5 g stick</span><span class="rule__line"></span><span>Spec RC2026057</span></div>
+    <div class="formula__intro">
+      <h2 class="display d-lg" data-reveal>Inside one stick, <em>by weight.</em></h2>
+      <p class="body lede" data-reveal style="--d:120ms">Six ingredients, listed by weight, to the milligram. Scroll through them in the order they fill a 5 g stick.</p>
+    </div>
+  </div>
+  <div class="formula__pin wrap">
+    <div class="formula__grid">
+      <div class="formula__sticky">
+        <div class="stage" aria-hidden="true">
+          <div class="stage__media" id="stageMedia"></div>
+          <div class="stage__readout">
+            <div class="stage__name" id="stageName">
+              <span class="label swap" id="stageIdx">01 / 06</span>
+              <span class="display d-sm" id="stageTitle">Tremella</span>
+            </div>
+            <div>
+              <div class="stage__count"><span id="stageCount">2,000</span><small id="stageUnit">mg</small></div>
+              <div class="label stage__of" style="margin-top:14px"><span class="stage__of-lbl">Running total </span><span id="stageTotal">2,000</span> of 5,000 mg</div>
+            </div>
+          </div>
+          <div class="stage__scale label"><span>5 g</span><span>2.5 g</span><span>0</span></div>
+          <div class="stage__bar" id="stageBar"></div>
+        </div>
       </div>
-      <div>
-        <div class="trust-item-badge">Quality</div>
-        <div class="trust-item-title">Standardised extracts only</div>
-        <div class="trust-item-body">We sell standardised extracts — not raw herbs. Every product declares its active compound percentage. You know exactly what you're getting, in exactly the form studied in the clinical trials we cite.</div>
-      </div>
-      <div>
-        <div class="trust-item-badge">Transparency</div>
-        <div class="trust-item-title">We publish what we don't sell</div>
-        <div class="trust-item-body">Our database includes herbs we've reviewed and decided not to stock — Aconite, Aristolochia, raw He Shou Wu. Those decisions are documented and public. Transparency is not marketing — it's the product.</div>
+      <div class="steps" id="steps"></div>
+    </div>
+  </div>
+  <div class="wrap" style="padding-bottom:var(--section)">
+    <p class="formula__foot" data-reveal>Botanicals are described by traditional use and carry no skin claims. Astragalus is included at the level permitted for foods.</p>
+  </div>
+</section>
+
+<!-- What to expect -->
+<section class="section expect on-clay" id="expect" data-nav="dark">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>02 · What to expect</span><span class="rule__line"></span><span>Compounding, not intensity</span></div>
+    <div class="expect-head">
+      <h2 class="display d-lg" data-reveal>Great things take <em>time to build.</em></h2>
+      <p class="body" data-reveal style="--d:120ms">aura is designed to be taken daily: one stick, every morning, for as long as it’s part of your routine.</p>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="timeline__track"></div>
+      <div class="timeline__fill"></div>
+      <div class="tl"><span class="tl__dot"></span><span class="label">Day</span><div class="tl__when">1</div><p>Your first stick. Tear, pour, stir.</p></div>
+      <div class="tl"><span class="tl__dot"></span><span class="label">Day</span><div class="tl__when">28</div><p>Thirty mornings in a row. The habit is the hard part. Keep going.</p></div>
+      <div class="tl"><span class="tl__dot"></span><span class="label">Weeks</span><div class="tl__when">8–12</div><p>The honest point to judge it for yourself.</p></div>
+      <div class="tl"><span class="tl__dot"></span><span class="label">Day</span><div class="tl__when">365</div><p>365 sticks. The point. It’s not one dose that matters, it’s the 365 of them.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Ritual -->
+<section class="section ritual" id="ritual">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>03 · The ritual</span><span class="rule__line"></span><span>About a minute</span></div>
+    <div class="ritual__head">
+      <h2 class="display d-lg" data-reveal>Tear. Pour. <em>Stir.</em></h2>
+      <div class="must" data-reveal style="--d:120ms">
+        <strong><span class="must__n">250<small>mL</small></span></strong>
+        <span class="label" style="line-height:1.6">Minimum liquid per stick</span>
       </div>
     </div>
-  </section>
+    <div class="rstage" data-rstage>
+      <figure class="rstage__media" data-reveal>
+        <video src="img/sci-pour.mp4" poster="img/sci-pour-poster.jpg" muted loop playsinline preload="metadata" aria-label="A hand tears open an aura stick, pours it into a glass of milk and stirs."></video>
+      </figure>
+      <div class="rstage__progress" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+      <ol class="rstage__steps">
+        <li class="rstep" data-from="0" data-to="1.8" data-reveal>
+          <button type="button" class="rstep__btn">
+            <span class="rstep__num">01</span>
+            <span class="rstep__text">
+              <span class="display d-sm">Tear at the notch.</span>
+              <span class="rstep__p">One stick. No scoops, no guessing at a level spoon.</span>
+            </span>
+          </button>
+          <span class="rstep__bar" aria-hidden="true"><span></span></span>
+        </li>
+        <li class="rstep" data-from="1.8" data-to="4.6" data-reveal style="--d:120ms">
+          <button type="button" class="rstep__btn">
+            <span class="rstep__num">02</span>
+            <span class="rstep__text">
+              <span class="display d-sm">Pour into liquid.</span>
+              <span class="rstep__p">Water, or anything you already drink.</span>
+            </span>
+          </button>
+          <span class="rstep__bar" aria-hidden="true"><span></span></span>
+        </li>
+        <li class="rstep" data-from="4.6" data-to="8.04" data-reveal style="--d:240ms">
+          <button type="button" class="rstep__btn">
+            <span class="rstep__num">03</span>
+            <span class="rstep__text">
+              <span class="display d-sm">Stir until dispersed.</span>
+              <span class="rstep__p">Unflavoured, so it takes on whatever it’s stirred into.</span>
+            </span>
+          </button>
+          <span class="rstep__bar" aria-hidden="true"><span></span></span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- From the kitchen: Instagram recipes -->
+<section class="section kitchen" id="kitchen">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>04 · How we started</span><span class="rule__line"></span><span>@jingherbal</span></div>
+    <div class="rail-head">
+      <div>
+        <h2 class="display d-lg" data-reveal>From the lab <em>to the kitchen.</em></h2>
+        <p class="body" data-reveal style="--d:120ms;margin:24px 0 0;max-width:520px">Jing began as a research platform: herbs used in Traditional Chinese Medicine, each catalogued against the published research. We’ve reviewed around 4,800 studies, and these are the recipes that came out of it: traditional ingredients, made a tasty part of your day.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="labcards labcards--single">
+      <!-- journal:pinned (generated by tools/build-journal.py) -->
+      <div class="labcard labcard--journal" data-reveal>
+        <a class="labcard__media" href="journal-monash-sine-co-incubation.html" data-wipe><img src="img/journal-monash-sine.jpg" alt="We've joined the Monash–IIT Bombay co-incubation program" loading="lazy"></a>
+        <div class="labcard__body">
+          <span class="label">Pinned · News · Research</span>
+          <h3 class="display d-sm"><a href="journal-monash-sine-co-incubation.html">We've joined the Monash–IIT Bombay co-incubation program</a></h3>
+          <p class="body" style="margin:0">Jing has been selected for the co-incubation program run by Monash University and SINE at IIT Bombay, putting world-class research infrastructure, and the best botanical sourcing regions on earth, within reach of a small Melbourne brand.</p>
+          <div class="labcard__links">
+            <a class="btn" href="journal-monash-sine-co-incubation.html">Read the post <span class="arr">→</span></a>
+            <a class="btn btn--outline" href="journal.html">Explore our journal</a>
+          </div>
+        </div>
+      </div>
+      <!-- /journal:pinned -->
+    </div>
+    <div class="rail-nav rail-nav--end" data-reveal>
+        <button type="button" class="rail-btn" data-rail-prev="kitchenRail" aria-label="Previous">←</button>
+        <button type="button" class="rail-btn" data-rail-next="kitchenRail" aria-label="Next">→</button>
+      </div>
+  </div>
+  <div class="hscroll" id="kitchenHs">
+  <div class="hscroll__sticky">
+  <div class="rail-outer">
+    <div class="rail" id="kitchenRail">
+      <button type="button" class="vcard vcard--700" data-ig="Ddix6OdpNQq" data-reveal>
+        <img class="vcard__poster" src="img/recipes/Ddix6OdpNQq-poster.jpg" alt="" loading="lazy" style="object-position:50% 22%">
+        <span class="vcard__shade" aria-hidden="true"></span>
+        <video class="vcard__video" muted loop playsinline preload="none" data-src="img/recipes/Ddix6OdpNQq.mp4" aria-hidden="true"></video>
+        <span class="vcard__top label"><span>Recipe 01</span><span>Reel</span></span>
+        <span class="vcard__title display">Rosebud and goji cooler</span>
+        <span class="vcard__ing label">Goji · dried rosebuds · blueberries · coconut water · ice</span>
+        <span class="vcard__play"><span class="vcard__dot">▶</span><span class="label">Watch on Instagram</span></span>
+      </button>
+      <button type="button" class="vcard vcard--900" data-ig="Dah1-RcpsP7" data-reveal style="--d:100ms">
+        <img class="vcard__poster" src="img/recipes/Dah1-RcpsP7-poster.jpg" alt="" loading="lazy" style="object-position:50% 70%">
+        <span class="vcard__shade" aria-hidden="true"></span>
+        <video class="vcard__video" muted loop playsinline preload="none" data-src="img/recipes/Dah1-RcpsP7.mp4" aria-hidden="true"></video>
+        <span class="vcard__top label"><span>Recipe 02</span><span>Reel</span></span>
+        <span class="vcard__title display">Tremella, apple and red date soup</span>
+        <span class="vcard__ing label">Tremella · apple · red dates · goji · longan</span>
+        <span class="vcard__play"><span class="vcard__dot">▶</span><span class="label">Watch on Instagram</span></span>
+      </button>
+      <a href="journal-five-minute-breakfast-smoothie.html" class="vcard vcard--500" data-reveal style="--d:200ms;text-decoration:none">
+        <img class="vcard__poster" src="img/recipes/smoothie-poster.jpg" alt="" loading="lazy" style="object-position:50% 22%">
+        <span class="vcard__shade" aria-hidden="true"></span>
+        <video class="vcard__video" muted loop playsinline preload="none" data-src="img/recipes/smoothie.mp4" aria-hidden="true"></video>
+        <span class="vcard__top label"><span>Recipe 03</span><span>Journal</span></span>
+        <span class="vcard__title display">The five-minute breakfast smoothie</span>
+        <span class="vcard__ing label">Goji · blueberries · protein powder · aura · milk</span>
+        <span class="vcard__play"><span class="vcard__dot">→</span><span class="label">Read the recipe</span></span>
+      </a>
+      <button type="button" class="vcard vcard--700" data-ig="DbkrRwwp5zn" data-reveal style="--d:300ms">
+        <img class="vcard__poster" src="img/recipes/DbkrRwwp5zn-poster.jpg" alt="" loading="lazy" style="object-position:50% 22%">
+        <span class="vcard__shade" aria-hidden="true"></span>
+        <video class="vcard__video" muted loop playsinline preload="none" data-src="img/recipes/DbkrRwwp5zn.mp4" aria-hidden="true"></video>
+        <span class="vcard__top label"><span>Recipe 04</span><span>Reel</span></span>
+        <span class="vcard__title display">Mandarin peel, red date and goji tea</span>
+        <span class="vcard__ing label">Mandarin peel · goji · apple · red dates · hot water</span>
+        <span class="vcard__play"><span class="vcard__dot">▶</span><span class="label">Watch on Instagram</span></span>
+      </button>
+      <div class="vcard vcard--follow" data-reveal style="--d:400ms">
+        <span class="vcard__top label"><span>More</span><span>Weekly</span></span>
+        <span class="vcard__title display">More recipes, <em>every week.</em></span>
+        <span class="vcard__links">
+          <a class="btn btn--block" href="https://www.instagram.com/jingherbal/" target="_blank" rel="noopener">Instagram <span class="arr">→</span></a>
+          <a class="btn btn--outline btn--block" href="https://www.tiktok.com/@jingherbal" target="_blank" rel="noopener">TikTok <span class="arr">→</span></a>
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- Shop -->
+<section class="section shop" id="shop" style="border-top:.5px solid var(--line)">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>05 · Shop</span><span class="rule__line"></span><span>aura · 30 sticks · 150 g</span></div>
+    <div class="pdp">
+      <div class="gallery">
+        <div class="gallery__thumbs" id="thumbs" role="tablist" aria-label="Product images"></div>
+        <div class="gallery__main" id="galleryMain"></div>
+      </div>
+
+      <form class="buy" id="buy" novalidate>
+        <div class="buy__head">
+          <span class="label" style="color:var(--ink-600)">AU–01 · Botanical Daily Blend</span>
+          <div class="buy__title"><span class="wordmark">aura</span><span class="label">30 sticks · 150 g</span></div>
+          <p class="body" style="margin:0">Six botanicals and 60 mg of vitamin C from acerola, in an unflavoured 5 g stick. One a day, in at least 250 mL of liquid.</p>
+        </div>
+
+        <fieldset class="plans" style="border:0;padding:0;margin:0">
+          <legend class="sr-only">Purchase option</legend>
+          <label class="plan">
+            <input type="radio" name="plan" value="single" checked>
+            <span class="plan__radio"></span>
+            <span><span class="plan__name">One box</span><span class="plan__sub" style="display:block">30 days. No account needed, nothing recurring.</span></span>
+            <span class="plan__price" data-price="single"></span>
+          </label>
+          <label class="plan plan--soon" aria-disabled="true">
+            <input type="radio" name="plan" value="sub" disabled>
+            <span class="plan__radio"></span>
+            <span><span class="plan__name">Every 4 weeks</span><span class="plan__sub" style="display:block">Skip, pause or cancel from your account. No minimum.</span></span>
+            <span class="plan__soon pill pill--line">Coming soon</span>
+          </label>
+        </fieldset>
+
+        <div class="buy__row">
+          <div class="stepper" aria-label="Quantity">
+            <button type="button" data-qty="-1" aria-label="Decrease quantity">−</button>
+            <output id="qty" aria-live="polite">1</output>
+            <button type="button" data-qty="1" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="submit" class="btn btn--block" id="addBtn">Add to cart · <span id="addPrice"></span> <span class="arr">→</span></button>
+        </div>
+
+        <div class="buy__assure label">
+          <span><svg class="assure__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>Non-GMO</span>
+          <span><svg class="assure__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>Free AU shipping over A$70</span>
+          <span><svg class="assure__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>Third-party tested</span>
+          <span><svg class="assure__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/><path d="m2 2 20 20"/></svg>Gluten free</span>
+        </div>
+
+        <div class="acc" data-acc>
+          <div class="acc__item is-open">
+            <button type="button" class="acc__btn" aria-expanded="true"><span class="label">Ingredients · per 5 g stick</span><span class="acc__icon"></span></button>
+            <div class="acc__panel"><div><div class="acc__body">
+              <ul class="panel-list" id="panelList"></ul>
+              <p style="margin-top:14px;font-size:14px">Botanicals are described by traditional use and carry no skin claims. Astragalus is included at the level permitted for foods.</p>
+            </div></div></div>
+          </div>
+          <div class="acc__item">
+            <button type="button" class="acc__btn" aria-expanded="false"><span class="label">How to take it</span><span class="acc__icon"></span></button>
+            <div class="acc__panel"><div><div class="acc__body">
+              <p>One stick a day. Tear at the notch, pour into at least 250 mL of water or another liquid, and stir until dispersed.</p>
+              <p>Take it at the same time each day, so it becomes a habit rather than a decision.</p>
+            </div></div></div>
+          </div>
+          <div class="acc__item">
+            <button type="button" class="acc__btn" aria-expanded="false"><span class="label">Advisory, allergens, storage</span><span class="acc__icon"></span></button>
+            <div class="acc__panel"><div><div class="acc__body">
+              <p>If you are pregnant or breastfeeding, consult your healthcare professional before use.</p>
+              <p>Allergen statement: no allergens present.</p>
+              <p>Storage: store in a cool, dry place, away from direct sunlight.</p>
+              <p>aura is a food, not a medicine, and not a substitute for a varied and balanced diet.</p>
+            </div></div></div>
+          </div>
+          <div class="acc__item">
+            <button type="button" class="acc__btn" aria-expanded="false"><span class="label">Shipping and refunds</span><span class="acc__icon"></span></button>
+            <div class="acc__panel"><div><div class="acc__body">
+              <p>Free shipping within Australia on orders over A$70.</p>
+              <p>If aura isn't for you within 30 days, we refund your first box in full. Tell us why if you like; you don't have to.</p>
+            </div></div></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews: real Trustpilot reviews, screened against the claims register (see README) -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>06 · Reviews</span><span class="rule__line"></span><span>From Trustpilot</span></div>
+    <div class="rail-head">
+      <div>
+        <h2 class="display d-lg" data-reveal>After the first box.</h2>
+        <p class="body" data-reveal style="--d:120ms;margin:24px 0 0;max-width:460px">What people say about the ritual, the label and the habit. Reviews are published as written, and none of them describe results.</p>
+        <p data-reveal style="--d:160ms;margin:20px 0 0"><a class="link-arrow tp-link" href="https://au.trustpilot.com/review/jingherbal.com" target="_blank" rel="noopener">Read our reviews on <img class="tp-logo" src="img/trustpilot-logo.svg" alt="Trustpilot" width="98" height="24" loading="lazy"> <span>→</span></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="rail-outer">
+    <div class="rail" id="reviewRail"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="border-top:.5px solid var(--line)">
+  <div class="wrap">
+    <div class="rule label" data-reveal="rule"><span>07 · Questions</span><span class="rule__line"></span><span>Answered plainly</span></div>
+    <div class="faq">
+      <div>
+        <h2 class="display d-lg" data-reveal>The questions we'd ask.</h2>
+        <p class="body" data-reveal style="--d:120ms;margin-top:24px">Something missing? <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">Contact us →</a></p>
+      </div>
+      <div class="acc acc--lg" data-acc>
+        <div class="acc__item">
+          <button type="button" class="acc__btn" aria-expanded="false"><span>When will I notice something?</span><span class="acc__icon"></span></button>
+          <div class="acc__panel"><div><div class="acc__body">
+            <p>Probably not in the first weeks, and that's expected. Skin renews on a cycle of roughly 28 days, slower with age. Take it daily and assess at 8–12 weeks. That is when to judge it, not a promise of what you'll see.</p>
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button type="button" class="acc__btn" aria-expanded="false"><span>Why is there only one claim?</span><span class="acc__icon"></span></button>
+          <div class="acc__panel"><div><div class="acc__body">
+            <p>Because it's the only one the evidence and Australian food law support for this product. Vitamin C has permitted wording under FSANZ Standard 1.2.7, and we use it verbatim.</p>
+            <p>The botanicals have a long record of traditional use. That record is real, and it is also a different thing from clinical evidence. We describe them by tradition and keep the two apart.</p>
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button type="button" class="acc__btn" aria-expanded="false"><span>Can I stir aura into foods like yoghurt or congee?</span><span class="acc__icon"></span></button>
+          <div class="acc__panel"><div><div class="acc__body">
+            <p>Yes, aura is designed for food and drinks with at least 250 mL of water.</p>
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button type="button" class="acc__btn" aria-expanded="false"><span>Where is aura made?</span><span class="acc__icon"></span></button>
+          <div class="acc__panel"><div><div class="acc__body">
+            <p>aura is blended and packed to our specification by a manufacturing partner in China.</p>
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button type="button" class="acc__btn" aria-expanded="false"><span>Can I take it while pregnant?</span><span class="acc__icon"></span></button>
+          <div class="acc__panel"><div><div class="acc__body">
+            <p>If you are pregnant or breastfeeding, consult your healthcare professional before use.</p>
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button type="button" class="acc__btn" aria-expanded="false"><span>Do I have to subscribe?</span><span class="acc__icon"></span></button>
+          <div class="acc__panel"><div><div class="acc__body">
+            <p>No. One box is the default, and subscriptions are coming soon. When they arrive, you’ll be able to skip, pause or cancel from your account at any time. We’d rather you reorder because it worked than because you forgot to cancel.</p>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA: morning light on the wall, one clear action, one sign-up -->
+<section class="section final2" id="newsletter">
+  <div class="final2__bg" aria-hidden="true">
+    <video src="img/morning-light.mp4" poster="img/morning-light-poster.jpg" muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="wrap final2__inner">
+    <h2 class="display final2__title" data-split>
+      <span class="split-line"><span>Start the ritual,</span></span>
+      <span class="split-line"><span><em>for good.</em></span></span>
+    </h2>
+    <p class="final2__sub" data-reveal>If the ritual isn’t for you within 30 days, we refund your first box in full.</p>
+    <div class="final2__ctas" data-reveal style="--d:100ms">
+      <a href="#shop" class="btn final2__shop">Shop aura <span class="arr">→</span></a>
+      <a href="science.html" class="link-arrow">View science <span>→</span></a>
+    </div>
+    <p class="final2__promise label" data-reveal style="--d:160ms">Free AU shipping over A$70 · Every dose printed on the box, to the milligram</p>
+    <div class="final2__letter" data-reveal style="--d:220ms">
+      <span class="label">The letter · launches and research notes, occasionally</span>
+      <form class="final2__form" id="finalNews" novalidate>
+        <label for="finalEmail" class="sr-only">Email address</label>
+        <input id="finalEmail" type="email" required placeholder="Email address" autocomplete="email">
+        <button class="btn btn--outline" type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<div id="footer-root"></div>
-<script src="shared.js"></script>
-<script>
-document.getElementById('nav-root').innerHTML = renderNav('');
-// Live herb count
-const sc=document.getElementById('stat-herb-count');if(sc&&typeof HERB_COUNT!=='undefined')sc.textContent=HERB_COUNT;
-document.getElementById('footer-root').innerHTML = renderFooter();
-initKlaviyo();
-initMegas();
-
-/* ── HERO CARD — rotating featured herbs ── */
-const heroHerbs = ['reishi','lions-mane','ashwagandha','saw-palmetto','schisandra'];
-let heroIdx = 0;
-function updateHeroCard(herb) {
-  document.getElementById('hpc-name').textContent = `${herb.name} (${herb.zh})`;
-  document.getElementById('hpc-latin').textContent = herb.latin;
-  document.getElementById('hpc-refs').textContent = `${herb.studies} studies · ${herb.rcts} RCTs · updated Mar '26`;
-  document.getElementById('hpc-ev-fill').style.width = herb.evPct + '%';
-  document.getElementById('hero-sketch').innerHTML = getSketch(herb.id);
-  document.getElementById('hpc-link').href = `/herb/${herb.id}`;
-  const b = document.getElementById('hpc-badges');
-  b.innerHTML = herb.tags.map(t=>`<span class="hpc-badge">${t}</span>`).join('');
-}
-function cycleHero() {
-  heroIdx = (heroIdx + 1) % heroHerbs.length;
-  const h = HERBS.find(x=>x.id===heroHerbs[heroIdx]);
-  if(h) updateHeroCard(h);
-}
-// init
-updateHeroCard(HERBS.find(x=>x.id==='reishi'));
-setInterval(cycleHero, 4000);
-
-/* ── CAROUSEL ── */
-const carouselHerbs = HERBS.filter(h=>h.ev==='s');
-const track = document.getElementById('carousel-track');
-const dotsEl = document.getElementById('carousel-dots');
-const visibleCount = 4;
-let carouselPos = 0;
-
-track.innerHTML = carouselHerbs.map(renderHerbCard).join('');
-
-const totalSlides = Math.max(0, carouselHerbs.length - visibleCount);
-dotsEl.innerHTML = Array.from({length:totalSlides+1},(_,i)=>`<div class="carousel-dot ${i===0?'active':''}" onclick="goCarousel(${i})"></div>`).join('');
-
-function moveCarousel(dir) {
-  carouselPos = Math.max(0, Math.min(totalSlides, carouselPos + dir));
-  applyCarousel();
-}
-function goCarousel(i) {
-  carouselPos = i;
-  applyCarousel();
-}
-function applyCarousel() {
-  const cardW = 230 + 20; // card width + gap
-  track.style.transform = `translateX(-${carouselPos * cardW}px)`;
-  document.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===carouselPos));
-}
-
-/* ── GOALS GRID ── */
-const goalIcons = {
-  immune:`<path d="M8 2L10 6L14 6L11 9L12 13L8 11L4 13L5 9L2 6L6 6Z"/>`,
-  'hair-loss':`<path d="M8 2Q6 4 5 7Q4 10 6 13 M8 2Q10 4 11 7Q12 10 10 13 M8 2L8 13"/>`,
-  testosterone:`<circle cx="8" cy="5" r="3"/><path d="M8 8L8 14 M5 11L11 11"/>`,
-  skin:`<circle cx="8" cy="8" r="5"/><path d="M6 8Q8 6 10 8Q8 10 6 8Z"/>`,
-  stress:`<path d="M4 8Q4 4 8 4Q12 4 12 8Q12 12 8 12Q6 12 5 11"/><path d="M8 7L8 9"/>`,
-  sleep:`<path d="M12 8Q12 12 8 14Q4 12 4 8Q4 4 6 3Q6 8 10 8Q11 6 12 8Z"/>`,
-  'bone-density':`<path d="M5 4L11 12 M5 12L11 4"/><circle cx="5" cy="4" r="2" fill="none"/><circle cx="11" cy="12" r="2" fill="none"/>`,
-  focus:`<path d="M4 8Q4 4 8 2Q12 4 12 8Q11 12 8 14Q5 12 4 8Z"/><circle cx="8" cy="8" r="2"/>`,
-  'liver-detox':`<path d="M3 4Q2 8 4 11Q7 14 10 12Q14 10 13 6Q12 3 9 3Q6 2 3 4Z"/>`,
-  heart:`<path d="M8 13Q2 9 2 5Q2 2 5 2Q7 2 8 4Q9 2 11 2Q14 2 14 5Q14 9 8 13Z"/>`,
-  energy:`<path d="M10 2L6 9L9 9L6 14L12 7L9 7Z"/>`,
-  'gut-health':`<path d="M5 2Q3 4 4 7Q5 10 3 13 M8 2Q10 4 9 7Q8 10 10 13 M11 2Q13 5 12 8Q11 11 13 14"/>`,
-  'anti-ageing':`<circle cx="8" cy="8" r="6"/><path d="M8 5L8 8L10 10"/>`,
-  'eye-health':`<path d="M2 8Q5 4 8 4Q11 4 14 8Q11 12 8 12Q5 12 2 8Z"/><circle cx="8" cy="8" r="2"/>`,
-  respiratory:`<path d="M8 2L8 9 M4 9Q2 10 2 12Q2 14 4 14Q6 14 6 12L6 8 M12 9Q14 10 14 12Q14 14 12 14Q10 14 10 12L10 8"/>`,
-};
-
-const goalIconPaths = {
-  immune:`<path d="M8 2L10 6L14 6L11 9L12 13L8 11L4 13L5 9L2 6L6 6Z"/>`,
-  'hair-loss':`<path d="M8 2Q6 4 5 7Q4 10 6 13 M8 2Q10 4 11 7Q12 10 10 13 M8 2L8 13"/>`,
-  testosterone:`<circle cx="8" cy="5" r="3"/><path d="M8 8L8 14 M5 11L11 11"/>`,
-  skin:`<circle cx="8" cy="8" r="5"/><path d="M6 8Q8 6 10 8Q8 10 6 8Z"/>`,
-  stress:`<path d="M4 8Q4 4 8 4Q12 4 12 8Q12 12 8 12Q6 12 5 11"/><path d="M8 7L8 9"/>`,
-  sleep:`<path d="M12 8Q12 12 8 14Q4 12 4 8Q4 4 6 3Q6 8 10 8Q11 6 12 8Z"/>`,
-  'bone-density':`<path d="M5 4L11 12 M5 12L11 4" stroke-linecap="round"/><circle cx="5" cy="4" r="2" fill="none"/><circle cx="11" cy="12" r="2" fill="none"/>`,
-  focus:`<path d="M4 8Q4 4 8 2Q12 4 12 8Q11 12 8 14Q5 12 4 8Z"/><circle cx="8" cy="8" r="2"/>`,
-  'liver-detox':`<path d="M3 4Q2 8 4 11Q7 14 10 12Q14 10 13 6Q12 3 9 3Q6 2 3 4Z"/>`,
-  heart:`<path d="M8 13Q2 9 2 5Q2 2 5 2Q7 2 8 4Q9 2 11 2Q14 2 14 5Q14 9 8 13Z"/>`,
-  energy:`<path d="M10 2L6 9L9 9L6 14L12 7L9 7Z"/>`,
-  'gut-health':`<path d="M5 2Q3 4 4 7Q5 10 3 13 M8 2Q10 4 9 7Q8 10 10 13 M11 2Q13 5 12 8Q11 11 13 14"/>`,
-  'anti-ageing':`<circle cx="8" cy="8" r="6"/><path d="M8 5L8 8L10 10"/>`,
-  'eye-health':`<path d="M2 8Q5 4 8 4Q11 4 14 8Q11 12 8 12Q5 12 2 8Z"/><circle cx="8" cy="8" r="2"/>`,
-  respiratory:`<path d="M8 2L8 9 M4 9Q2 10 2 12Q2 14 4 14Q6 14 6 12L6 8 M12 9Q14 10 14 12Q14 14 12 14Q10 14 10 12L10 8"/>`,
-};
-
-document.getElementById('goals-grid').innerHTML = GOALS.map(g=>`
-  <a class="goal-tile" href="/formulary?goal=${g.id}">
-    <div class="goal-tile-icon">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${goalIconPaths[g.id]||'<circle cx="8" cy="8" r="6"/>'}</svg>
+<footer class="footer" data-nav="dark">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__col">
+        <img src="img/jing-logo-white.png" alt="Jing" style="width:64px;margin-bottom:12px" loading="lazy">
+        <p style="margin:0;max-width:340px;opacity:.8">Skin nutrition rooted in Traditional Chinese Medicine, held to a Western evidence standard.<span class="footer__origin">Developed and designed in Australia.</span></p>
+      </div>
+      <div class="footer__col">
+        <span class="label">Shop</span>
+        <a href="#shop">aura · 30 sticks</a>
+        <a href="#footer-news">bloom · in development</a>
+      </div>
+      <div class="footer__col">
+        <span class="label">Learn</span>
+        <a href="#formula">The formula</a>
+        <a href="science.html">The science</a>
+        <a href="journal.html">Journal</a>
+        <a href="our-story.html">Our story</a>
+        <a href="#expect">What to expect</a>
+        <a href="#faq">Questions</a>
+        <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">Contact us</a>
+      </div>
+      <div class="footer__col" id="footer-news">
+        <span class="label">Keep up to date</span>
+        <p style="margin:0;opacity:.8">Launches, recipes and the research we’re reading.</p>
+        <a class="footer__join link-arrow" href="#newsletter">Sign up above <span>↑</span></a>
+        <form class="news" id="news" novalidate>
+          <label for="newsEmail" class="sr-only">Email</label>
+          <input id="newsEmail" type="email" placeholder="Email address" autocomplete="email">
+          <button class="btn btn--light" type="submit">Join</button>
+        </form>
+      </div>
     </div>
-    <div class="goal-tile-name">${g.name}</div>
-    <div class="goal-tile-herbs">${g.herbs}</div>
-    <div class="goal-tile-tags">${g.tags.map(t=>`<span class="tag tag-jade">${t}</span>`).join('')}</div>
-  </a>`).join('');
-</script>
+    <div class="footer__big" aria-hidden="true">aura</div>
+    <div class="footer__legal">
+      <p>aura is a food, not a medicine, and not a substitute for a varied and balanced diet. Vitamin C contributes to normal collagen formation for the normal function of skin. Botanicals are described by traditional use and carry no skin claims. Astragalus is included at the level permitted for foods. If you are pregnant or breastfeeding, consult your healthcare professional before use.</p>
+      <p>© 2026 Apothecary Labs Pty Ltd · Balwyn VIC 3103<br><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of sale</a> · <a href="shipping-returns.html">Shipping &amp; returns</a> · <a href="#" data-cookie-settings>Cookie settings</a><br><a href="https://www.instagram.com/jingherbal/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@jingherbal" target="_blank" rel="noopener">TikTok</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart -->
+<div class="scrim" data-close-cart></div>
+<aside class="drawer" id="drawer" data-lenis-prevent aria-label="Cart" aria-hidden="true">
+  <div class="drawer__head">
+    <span class="label">Your cart</span>
+    <button class="drawer__close label" data-close-cart>Close ✕</button>
+  </div>
+  <div class="drawer__body">
+    <div class="ship">
+      <span class="label" id="shipMsg"></span>
+      <div class="ship__bar"><span id="shipBar"></span></div>
+    </div>
+    <div id="cartLines"></div>
+  </div>
+  <div class="drawer__foot">
+    <div class="total"><span class="label">Subtotal</span><strong id="cartTotal">A$0</strong></div>
+    <button class="btn btn--block" id="checkout">Checkout <span class="arr">→</span></button>
+    <span class="label" style="color:var(--ink-600);text-align:center">Shipping calculated at checkout</span>
+  </div>
+</aside>
+
+<!-- Instagram lightbox: the embed loads only when a video is opened -->
+<div class="lightbox" id="lightbox" aria-hidden="true" data-lenis-prevent>
+  <div class="lightbox__scrim" data-close-lb></div>
+  <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Instagram video">
+    <div class="lightbox__bar">
+      <a class="link-arrow" id="lbLink" href="https://www.instagram.com/jingherbal/" target="_blank" rel="noopener">Open on Instagram <span>→</span></a>
+      <button type="button" class="drawer__close label" data-close-lb>Close ✕</button>
+    </div>
+    <div class="lightbox__frame" id="lbFrame"></div>
+  </div>
+</div>
+
+<!-- Sticky buy bar -->
+<div class="buybar" id="buybar">
+  <div class="buybar__meta"><span class="wordmark">aura</span><span class="label">30 sticks · from <span data-price="sub"></span></span></div>
+  <a href="#shop" class="btn">Shop <span class="arr">→</span></a>
+</div>
+
+<div class="toast label" id="toast" role="status"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/data.js?v=7"></script>
+<script src="js/site.js?v=32"></script>
+<script src="js/analytics.js?v=6"></script>
+<script src="js/menu.js?v=2"></script>
 </body>
 </html>

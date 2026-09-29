@@ -1,427 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Privacy Policy — Jing</title>
-<meta name="description" content="Jing's privacy policy. How we collect, use and protect your personal information in accordance with the Australian Privacy Act 1988.">
-<link rel="canonical" href="https://jingherbal.com/privacy.html">
-<meta property="og:title" content="Privacy Policy — Jing">
-<meta property="og:description" content="How Jing collects, uses and protects your personal information.">
-<meta property="og:url" content="https://jingherbal.com/privacy.html">
-<!-- Favicons — light/dark adaptive -->
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="stylesheet" href="shared.css">
-<style>
-.policy-hero {
-  background: var(--ink);
-  padding: 3.5rem 2rem 3rem;
-  border-bottom: 0.5px solid rgba(255,255,255,0.08);
-}
-.policy-hero-inner {
-  max-width: 760px;
-  margin: 0 auto;
-}
-.policy-eyebrow {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--jade);
-  margin-bottom: 0.75rem;
-}
-.policy-title {
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  color: #fff;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.75rem;
-}
-.policy-meta {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.06em;
-}
-
-.policy-body {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 3rem 2rem 5rem;
-}
-
-/* Table of contents */
-.toc {
-  background: var(--cream2);
-  border: 0.5px solid var(--border);
-  border-radius: 10px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 3rem;
-}
-.toc-title {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink3);
-  margin-bottom: 0.75rem;
-}
-.toc-links {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  counter-reset: toc;
-}
-.toc-links a {
-  font-size: 13px;
-  color: var(--ink2);
-  text-decoration: none;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  transition: color .15s;
-}
-.toc-links a:hover { color: var(--jade-m); }
-.toc-links a::before {
-  counter-increment: toc;
-  content: counter(toc, decimal-leading-zero);
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--ink4);
-  flex-shrink: 0;
-}
-
-/* Policy sections */
-.policy-section {
-  margin-bottom: 3rem;
-  scroll-margin-top: 80px;
-}
-.policy-section-num {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--jade);
-  margin-bottom: 0.5rem;
-}
-.policy-section h2 {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 0.5px solid var(--border);
-}
-.policy-section p {
-  font-size: 0.9rem;
-  color: var(--ink2);
-  line-height: 1.85;
-  margin-bottom: 0.85rem;
-}
-.policy-section p:last-child { margin-bottom: 0; }
-.policy-section strong { color: var(--ink); font-weight: 500; }
-.policy-section ul {
-  margin: 0.5rem 0 0.85rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.policy-section ul li {
-  font-size: 0.9rem;
-  color: var(--ink2);
-  line-height: 1.7;
-}
-.policy-section a {
-  color: var(--jade-m);
-  text-decoration: underline;
-  text-decoration-color: rgba(15,110,86,0.3);
-}
-.policy-section a:hover { text-decoration-color: var(--jade-m); }
-
-/* Info box */
-.info-box {
-  background: var(--jade-l);
-  border: 0.5px solid rgba(29,158,117,0.2);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin: 1.25rem 0;
-}
-.info-box p {
-  font-size: 0.85rem !important;
-  color: var(--jade-d) !important;
-  margin-bottom: 0 !important;
-}
-
-/* Contact box */
-.contact-box {
-  background: var(--ink);
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-top: 3rem;
-}
-.contact-box h3 {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
-}
-.contact-box p {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.7;
-  margin-bottom: 0.75rem;
-}
-.contact-box a {
-  color: var(--jade) !important;
-  text-decoration: none;
-}
-.contact-box a:hover { text-decoration: underline; }
-
-@media (max-width: 600px) {
-  .policy-body { padding: 2rem 1.25rem 3.5rem; }
-  .policy-section h2 { font-size: 1.2rem; }
-}
-</style>
+<meta charset="utf-8">
+<script src="js/gate.js?v=2"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Jing</title>
+<meta name="description" content="What we collect, why, and what you can ask us to do with it.">
+<meta name="theme-color" content="#A3512F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400&display=swap">
+<link rel="stylesheet" href="css/site.css?v=66">
+<!-- meta:share -->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jing">
+<meta property="og:title" content="Privacy policy — Jing">
+<meta property="og:description" content="What we collect, why, and what you can ask us to do with it.">
+<meta property="og:image" content="https://jingherbal.com/img/og-image.jpg">
+<meta property="og:url" content="https://jingherbal.com/privacy">
+<meta name="twitter:card" content="summary_large_image">
+<!-- /meta:share -->
 </head>
 <body>
 
-<div id="topbar-mount"></div>
-<div id="nav-mount"></div>
-
-<div class="policy-hero">
-  <div class="policy-hero-inner">
-    <div class="policy-eyebrow">Legal</div>
-    <h1 class="policy-title">Privacy Policy</h1>
-    <p class="policy-meta">Last updated: April 2026 · Jing Pty Ltd · ABN 15 677 842 723</p>
+<!-- Announcement -->
+<div class="announce label" aria-live="polite">
+  <div class="announce__track" id="announce">
+    <div class="announce__item">Every dose printed on the box, to the milligram</div>
+    <div class="announce__item">Free AU shipping over A$70</div>
+    <div class="announce__item">Not for you? Your first box is refunded in full</div>
   </div>
 </div>
 
-<div class="policy-body">
+<!-- Nav -->
+<header class="nav" id="nav">
+  <nav class="nav__bar" aria-label="Main">
+    <div class="nav__links">
+      <a href="science.html">Science</a>
+      <a href="journal.html">Journal</a>
+      <a href="our-story.html">Our story</a>
+    </div>
+    <a href="index.html" class="wordmark" aria-label="aura, back to top">aura</a>
+    <div class="nav__right">
+      <button type="button" class="nav__menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <a class="nav__cart" href="index.html#shop">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <a href="index.html#shop" class="btn nav__cta">Shop aura</a>
+    </div>
+  </nav>
+</header>
 
-  <div class="info-box">
-    <p><strong>Plain English summary:</strong> We collect your email address when you sign up to our newsletter. We use it to send you updates about new herb dossiers, protocol changes and research. We don't sell your data, we don't share it with third parties for marketing, and you can unsubscribe at any time.</p>
+<!-- Phone menu: the page links the nav bar has no room for -->
+<div class="menu" id="menu" hidden data-lenis-prevent>
+  <nav class="menu__inner" aria-label="Menu">
+    <a class="menu__link" href="index.html#shop">Shop aura</a>
+    <a class="menu__link" href="science.html">Science</a>
+    <a class="menu__link" href="journal.html">Journal</a>
+    <a class="menu__link" href="our-story.html">Our story</a>
+    <div class="menu__small label">
+      <a href="index.html#faq">Questions</a>
+      <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">Contact us</a>
+    </div>
+  </nav>
+</div>
+
+<main id="top" class="legal">
+<section class="post-head" data-nav="dark">
+  <div class="wrap post-wrap">
+    <span class="label">Help · Privacy</span>
+    <h1 class="display d-lg">Privacy policy</h1>
+    <p class="lede">What we collect, why, and what you can ask us to do with it.</p>
   </div>
+</section>
+<section class="section">
+  <div class="wrap post-wrap">
+    <p class="legal__draft label">Draft for legal review · Items marked TBC need a decision before launch</p>
+    <div class="post-body legal__body">
 
-  <!-- Table of contents -->
-  <div class="toc">
-    <div class="toc-title">Contents</div>
-    <div class="toc-links">
-      <a href="#who-we-are">Who we are</a>
-      <a href="#what-we-collect">What personal information we collect</a>
-      <a href="#how-we-collect">How we collect it</a>
-      <a href="#why-we-collect">Why we collect it</a>
-      <a href="#how-we-use">How we use your information</a>
-      <a href="#disclosure">Disclosure to third parties</a>
-      <a href="#overseas">Overseas disclosure</a>
-      <a href="#storage">Storage and security</a>
-      <a href="#access">Access and correction</a>
-      <a href="#cookies">Cookies and tracking</a>
-      <a href="#marketing">Marketing communications</a>
-      <a href="#complaints">Complaints</a>
-      <a href="#changes">Changes to this policy</a>
-      <a href="#contact">Contact us</a>
+<h2>Who we are</h2>
+<p>Apothecary Labs Pty Ltd (ABN 15 677 842 723), trading as Jing, Suite 116, 6/399 Belmore Road, Balwyn VIC 3103. We handle personal information in line with the Australian Privacy Principles.</p>
+
+<h2>What we collect</h2>
+<ul>
+  <li><strong>Your email address,</strong> if you sign up for our letter (launches, recipes and research notes).</li>
+  <li><strong>What you send us</strong> through <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">our contact form</a>.</li>
+  <li><strong>Order details</strong> when checkout opens: your name, delivery address, email and phone number. Payment details go to our payment provider (<span class="tbc">TBC</span>), not to us.</li>
+</ul>
+<p>We don't ask for health information, and we'd ask you not to send it to us. If you have questions about aura and your health, please speak to your healthcare professional.</p>
+
+<h2>What the site stores in your browser</h2>
+<ul>
+  <li>Your cart is kept in your browser's local storage so it's there when you come back. It isn't sent to us until you check out.</li>
+  <li><strong>Google Analytics,</strong> only if you choose Accept on our cookie notice. It uses cookies to count visits and see which pages are read and whether the shop is used, such as adding to cart or signing up. It doesn't tell us who you are. If you choose Decline, no analytics cookies are set. You can change your choice any time with <a href="#" data-cookie-settings>Cookie settings</a> in the footer.</li>
+  <li><strong>The Meta Pixel,</strong> also only if you choose Accept. It tells Meta (Facebook and Instagram) when you view the shop, add to cart, start checkout or sign up, so we can measure our ads and show them to people who have visited. Meta may link this to your Facebook or Instagram account under its own policy. If you choose Decline, the pixel doesn't load.</li>
+  <li>Other advertising pixels (for example TikTok): not used. If we add them, this page will say so first.</li>
+</ul>
+
+<h2>Services the site relies on</h2>
+<ul>
+  <li><strong>Fonts and scripts</strong> load from Google Fonts and jsDelivr, which receive your IP address to deliver them.</li>
+  <li><strong>Instagram:</strong> if you open a recipe video, Instagram's embed loads and Meta may set cookies under its own policy.</li>
+  <li><strong>Our contact form</strong> is hosted by Tally, which stores what you submit.</li>
+  <li><strong>Google Analytics</strong> (Google LLC), if you accept cookies. Google processes this data in the United States and elsewhere.</li>
+  <li><strong>Meta Pixel</strong> (Meta Platforms), if you accept cookies. Meta processes this data in the United States and elsewhere.</li>
+  <li>Email platform, checkout and delivery partners: <span class="tbc">TBC</span></li>
+</ul>
+<p>Some of these providers store data outside Australia, including in the United States (Google, Meta) and the European Union (Tally). Others: <span class="tbc">TBC</span></p>
+
+<h2>How we use it</h2>
+<ul>
+  <li>To fulfil and deliver your order, and to contact you about it.</li>
+  <li>To reply to you.</li>
+  <li>To send our letter, only if you signed up. Every email has an unsubscribe link.</li>
+  <li>To measure our advertising and show our ads to people who have visited the site, only if you accepted cookies.</li>
+</ul>
+<p>We don't sell your personal information.</p>
+
+<h2>How long we keep it</h2>
+<p><span class="tbc">TBC</span></p>
+
+<h2>Your choices</h2>
+<p>You can ask to see the personal information we hold about you, ask us to correct it, or ask us to delete it, through <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">our contact form</a>. We'll respond within <span class="tbc">TBC</span> days.</p>
+
+<h2>Complaints</h2>
+<p>If you're unhappy with how we've handled your information, tell us first through <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">our contact form</a>. If we don't resolve it, you can contact the Office of the Australian Information Commissioner at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a>.</p>
+
+<h2>Changes</h2>
+<p>We'll update this page if our practices change, with the date below.</p>
+
+      <p class="legal__updated label">Last updated 29 September 2026</p>
     </div>
   </div>
-
-  <!-- 1. Who we are -->
-  <div class="policy-section" id="who-we-are">
-    <div class="policy-section-num">01</div>
-    <h2>Who we are</h2>
-    <p>This Privacy Policy applies to Jing Pty Ltd (ABN 15 677 842 723), trading as <strong>Jing</strong> ("we", "us", "our"). We operate the website at <a href="https://jingherbal.com">jingherbal.com</a> and the online store at <a href="https://shop.jingherbal.com">shop.jingherbal.com</a>.</p>
-    <p>We are committed to protecting your personal information and complying with the <strong>Privacy Act 1988 (Cth)</strong> and the <strong>Australian Privacy Principles (APPs)</strong>. This policy explains how we collect, use, hold and disclose your personal information.</p>
+</section>
+</main>
+<footer class="footer" data-nav="dark">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__col">
+        <img src="img/jing-logo-white.png" alt="Jing" style="width:64px;margin-bottom:12px" loading="lazy">
+        <p style="margin:0;max-width:340px;opacity:.8">Skin nutrition rooted in Traditional Chinese Medicine, held to a Western evidence standard.<span class="footer__origin">Developed and designed in Australia.</span></p>
+      </div>
+      <div class="footer__col">
+        <span class="label">Shop</span>
+        <a href="index.html#shop">aura · 30 sticks</a>
+        <a href="index.html#footer-news">bloom · in development</a>
+      </div>
+      <div class="footer__col">
+        <span class="label">Learn</span>
+        <a href="index.html#formula">The formula</a>
+        <a href="science.html">The science</a>
+        <a href="journal.html">Journal</a>
+        <a href="our-story.html">Our story</a>
+        <a href="index.html#expect">What to expect</a>
+        <a href="index.html#faq">Questions</a>
+        <a href="https://tally.so/r/WOM8Wv" target="_blank" rel="noopener">Contact us</a>
+      </div>
+      <div class="footer__col" id="footer-news">
+        <span class="label">Keep up to date</span>
+        <p style="margin:0;opacity:.8">Launches, recipes and the research we’re reading.</p>
+        <a class="footer__join link-arrow" href="index.html#newsletter">Sign up above <span>↑</span></a>
+        <form class="news" id="news" novalidate>
+          <label for="newsEmail" class="sr-only">Email</label>
+          <input id="newsEmail" type="email" placeholder="Email address" autocomplete="email">
+          <button class="btn btn--light" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__big" aria-hidden="true">aura</div>
+    <div class="footer__legal">
+      <p>aura is a food, not a medicine, and not a substitute for a varied and balanced diet. Vitamin C contributes to normal collagen formation for the normal function of skin. Botanicals are described by traditional use and carry no skin claims. Astragalus is included at the level permitted for foods. If you are pregnant or breastfeeding, consult your healthcare professional before use.</p>
+      <p>© 2026 Apothecary Labs Pty Ltd · Balwyn VIC 3103<br><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of sale</a> · <a href="shipping-returns.html">Shipping &amp; returns</a> · <a href="index.html#" data-cookie-settings>Cookie settings</a><br><a href="https://www.instagram.com/jingherbal/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@jingherbal" target="_blank" rel="noopener">TikTok</a></p>
+    </div>
   </div>
+</footer>
 
-  <!-- 2. What we collect -->
-  <div class="policy-section" id="what-we-collect">
-    <div class="policy-section-num">02</div>
-    <h2>What personal information we collect</h2>
-    <p>We may collect the following types of personal information:</p>
-    <ul>
-      <li><strong>Contact information:</strong> name and email address when you subscribe to our newsletter or contact us</li>
-      <li><strong>Order information:</strong> name, email, shipping address and payment details when you place an order through our Shopify store</li>
-      <li><strong>Communications:</strong> any information you provide when you contact us by email or through our website</li>
-      <li><strong>Usage data:</strong> information about how you use our website, including pages visited and time spent (collected anonymously via analytics)</li>
-    </ul>
-    <p>We do not collect sensitive information such as health information, financial account details (payment processing is handled by Shopify and Stripe), or government identifiers.</p>
-  </div>
-
-  <!-- 3. How we collect it -->
-  <div class="policy-section" id="how-we-collect">
-    <div class="policy-section-num">03</div>
-    <h2>How we collect it</h2>
-    <p>We collect personal information in the following ways:</p>
-    <ul>
-      <li><strong>Directly from you:</strong> when you subscribe to our email newsletter, place an order, or contact us</li>
-      <li><strong>Automatically:</strong> when you visit our website, we may collect anonymous usage data through analytics tools</li>
-      <li><strong>Through third-party platforms:</strong> when you interact with our social media accounts or Shopify store</li>
-    </ul>
-    <p>We will always tell you why we are collecting your information at or before the time we collect it.</p>
-  </div>
-
-  <!-- 4. Why we collect it -->
-  <div class="policy-section" id="why-we-collect">
-    <div class="policy-section-num">04</div>
-    <h2>Why we collect it</h2>
-    <p>We collect personal information for the following primary purposes:</p>
-    <ul>
-      <li>To send you our newsletter and updates about new herb dossiers, protocols and clinical research (only with your consent)</li>
-      <li>To process and fulfil your orders</li>
-      <li>To respond to your enquiries and provide customer support</li>
-      <li>To improve our website and services</li>
-      <li>To comply with our legal obligations</li>
-    </ul>
-    <p>We will not collect personal information unless it is reasonably necessary for one of these purposes.</p>
-  </div>
-
-  <!-- 5. How we use it -->
-  <div class="policy-section" id="how-we-use">
-    <div class="policy-section-num">05</div>
-    <h2>How we use your information</h2>
-    <p>We use your personal information only for the purpose for which it was collected, or for a directly related secondary purpose. Specifically:</p>
-    <ul>
-      <li><strong>Email address:</strong> used to send you newsletters and marketing communications you have opted into, and to communicate about your orders</li>
-      <li><strong>Order information:</strong> used to process your purchase, arrange delivery, and provide after-sales support</li>
-      <li><strong>Usage data:</strong> used in aggregate, anonymised form to understand how people use our website and improve it</li>
-    </ul>
-    <p>We will never use your personal information for a purpose that would be unexpected or that you have not consented to.</p>
-  </div>
-
-  <!-- 6. Disclosure to third parties -->
-  <div class="policy-section" id="disclosure">
-    <div class="policy-section-num">06</div>
-    <h2>Disclosure to third parties</h2>
-    <p>We do not sell, rent or trade your personal information to third parties for their marketing purposes.</p>
-    <p>We may share your personal information with the following third-party service providers who assist us in operating our business:</p>
-    <ul>
-      <li><strong>Klaviyo</strong> — email marketing platform. Your email address is stored and processed by Klaviyo to send newsletters. Klaviyo's privacy policy is available at <a href="https://www.klaviyo.com/legal/privacy-notice" target="_blank" rel="noopener">klaviyo.com</a>.</li>
-      <li><strong>Shopify</strong> — e-commerce platform. Order and payment information is processed and stored by Shopify. Shopify's privacy policy is at <a href="https://www.shopify.com/legal/privacy" target="_blank" rel="noopener">shopify.com</a>.</li>
-      <li><strong>Netlify</strong> — website hosting provider. Netlify processes basic server logs. Privacy policy at <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com</a>.</li>
-    </ul>
-    <p>These providers are only authorised to use your information as necessary to provide services to us. We use contractual and other measures to ensure they protect your information.</p>
-    <p>We may also disclose your personal information where required by law, court order, or in connection with legal proceedings.</p>
-  </div>
-
-  <!-- 7. Overseas disclosure -->
-  <div class="policy-section" id="overseas">
-    <div class="policy-section-num">07</div>
-    <h2>Overseas disclosure</h2>
-    <p>Some of our third-party service providers store and process data outside Australia. Klaviyo and Shopify are US-based companies and their servers are located in the United States.</p>
-    <p>Before disclosing your personal information to an overseas recipient, we take reasonable steps to ensure the recipient complies with the Australian Privacy Principles or is otherwise bound by a law or binding scheme that provides substantially similar protection.</p>
-    <p>By providing us with your personal information, you consent to us disclosing it to overseas recipients for the purposes described in this policy.</p>
-  </div>
-
-  <!-- 8. Storage and security -->
-  <div class="policy-section" id="storage">
-    <div class="policy-section-num">08</div>
-    <h2>Storage and security</h2>
-    <p>We take reasonable steps to protect your personal information from misuse, interference, loss, and unauthorised access, modification or disclosure. These steps include:</p>
-    <ul>
-      <li>Using industry-standard encryption (HTTPS/TLS) for all data transmitted to and from our website</li>
-      <li>Using reputable, security-audited third-party platforms (Shopify, Klaviyo) to store customer data</li>
-      <li>Limiting access to personal information to staff who need it to perform their role</li>
-    </ul>
-    <p>When we no longer need your personal information, we will take reasonable steps to destroy or de-identify it.</p>
-  </div>
-
-  <!-- 9. Access and correction -->
-  <div class="policy-section" id="access">
-    <div class="policy-section-num">09</div>
-    <h2>Access and correction</h2>
-    <p>Under the Australian Privacy Principles, you have the right to:</p>
-    <ul>
-      <li>Request access to the personal information we hold about you</li>
-      <li>Request correction of your personal information if it is inaccurate, out of date, incomplete, or misleading</li>
-    </ul>
-    <p>To make a request, please contact us at <a href="mailto:hello@jingherbal.com">hello@jingherbal.com</a>. We will respond within 30 days. We will not charge a fee for making a request, though we may charge a reasonable fee for providing access in complex cases.</p>
-    <p>In some circumstances we may decline your request, for example where providing access would be unlawful or where it would impact the privacy of other individuals. If we decline, we will tell you why in writing.</p>
-  </div>
-
-  <!-- 10. Cookies -->
-  <div class="policy-section" id="cookies">
-    <div class="policy-section-num">10</div>
-    <h2>Cookies and tracking</h2>
-    <p>Our website uses cookies — small text files stored on your device — to help us understand how visitors use the site.</p>
-    <p>We use the following types of cookies:</p>
-    <ul>
-      <li><strong>Essential cookies:</strong> required for the website to function correctly. These cannot be disabled.</li>
-      <li><strong>Analytics cookies:</strong> help us understand how visitors interact with our website by collecting information anonymously. We use privacy-first analytics tools that do not identify individual users.</li>
-      <li><strong>Marketing cookies:</strong> set by Klaviyo to enable our newsletter sign-up form to function and to identify returning visitors.</li>
-    </ul>
-    <p>You can control cookies through your browser settings. Note that disabling certain cookies may affect the functionality of our website.</p>
-  </div>
-
-  <!-- 11. Marketing -->
-  <div class="policy-section" id="marketing">
-    <div class="policy-section-num">11</div>
-    <h2>Marketing communications</h2>
-    <p>We will only send you marketing communications (such as our newsletter) if you have explicitly opted in. Every marketing email we send includes an unsubscribe link that allows you to opt out at any time.</p>
-    <p>To unsubscribe, either click the unsubscribe link in any of our emails or contact us at <a href="mailto:hello@jingherbal.com">hello@jingherbal.com</a>.</p>
-    <p>We comply with the <strong>Spam Act 2003 (Cth)</strong> and will not send unsolicited commercial electronic messages.</p>
-  </div>
-
-  <!-- 12. Complaints -->
-  <div class="policy-section" id="complaints">
-    <div class="policy-section-num">12</div>
-    <h2>Complaints</h2>
-    <p>If you believe we have breached the Australian Privacy Principles or this Privacy Policy, you may lodge a complaint with us by contacting <a href="mailto:hello@jingherbal.com">hello@jingherbal.com</a>. Please include as much detail as possible about your complaint.</p>
-    <p>We will acknowledge your complaint within 5 business days and aim to resolve it within 30 days. If we cannot resolve your complaint to your satisfaction, you may refer it to the <strong>Office of the Australian Information Commissioner (OAIC)</strong>:</p>
-    <ul>
-      <li>Website: <a href="https://www.oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a></li>
-      <li>Phone: 1300 363 992</li>
-      <li>GPO Box 5218, Sydney NSW 2001</li>
-    </ul>
-  </div>
-
-  <!-- 13. Changes -->
-  <div class="policy-section" id="changes">
-    <div class="policy-section-num">13</div>
-    <h2>Changes to this policy</h2>
-    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we make changes, we will update the "Last updated" date at the top of this page.</p>
-    <p>We encourage you to review this policy periodically. Continued use of our website after any changes constitutes acceptance of the updated policy.</p>
-  </div>
-
-  <!-- 14. Contact -->
-  <div class="policy-section" id="contact">
-    <div class="policy-section-num">14</div>
-    <h2>Contact us</h2>
-    <p>For any privacy-related enquiries, access requests, corrections, or complaints, please contact us:</p>
-  </div>
-
-  <div class="contact-box">
-    <h3>Mereo Consultants Pty Ltd</h3>
-    <p>
-      Melbourne, VIC 3000, Australia<br>
-      ABN: 15 677 842 723
-    </p>
-    <p>
-      Email: <a href="mailto:hello@jingherbal.com">hello@jingherbal.com</a><br>
-      Website: <a href="https://jingherbal.com">jingherbal.com</a>
-    </p>
-    <p style="font-size:0.8rem;color:rgba(255,255,255,0.3);margin-top:1rem;margin-bottom:0">
-      This policy was last reviewed in April 2026. Mereo Consultants Pty Ltd (ABN 15 677 842 723) trading as Jing. Compliant with the Privacy Act 1988 (Cth) and the Australian Privacy Principles.
-    </p>
-  </div>
-
-</div>
-
-<div id="footer-mount"></div>
-
-<script src="herb-data.js"></script>
-<script src="shared.js"></script>
-<script>
-  document.getElementById('topbar-mount').innerHTML = renderTopbar();
-  document.getElementById('nav-mount').innerHTML = renderNav('');
-  document.getElementById('footer-mount').innerHTML = renderFooter();
-  initMegas();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/journal.js?v=8"></script>
+<script src="js/analytics.js?v=6"></script>
+<script src="js/menu.js?v=2"></script>
 </body>
 </html>
