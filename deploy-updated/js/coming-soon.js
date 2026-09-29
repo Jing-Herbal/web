@@ -9,9 +9,32 @@
   const safeNext = /^[\w\-]+(\.html)?(#[\w\-]*)?$/.test(next) ? next : 'index.html';
   const say = (el, text, ok) => { el.textContent = text; el.classList.toggle('is-ok', !!ok); el.hidden = !text; };
 
-  // Launch notify: posts to Brevo (js/signup.js)
+  // Launch notify: posts to Brevo (js/signup.js). On success the form gives way to next steps.
   window.auraWireSignup($('#notify'), $('#notifyEmail'), 'waitlist', (t, ok) => {
-    say($('#notifyMsg'), ok ? 'Thank you. We’ll email you the day aura is ready.' : t, ok);
+    if (!ok) { say($('#notifyMsg'), t); return; }
+    $('#signup').hidden = true;
+    const done = $('#signupDone');
+    done.hidden = false;
+    done.focus({ preventScroll: true });
+  });
+
+  // Share: the phone's share sheet where there is one, otherwise copy the link
+  const SHARE_URL = 'https://jingherbal.com/coming-soon?utm_source=share&utm_medium=referral&utm_campaign=waitlist';
+  $('#shareBtn').addEventListener('click', async () => {
+    const msg = $('#shareMsg');
+    const data = { title: 'aura by Jing', text: 'A daily ritual, built for your skin. Coming soon from Jing.', url: SHARE_URL };
+    if (window.auraTrack) window.auraTrack('share', { method: navigator.share ? 'share_sheet' : 'copy_link', content_type: 'waitlist' });
+    try {
+      if (navigator.share) { await navigator.share(data); return; }
+      await navigator.clipboard.writeText(SHARE_URL);
+      say(msg, 'Link copied. Send it to someone who’d like it.', true);
+    } catch (err) {
+      if (err && err.name === 'AbortError') return;
+      say(msg, SHARE_URL, true);
+    }
+  });
+  document.querySelector('[data-next="instagram"]').addEventListener('click', () => {
+    if (window.auraTrack) window.auraTrack('select_content', { content_type: 'instagram_follow', item_id: 'waitlist' });
   });
 
   // Early access

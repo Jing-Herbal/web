@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<link rel="stylesheet" href="css/site.css?v=68">
+<link rel="stylesheet" href="css/site.css?v=70">
 <!-- meta:share -->
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -33,27 +33,46 @@
 </header>
 
 <main class="soon__main">
-  <span class="label soon__eyebrow">Coming soon</span>
-  <h1 class="display soon__title">A daily ritual, <em>built for your skin.</em></h1>
-  <p class="soon__sub">Six botanicals and 60 mg of vitamin C in one 5 g stick, every dose printed on the box. Leave your email and we’ll tell you the day it’s ready.</p>
+  <div class="soon__copy">
+    <span class="label soon__eyebrow">Coming soon</span>
+    <h1 class="display soon__title">A daily ritual, <em>built for your skin.</em></h1>
+    <p class="soon__sub">Six botanicals and 60 mg of vitamin C in one 5 g stick, every dose printed on the box. Leave your email and we’ll tell you the day it’s ready.</p>
 
-  <form class="soon__form" id="notify" novalidate>
-    <label for="notifyEmail" class="sr-only">Email address</label>
-    <input id="notifyEmail" type="email" required placeholder="Email address" autocomplete="email">
-    <button class="btn" type="submit">Notify me</button>
-  </form>
-  <p class="soon__msg label" id="notifyMsg" role="status" hidden></p>
-  <p class="soon__fine">Launch news and our occasional letter. Unsubscribe any time. <a href="privacy.html">Privacy</a></p>
+    <div class="soon__signup" id="signup">
+      <form class="soon__form" id="notify" novalidate>
+        <label for="notifyEmail" class="sr-only">Email address</label>
+        <input id="notifyEmail" type="email" required placeholder="Email address" autocomplete="email">
+        <button class="btn" type="submit">Notify me</button>
+      </form>
+      <p class="soon__msg label" id="notifyMsg" role="status" hidden></p>
+      <p class="soon__fine">Launch news and our occasional letter. Unsubscribe any time. <a href="privacy.html">Privacy</a></p>
+    </div>
 
-  <div class="soon__early">
-    <button type="button" class="soon__early-toggle label" id="earlyToggle" aria-expanded="false" aria-controls="early">Have an early access code?</button>
-    <form class="soon__form soon__form--code" id="early" hidden>
-      <label for="earlyCode" class="sr-only">Early access code</label>
-      <input id="earlyCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Early access code">
-      <button class="btn btn--outline" type="submit">Enter</button>
-      <p class="soon__msg label" id="earlyMsg" role="status" hidden></p>
-    </form>
+    <!-- Shown after a successful sign-up -->
+    <div class="soon__done" id="signupDone" hidden tabindex="-1">
+      <p class="display soon__done-title">You’re on the list.</p>
+      <p class="soon__fine">We’ll email you the day aura is ready. Until then:</p>
+      <div class="soon__next">
+        <a class="btn" href="https://www.instagram.com/jingherbal/" target="_blank" rel="noopener" data-next="instagram">Follow on Instagram <span class="arr">→</span></a>
+        <button type="button" class="btn btn--outline" id="shareBtn">Share with a friend</button>
+      </div>
+      <p class="soon__msg label" id="shareMsg" role="status" hidden></p>
+    </div>
+
+    <div class="soon__early">
+      <button type="button" class="soon__early-toggle label" id="earlyToggle" aria-expanded="false" aria-controls="early">Have an early access code?</button>
+      <form class="soon__form soon__form--code" id="early" hidden>
+        <label for="earlyCode" class="sr-only">Early access code</label>
+        <input id="earlyCode" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Early access code">
+        <button class="btn btn--outline" type="submit">Enter</button>
+        <p class="soon__msg label" id="earlyMsg" role="status" hidden></p>
+      </form>
+    </div>
   </div>
+
+  <figure class="soon__art">
+    <img src="img/au-card.jpg" alt="An aura stick standing in a glass of water beside the aura box on a plaster plinth." fetchpriority="high">
+  </figure>
 </main>
 
 <footer class="soon__foot label">
@@ -62,7 +81,7 @@
 </footer>
 
 <script src="js/signup.js?v=1"></script>
-<script src="js/coming-soon.js?v=3"></script>
+<script src="js/coming-soon.js?v=4"></script>
 <script src="js/analytics.js?v=6"></script>
 </body>
 </html>
