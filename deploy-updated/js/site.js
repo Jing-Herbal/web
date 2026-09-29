@@ -299,8 +299,37 @@
   addEventListener('resize', hsSize);
   addEventListener('load', hsSize);
   hsSize();
-  const timeline = $('#timeline');
-  const tls = $$('.tl', timeline);
+  // What to expect: one dot per stick for the first six boxes of 30; they fill as the section scrolls past
+  const field = $('#field');
+  const fieldN = $('#fieldN');
+  const GIFTS = { 2: 'Gua sha', 4: null, 6: null };
+  const DAYS = 180; // six boxes: the stretch where the habit forms
+  const dots = [], boxEls = [];
+  if (field) {
+    const list = $('#fieldBoxes');
+    for (let b = 1, day = 1; day <= DAYS; b++) {
+      const li = document.createElement('li');
+      li.className = 'fbox';
+      const n = 30;
+      const gift = b in GIFTS ? (GIFTS[b] || '<svg class="fbox__lock" viewBox="0 0 12 14" aria-hidden="true"><rect x="1.5" y="6" width="9" height="7" rx="1"/><path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2"/></svg>Soon') : '';
+      li.innerHTML = `<span class="fbox__label label">Box ${b}</span><span class="fbox__dots"></span>` +
+        (gift ? `<span class="fbox__gift${GIFTS[b] ? '' : ' is-locked'}">${gift}</span>` : '');
+      const holder = li.querySelector('.fbox__dots');
+      for (let i = 0; i < n; i++, day++) {
+        const d = document.createElement('i');
+        if (day >= 56 && day <= 84) d.className = 'is-judge';
+        holder.append(d);
+        dots.push(d);
+      }
+      boxEls.push({ li, first: dots.length - n });
+      list.append(li);
+    }
+    // The reorder-by date for someone ordering today: 35 days from the order
+    const fmt = (d) => d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long' });
+    const today = new Date(), by = new Date(today); by.setDate(by.getDate() + 35);
+    $('#fieldStart').innerHTML = `Order today, ${fmt(today)}, and reorder by <strong>${fmt(by)}</strong>: box 2 comes with a gua sha.`;
+  }
+  let lit = -1;
   const buybar = $('#buybar');
   const hero = $('.hero');
   const shop = $('#shop');
@@ -387,11 +416,18 @@
     });
     setStage(best);
 
-    // Timeline fill
-    const tr = timeline.getBoundingClientRect();
-    const tp = clamp((vh * 0.75 - tr.top) / (tr.height + vh * 0.2));
-    timeline.style.setProperty('--p', tp.toFixed(3));
-    tls.forEach((t, i) => t.classList.toggle('is-reached', tp >= i / tls.length + 0.02));
+    // What to expect: light one dot per stick as the field crosses the screen
+    if (field) {
+      const fr = field.getBoundingClientRect();
+      const fp = reduced ? 1 : clamp((vh * 0.9 - fr.top) / (fr.height + vh * 0.45));
+      const n = Math.round(fp * DAYS);
+      if (n !== lit) {
+        dots.forEach((d, i) => d.classList.toggle('is-lit', i < n));
+        boxEls.forEach(({ li, first }) => li.classList.toggle('is-reached', n > first));
+        fieldN.textContent = Math.max(1, n);
+        lit = n;
+      }
+    }
 
     // Sticky buy bar: after the hero, not while the shop is on screen
     const hb = hero.getBoundingClientRect().bottom;
