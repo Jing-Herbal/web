@@ -291,14 +291,17 @@
   let hsOn = false, hsOver = 0;
   const hsSize = () => {
     if (!hs) return;
-    hsOn = !reduced && innerWidth > 860 && matchMedia('(hover: hover)').matches;
+    hsOn = !reduced;
     hs.classList.toggle('is-on', hsOn);
     hsRail.style.transform = '';
     hsOver = hsOn ? Math.max(0, hsRail.scrollWidth - hsRail.clientWidth) : 0;
     // The section is as tall as the sideways travel, so a scroll of N px moves the rail N px
     hs.style.height = hsOn ? `${hsSticky.offsetHeight + hsOver}px` : '';
   };
-  addEventListener('resize', hsSize);
+  // Only a width change resizes the rail: phone toolbars showing and hiding change the height
+  // on every flick, and re-measuring then would make the rail jump
+  let hsW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth !== hsW) { hsW = innerWidth; hsSize(); } });
   addEventListener('load', hsSize);
   hsSize();
   // What to expect: one dot per stick for the first six boxes of 30; they fill as the section scrolls past

@@ -947,7 +947,7 @@ a.labcard--journal:hover .btn { --bg: var(--clay-600); }
   .labcard--journal .labcard__body { padding: 26px 24px 28px; }
 }
 
-/* Pinned horizontal scroll for the recipe rail (desktop). Off: the rail swipes natively. */
+/* Pinned horizontal scroll for the recipe rail. Off (reduced motion): the rail swipes natively. */
 .hscroll.is-on .hscroll__sticky { position: sticky; top: max(90px, calc(50vh - 300px)); }
 .hscroll.is-on .rail { overflow: visible; scroll-snap-type: none; cursor: default; will-change: transform; }
 .hscroll.is-on .rail-outer { overflow: hidden; }
@@ -1571,3 +1571,10 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 .fbox__gift.is-mystery .fbox__icon { stroke: var(--clay-300); }
 .fbox.is-reached .fbox__gift.is-mystery { box-shadow: inset 0 0 0 1px var(--clay-300); }
 @media (max-width: 360px) { .fbox__gift { font-size: 10.5px; gap: 4px; padding: 3px 7px 3px 5px; } .fbox__icon { width: 12px; height: 12px; } }
+
+/* Pinned recipe rail on phones and tablets: one card fills most of the width, the next peeks in */
+@media (max-width: 860px) {
+  .hscroll.is-on .hscroll__sticky { top: max(80px, calc(50vh - 240px)); }
+  .hscroll.is-on .vcard { width: min(78vw, 360px); }
+  .hscroll.is-on .vcard__title { font-size: clamp(28px, 7.4vw, 36px); }
+}
