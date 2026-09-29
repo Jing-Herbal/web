@@ -190,6 +190,8 @@
     uDrawn = i;
     uCanvas.classList.add('is-ready');
   }
+  // ?debug=unbox shows the numbers that drive the sequence, for checking on a phone
+  const uDebug = /debug=unbox/.test(location.search) ? document.body.appendChild(Object.assign(document.createElement('div'), { style: 'position:fixed;left:8px;right:8px;bottom:8px;z-index:9999;padding:8px 10px;background:#000;color:#0f0;font:11px/1.4 monospace;border-radius:6px;pointer-events:none' })) : null;
   const uCaps = $$('.unbox__cap');
   const uSteps = $$('.unbox__steps > span:not(.unbox__bar)');
   function unboxScroll(vh) {
@@ -452,6 +454,12 @@
   const frame = (t) => {
     if (lenis) { lenis.raf(t); velocity = lenis.velocity || 0; }
     else { velocity = scrollY - prevY; prevY = scrollY; }
+    // Unboxing follows the scroll position every frame, not just on scroll events: some mobile
+    // browsers (Chrome on iPhone) deliver scroll events late during a flick, and the film would
+    // jump straight to its last frame
+    const ubr = unbox.getBoundingClientRect();
+    if (ubr.top < innerHeight * 2.5 && ubr.bottom > -innerHeight) unboxScroll(innerHeight);
+    if (uDebug) uDebug.textContent = `reduced:${reduced} lenis:${!!lenis} vh:${innerHeight} top:${Math.round(ubr.top)} h:${Math.round(ubr.height)} frame:${uWant}/${UNBOX_FRAMES - 1} loaded:${uFrames.filter(Boolean).length}`;
     // Marquee drifts left; scrolling adds speed, and scrolling up reverses it
     if (!reduced) {
       const half = marqueeTrack.scrollWidth / 2;
