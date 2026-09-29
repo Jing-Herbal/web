@@ -1517,3 +1517,9 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 @media (max-width: 899px) { .soon__art { width: min(340px, 100%); aspect-ratio: 5 / 4; } }
 .soon__copy, .soon__signup, .soon__done, .soon__early { grid-template-columns: minmax(0, 1fr); }
 .soon__signup > *, .soon__done > * { max-width: 100%; }
+
+/* Coming soon: show the whole product photo (portrait 9:16) rather than cropping it */
+.soon__art { aspect-ratio: 714 / 1280; width: min(340px, 100%); }
+.soon__art img { object-position: 50% 50%; }
+@media (min-width: 900px) { .soon__art { width: auto; height: min(640px, 72vh); } }
+@media (max-width: 899px) { .soon__art { aspect-ratio: 3 / 4; width: min(320px, 100%); } .soon__art img { object-position: 50% 60%; } }
