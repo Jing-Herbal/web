@@ -332,7 +332,7 @@
     const today = new Date(), by = new Date(today); by.setDate(by.getDate() + 35);
     $('#fieldStart').innerHTML = `Order today, ${fmt(today)}, and reorder by <strong>${fmt(by)}</strong>: box 2 comes with a gua sha.`;
   }
-  let lit = -1;
+  let fieldLit = -1;
   const buybar = $('#buybar');
   const hero = $('.hero');
   const shop = $('#shop');
@@ -424,11 +424,11 @@
       const fr = field.getBoundingClientRect();
       const fp = reduced ? 1 : clamp((vh * 0.9 - fr.top) / (fr.height + vh * 0.45));
       const n = Math.round(fp * DAYS);
-      if (n !== lit) {
+      if (n !== fieldLit) {
         dots.forEach((d, i) => d.classList.toggle('is-lit', i < n));
         boxEls.forEach(({ li, first }) => li.classList.toggle('is-reached', n > first));
         fieldN.textContent = Math.max(1, n);
-        lit = n;
+        fieldLit = n;
       }
     }
 
@@ -452,15 +452,17 @@
   let prevY = scrollY;
   const marqueeTrack = $('#marquee');
   let mx = 0;
+  let polledY = -1, polledVh = -1;
   const frame = (t) => {
     if (lenis) { lenis.raf(t); velocity = lenis.velocity || 0; }
     else { velocity = scrollY - prevY; prevY = scrollY; }
-    // Unboxing follows the scroll position every frame, not just on scroll events: some mobile
-    // browsers (Chrome on iPhone) deliver scroll events late during a flick, and the film would
-    // jump straight to its last frame
+    // Everything scroll-linked (reveals, unboxing, counters, nav) follows the scroll position every
+    // frame, not just on scroll events: Chrome on iPhone can deliver scroll events late or drop the
+    // last one after a flick, which left the film on its last frame and closing CTAs invisible
+    if (scrollY !== polledY || innerHeight !== polledVh) { polledY = scrollY; polledVh = innerHeight; onScroll(); }
     const ubr = unbox.getBoundingClientRect();
     if (ubr.top < innerHeight * 2.5 && ubr.bottom > -innerHeight) unboxScroll(innerHeight);
-    if (uDebug) uDebug.textContent = `reduced:${reduced} lenis:${!!lenis} vh:${innerHeight} top:${Math.round(ubr.top)} h:${Math.round(ubr.height)} frame:${uWant}/${UNBOX_FRAMES - 1} loaded:${uFrames.filter(Boolean).length}`;
+    if (uDebug) uDebug.textContent = `reduced:${reduced} lenis:${!!lenis} vh:${innerHeight} y:${Math.round(scrollY)} top:${Math.round(ubr.top)} h:${Math.round(ubr.height)} frame:${uWant}/${UNBOX_FRAMES - 1} loaded:${uFrames.filter(Boolean).length} cta:${$('.final2__ctas').style.getPropertyValue('--p') || '-'}`;
     // Marquee drifts left; scrolling adds speed, and scrolling up reverses it
     if (!reduced) {
       const half = marqueeTrack.scrollWidth / 2;
