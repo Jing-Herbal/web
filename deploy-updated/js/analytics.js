@@ -1,7 +1,7 @@
 /* aura — Google Analytics 4 and the Meta Pixel, with one cookie notice.
    Off until HOSTS lists the live domain, so drafts and previews send nothing.
-   Notice with opt-out (decided 2026-09-30): tracking runs by default and a small notice says so,
-   with an Opt out button that stops it (remembered per browser, reopened from "Cookie settings").
+   Opt-out (decided 2026-09-30): tracking runs by default. No popup: a small line in the footer
+   says so, with an Opt out link that stops it at once (remembered per browser).
    Visitors whose time zone is in Europe (EU/EEA/UK rules) get the opt-in version instead: nothing
    runs until Accept. Browsers sending Global Privacy Control start opted out.
    Events (GA4 name → Meta name):
@@ -107,9 +107,34 @@
     if (!b) return;
     if (b.dataset.consent === 'close') hide(); else choose(b.dataset.consent);
   });
-  // Shown once until answered; Global Privacy Control visitors outside Europe aren't asked
-  if (!consent && !(gpc && !optIn)) addEventListener('load', show);
-  document.addEventListener('click', (e) => { if (e.target.closest('[data-cookie-settings]')) { e.preventDefault(); show(); } });
+  // Europe: the Decline/Accept popup, shown until answered, reopened from "Cookie settings".
+  // Everywhere else: no popup; the footer's "Cookie settings" link becomes a line with the switch.
+  if (optIn) {
+    if (!consent) addEventListener('load', show);
+    document.addEventListener('click', (e) => { if (e.target.closest('[data-cookie-settings]')) { e.preventDefault(); show(); } });
+  } else {
+    const lines = [];
+    const paint = () => lines.forEach((l) => {
+      l.innerHTML = tracking()
+        ? 'We use cookies to measure the site and our ads. <a href="#" data-cookie-toggle>Opt out</a>'
+        : 'Cookies are off for you. <a href="#" data-cookie-toggle>Turn on</a>';
+    });
+    document.querySelectorAll('footer [data-cookie-settings]').forEach((link) => {
+      const box = link.parentElement;
+      const before = link.previousSibling;
+      if (before && before.nodeType === 3) before.textContent = before.textContent.replace(/\s*·\s*$/, '');
+      link.remove();
+      const line = document.createElement('span');
+      line.className = 'cookie-line';
+      if (box.tagName === 'P') box.append(document.createElement('br'), line); else box.append(' · ', line);
+      lines.push(line);
+    });
+    paint();
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-cookie-toggle]')) { e.preventDefault(); choose(tracking() ? 'denied' : 'granted'); paint(); }
+      else if (e.target.closest('[data-cookie-settings]')) { e.preventDefault(); if (lines[0]) lines[0].scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    });
+  }
 
   // Shop seen
   const shop = document.getElementById('shop');

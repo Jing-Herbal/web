@@ -1578,3 +1578,5 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
   .hscroll.is-on .vcard { width: min(78vw, 360px); }
   .hscroll.is-on .vcard__title { font-size: clamp(28px, 7.4vw, 36px); }
 }
+/* Footer cookie line (outside Europe): replaces the popup, with the opt-out switch inline */
+.cookie-line a { text-decoration: underline; text-underline-offset: 3px; }
