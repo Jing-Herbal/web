@@ -1,6 +1,9 @@
-/* aura — Google Analytics 4 and the Meta Pixel, both behind one cookie notice.
+/* aura — Google Analytics 4 and the Meta Pixel, with one cookie notice.
    Off until HOSTS lists the live domain, so drafts and previews send nothing.
-   Nothing is stored and the Meta Pixel does not load until the visitor chooses Accept.
+   Notice with opt-out (decided 2026-09-30): tracking runs by default and a small notice says so,
+   with an Opt out button that stops it (remembered per browser, reopened from "Cookie settings").
+   Visitors whose time zone is in Europe (EU/EEA/UK rules) get the opt-in version instead: nothing
+   runs until Accept. Browsers sending Global Privacy Control start opted out.
    Events (GA4 name → Meta name):
      page views (automatic)            → PageView
      view_item      (shop seen)        → ViewContent
@@ -21,6 +24,13 @@
   const META_EVENTS = { view_item: 'ViewContent', add_to_cart: 'AddToCart', begin_checkout: 'InitiateCheckout', sign_up: 'Lead' };
   let consent = null;
   try { consent = localStorage.getItem(KEY); } catch { /* storage unavailable */ }
+  // Europe: opt-in. Judged from the time zone, which needs no request and errs towards Europe
+  let tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch { /* no Intl */ }
+  const optIn = /^Europe\/|^Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe)/.test(tz);
+  const gpc = navigator.globalPrivacyControl === true;
+  // No stored choice: on by default, except in Europe or with Global Privacy Control
+  const tracking = () => consent ? consent === 'granted' : !(optIn || gpc);
 
   // One call site for the whole site: sends to GA4, and to Meta once consent is given
   window.auraTrack = (name, params) => {
@@ -28,7 +38,7 @@
     params = params || {};
     if (GA_ID && window.gtag) window.gtag('event', name, params);
     const m = META_EVENTS[name];
-    if (m && META_PIXEL && window.fbq && consent === 'granted') {
+    if (m && META_PIXEL && window.fbq && tracking()) {
       const items = params.items || [];
       window.fbq('track', m, items.length ? {
         currency: params.currency || 'AUD',
@@ -40,11 +50,11 @@
   };
   if (!on) return;
 
-  // Google: Consent Mode. Everything denied until Accept.
+  // Google: Consent Mode, set from the visitor's current choice
   if (GA_ID) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
-    const g = consent === 'granted' ? 'granted' : 'denied';
+    const g = tracking() ? 'granted' : 'denied';
     gtag('consent', 'default', { analytics_storage: g, ad_storage: g, ad_user_data: g, ad_personalization: g, wait_for_update: 500 });
     gtag('js', new Date());
     const shop = window.AURA_DATA && window.AURA_DATA.SHOP && window.AURA_DATA.SHOP.domain;
@@ -55,7 +65,7 @@
     document.head.appendChild(s);
   }
 
-  // Meta: the pixel script is only fetched after Accept
+  // Meta: the pixel script is only fetched while tracking is on
   let metaLoaded = false;
   const loadMeta = () => {
     if (metaLoaded || !META_PIXEL) return;
@@ -64,31 +74,41 @@
     window.fbq('init', META_PIXEL);
     window.fbq('track', 'PageView');
   };
-  if (consent === 'granted') loadMeta();
+  if (tracking()) loadMeta();
 
-  // Cookie notice
+  // Cookie notice. Opt-out version by default; opt-in version for Europe
   const note = document.createElement('div');
   note.className = 'consent';
   note.setAttribute('role', 'dialog');
-  note.setAttribute('aria-label', 'Cookie choice');
-  note.innerHTML = `
-    <p>We use cookies to see how the site is used, and to measure and show our ads on Facebook and Instagram. <a href="privacy.html">Privacy</a></p>
-    <div class="consent__btns">
-      <button type="button" class="btn btn--outline" data-consent="denied">Decline</button>
-      <button type="button" class="btn" data-consent="granted">Accept</button>
-    </div>`;
-  const show = () => { document.body.appendChild(note); requestAnimationFrame(() => note.classList.add('is-in')); };
+  note.setAttribute('aria-label', 'Cookies');
+  const text = 'We use cookies to see how the site is used, and to measure and show our ads on Facebook and Instagram.';
+  const render = () => {
+    const btns = optIn
+      ? '<button type="button" class="btn btn--outline" data-consent="denied">Decline</button><button type="button" class="btn" data-consent="granted">Accept</button>'
+      : tracking()
+        ? '<button type="button" class="btn btn--outline" data-consent="denied">Opt out</button><button type="button" class="btn" data-consent="granted">OK</button>'
+        : '<button type="button" class="btn btn--outline" data-consent="close">Keep off</button><button type="button" class="btn" data-consent="granted">Turn on</button>';
+    const state = optIn || tracking() || !consent ? '' : ' They are off for you now.';
+    note.innerHTML = `<p>${text}${state} <a href="privacy.html">Privacy</a></p><div class="consent__btns">${btns}</div>`;
+  };
+  const show = () => { render(); document.body.appendChild(note); requestAnimationFrame(() => note.classList.add('is-in')); };
+  const hide = () => { note.classList.remove('is-in'); setTimeout(() => note.remove(), 400); };
   const choose = (v) => {
+    const was = tracking();
     consent = v;
     try { localStorage.setItem(KEY, v); } catch { /* storage unavailable */ }
     if (GA_ID) gtag('consent', 'update', { analytics_storage: v, ad_storage: v, ad_user_data: v, ad_personalization: v });
-    if (v === 'granted') loadMeta();
+    if (v === 'granted') { if (window.fbq && !was) window.fbq('consent', 'grant'); loadMeta(); }
     else if (window.fbq) window.fbq('consent', 'revoke');
-    note.classList.remove('is-in');
-    setTimeout(() => note.remove(), 400);
+    hide();
   };
-  note.addEventListener('click', (e) => { const b = e.target.closest('[data-consent]'); if (b) choose(b.dataset.consent); });
-  if (!consent) addEventListener('load', show);
+  note.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-consent]');
+    if (!b) return;
+    if (b.dataset.consent === 'close') hide(); else choose(b.dataset.consent);
+  });
+  // Shown once until answered; Global Privacy Control visitors outside Europe aren't asked
+  if (!consent && !(gpc && !optIn)) addEventListener('load', show);
   document.addEventListener('click', (e) => { if (e.target.closest('[data-cookie-settings]')) { e.preventDefault(); show(); } });
 
   // Shop seen
