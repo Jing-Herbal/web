@@ -1580,3 +1580,17 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 }
 /* Footer cookie line (outside Europe): replaces the popup, with the opt-out switch inline */
 .cookie-line a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Coming soon: the Jing mark signs off the footer, on the cream band (clear of the video) */
+.soon__foot { align-items: center; }
+.soon__maker { display: inline-flex; align-items: center; gap: 16px; }
+.soon__maker img { width: 56px; height: auto; display: block; }
+/* The cookie line added by analytics.js keeps its size inside the phone footer's link row */
+.soon__foot .cookie-line { font-size: 11px; }
+@media (max-width: 860px) {
+  .soon__foot { align-items: flex-start; }
+  .soon__maker { gap: 12px; }
+  .soon__maker img { width: 48px; }
+  .soon__foot .cookie-line { flex-basis: 100%; padding: 6px 0; }
+  .soon__foot .cookie-line a { padding: 0; }
+}
