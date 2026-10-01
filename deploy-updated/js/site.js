@@ -13,7 +13,8 @@
   
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // The site ignores the device's Reduce Motion setting: everyone gets the full motion (owner, 2026-10-01)
+  const reduced = false;
   const fmtMg = (n) => n.toLocaleString('en-AU', { maximumFractionDigits: 2 });
   const fmtA = (n) => 'A$' + (Number.isInteger(n) ? n : n.toFixed(2));
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));

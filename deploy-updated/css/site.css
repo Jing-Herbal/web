@@ -643,13 +643,6 @@ a.card:hover .card__media img { transform: scale(1.04); }
 .toast.is-shown { opacity: 1; transform: translate(-50%, 0); }
 
 /* ---------- Reduced motion ---------- */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; transition-delay: 0ms !important; }
-  [data-reveal], .split-line > span, .hero__media img { opacity: 1 !important; transform: none !important; }
-  [data-wipe], .hero__media { clip-path: none !important; }
-  [data-wipe] img { transform: none !important; }
-  .statement .word { opacity: 1; }
-}
 
 /* Grid children may shrink below their content width (prevents mobile overflow) */
 .formula__grid > *, .formula__intro > *, .pdp > *, .gallery > *, .ask > *, .faq > *, .claim__inner > *, .expect-head > *, .hero > * { min-width: 0; }
@@ -689,9 +682,6 @@ a.card:hover .card__media img { transform: scale(1.04); }
 @media (max-width: 960px) {
   .stage__media { display: none; }
   .step__img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 8px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__media video { transform: none !important; }
 }
 
 /* ---------- Rails (recipes, reviews) ---------- */
@@ -780,10 +770,6 @@ button.vcard:hover .vcard__dot { transform: scale(1.1); }
   .unbox__captions { min-height: 110px; }
   .unbox__steps { top: 80px; gap: 14px; }
   .unbox__bar { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .unbox { height: auto; }
-  .unbox__sticky { position: relative; height: 80vh; }
 }
 
 /* Film above, caption band below: the caption no longer covers the plinth */
@@ -1146,11 +1132,6 @@ a.labcard--journal:hover .btn { --bg: var(--clay-600); }
   .mission__thumb { width: 56px; }
   .mission__post-title { font-size: 16px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .mission { height: auto; }
-  .mission__sticky { position: static; height: auto; padding: var(--section) 0; }
-  .herb__label { opacity: 1; }
-}
 
 /* Our story: founders' letter lights up word by word as it is read, then is signed */
 .letter .w { opacity: .16; transition: opacity .35s var(--ease); }
@@ -1158,10 +1139,6 @@ a.labcard--journal:hover .btn { --bg: var(--clay-600); }
 .letter .sign { font-style: italic; font-size: 28px; color: var(--clay-600); margin-top: 28px; }
 .letter .sign__ink { display: inline-block; clip-path: inset(0 100% 0 0); transition: clip-path 1.6s cubic-bezier(.65, 0, .35, 1); }
 .letter .sign.is-signed .sign__ink { clip-path: inset(0 0 0 0); }
-@media (prefers-reduced-motion: reduce) {
-  .letter .w { opacity: 1; }
-  .letter .sign__ink { clip-path: none; }
-}
 
 /* Our story: how we got here. A line that fills as you scroll, lighting each step */
 .tl { --tl: 0; position: relative; margin: 56px 0 0; }
@@ -1181,11 +1158,6 @@ a.labcard--journal:hover .btn { --bg: var(--clay-600); }
   .tl__track { top: 0; bottom: 0; left: 7px; right: auto; width: 1px; height: auto; }
   .tl__fill { transform-origin: top; transform: scaleY(var(--tl)); }
   .tl li { padding: 0 0 0 40px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .tl { --tl: 1; }
-  .tl li { opacity: 1; }
-  .tl li::before { background: var(--clay-500); }
 }
 
 /* The ritual: one looping film, the step it is on lit beside it */
@@ -1208,9 +1180,6 @@ a.labcard--journal:hover .btn { --bg: var(--clay-600); }
   .rstage { grid-template-columns: 1fr; gap: 28px; }
   .rstage__media { aspect-ratio: 4 / 5; }
   .rstep__btn { padding: 20px 0 16px; grid-template-columns: 48px 1fr; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .rstep__btn { opacity: 1; }
 }
 
 /* bloom card: the jar turning, colour pulled back so it sits with the clay palette */
@@ -1249,7 +1218,6 @@ a.labcard--journal:hover .btn { --bg: var(--clay-600); }
 .footer__join { display: none; color: var(--cream-50); }
 body:has(#finalNews) .footer .news { display: none; }
 body:has(#finalNews) .footer__join { display: inline-flex; }
-@media (prefers-reduced-motion: reduce) { .final2__bg video { display: none; } .final2__bg { background: url(../img/morning-light-poster.jpg) center / cover; } }
 .final2__sub { max-width: 560px; text-wrap: balance; }
 .footer__origin { display: block; margin-top: 14px; }
 
@@ -1352,7 +1320,7 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 
 /* Ritual on phones: one step at a time, swapping as the film plays, with a three-part progress bar */
 .rstage__progress { display: none; }
-@media (max-width: 860px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 860px) {
   .rstage__progress { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 18px; }
   .rstage__progress span { height: 3px; border-radius: 3px; background: var(--line-strong); overflow: hidden; }
   .rstage__progress i { display: block; height: 100%; background: var(--clay-500); transform: scaleX(0); transform-origin: left; }
@@ -1475,7 +1443,6 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
   .soon__top { flex-direction: column; align-items: flex-start; gap: 6px; }
   .soon__foot { flex-direction: column; }
 }
-@media (prefers-reduced-motion: reduce) { .soon__bg video { display: none; } .soon__bg { background: url(../img/morning-light-poster.jpg) center / cover; } }
 .soon { grid-template-columns: minmax(0, 1fr); }
 .soon__main { grid-template-columns: minmax(0, 1fr); }
 .soon__main > * { max-width: 100%; }
@@ -1562,7 +1529,6 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 .fbox__lid { transform-box: fill-box; transform-origin: 50% 100%; }
 .fbox.is-reached .fbox__lid { animation: gift-pop 900ms cubic-bezier(.34, 1.56, .64, 1) 200ms both; }
 @keyframes gift-pop { 0% { transform: none; } 35% { transform: translateY(-4px) rotate(-8deg); } 65% { transform: translateY(-1px) rotate(4deg); } 100% { transform: none; } }
-@media (prefers-reduced-motion: reduce) { .fbox.is-reached .fbox__lid { animation: none; } }
 .fbox__gift { white-space: nowrap; }
 @media (max-width: 860px) { .fbox__gift { font-size: 11.5px; gap: 5px; padding: 4px 9px 4px 6px; } .fbox__icon { width: 14px; height: 14px; } }
 
