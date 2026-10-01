@@ -276,6 +276,29 @@
     }
   }
 
+  // bloom card: the spinning tin plays over the still on hover; phones have no hover, so it plays
+  // while the card is on screen. The film is only fetched the first time it is needed
+  const bloomMedia = $('.card__media--bloom');
+  const bloomSpin = bloomMedia && $('.card__spin', bloomMedia);
+  if (bloomSpin && !reduced) {
+    const spin = (on) => {
+      if (on) {
+        if (!bloomSpin.src) bloomSpin.src = bloomSpin.dataset.src;
+        bloomSpin.play().then(() => bloomMedia.classList.add('is-spinning')).catch(() => {});
+      } else {
+        bloomMedia.classList.remove('is-spinning');
+        setTimeout(() => { if (!bloomMedia.classList.contains('is-spinning')) { bloomSpin.pause(); bloomSpin.currentTime = 0; } }, 500);
+      }
+    };
+    const card = bloomMedia.closest('.card');
+    if (matchMedia('(hover: hover)').matches) {
+      card.addEventListener('mouseenter', () => spin(true));
+      card.addEventListener('mouseleave', () => spin(false));
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver((es) => es.forEach((e) => spin(e.isIntersecting)), { threshold: 0.5 }).observe(card);
+    }
+  }
+
   // Closing section: the morning-light loop plays only while it is on screen
   const finalVid = $('.final2__bg video');
   if (finalVid && !reduced && 'IntersectionObserver' in window) {

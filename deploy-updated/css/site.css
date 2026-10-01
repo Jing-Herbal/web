@@ -1594,3 +1594,12 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
   .soon__foot .cookie-line { flex-basis: 100%; padding: 6px 0; }
   .soon__foot .cookie-line a { padding: 0; }
 }
+
+/* bloom card: the meadow still fills the card; on hover it fades to the mint backdrop and the
+   original spinning film (sized and feathered as before) */
+.range .card .card__media--bloom img { object-position: 50% 46%; filter: none; }
+.range .card .card__media--bloom img { transition: opacity 500ms var(--ease); }
+.range .card .card__media--bloom .card__spin { opacity: 0; transition: opacity 500ms var(--ease); }
+.range .card .card__media--bloom.is-spinning img { opacity: 0; }
+.range .card .card__media--bloom.is-spinning .card__spin { opacity: 1; }
+.range .card:has(.card__media--bloom)::before { height: 240px; background: linear-gradient(180deg, rgba(207, 221, 214, .94) 0%, rgba(207, 221, 214, .62) 50%, rgba(207, 221, 214, 0) 100%); }
