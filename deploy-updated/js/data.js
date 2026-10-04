@@ -9,7 +9,8 @@ const PRICE = { single: 69, sub: 69, freeShipOver: 70, sticks: 30 }; // subscrip
 //   variants: the variant ID for each plan, from Products > aura > the variant's URL
 //   handle:   the product's URL handle, used by tools/check-price.py
 //   sellingPlan: the subscription plan ID, once Shopify Subscriptions is set up
-const SHOP = { domain: 'zymt0d-az.myshopify.com', handle: 'aura', variants: { single: '56071784792232', sub: '' }, sellingPlan: '' };
+//   open:     false switches off Add to cart and Checkout site-wide (not on sale yet)
+const SHOP = { domain: 'zymt0d-az.myshopify.com', handle: 'aura', variants: { single: '56071784792232', sub: '' }, sellingPlan: '', open: false };
 
 // Herb descriptions: claims register rows 14-19 (accepted 2026-09-28).
 const FORMULA = [

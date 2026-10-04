@@ -599,6 +599,12 @@
   buy.addEventListener('change', updateBuy);
   $$('[data-qty]', buy).forEach((b) => b.addEventListener('click', () => { qty = clamp(qty + +b.dataset.qty, 1, 6); updateBuy(); }));
   updateBuy();
+  // Not on sale yet (SHOP.open in data.js): the product reads as normal, nothing can be bought
+  const onSale = !!(SHOP && SHOP.open);
+  if (!onSale) {
+    $$('button', buy).forEach((b) => { b.disabled = true; b.style.opacity = 0.5; b.style.cursor = 'not-allowed'; });
+    $('#addBtn').textContent = 'Not yet on sale';
+  }
 
   // ---------------------------------------------------------------------------
   // Cart (per-browser convenience only)
@@ -623,8 +629,8 @@
         </div>
         <div class="mono">${fmtA(l.qty * PRICE[l.plan])}</div>
       </div>`).join('') : '<p class="drawer__empty">Nothing here yet.</p>';
-    $('#checkout').disabled = !cart.length;
-    $('#checkout').style.opacity = cart.length ? 1 : 0.5;
+    $('#checkout').disabled = !onSale || !cart.length;
+    $('#checkout').style.opacity = onSale && cart.length ? 1 : 0.5;
     store.set('aura-cart', cart);
   };
   const openCart = () => { if (lenis) lenis.stop(); document.body.classList.add('cart-open'); $('#drawer').setAttribute('aria-hidden', 'false'); $('.drawer__close').focus({ preventScroll: true }); };
@@ -635,6 +641,7 @@
   $('#cartLines').addEventListener('click', (e) => { const b = e.target.closest('[data-rm]'); if (b) { cart.splice(+b.dataset.rm, 1); renderCart(); } });
   buy.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (!onSale) return;
     const p = plan();
     const line = cart.find((l) => l.plan === p);
     if (line) line.qty = Math.min(line.qty + qty, 6); else cart.push({ plan: p, qty });
@@ -655,7 +662,9 @@
     new URLSearchParams(location.search).forEach((v, k) => { if (/^utm_/.test(k)) u.searchParams.set(k, v); });
     return u.toString();
   };
+  if (!onSale) $('#checkout').textContent = 'Not yet on sale';
   $('#checkout').addEventListener('click', () => {
+    if (!onSale) return;
     auraTrack('begin_checkout', { currency: 'AUD', value: cart.reduce((s, l) => s + l.qty * PRICE[l.plan], 0) });
     const url = checkoutUrl();
     if (!url) { toast('Checkout is not connected in this draft'); return; }
