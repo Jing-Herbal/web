@@ -141,6 +141,7 @@
   const UNBOX_FRAMES = 151; // set by tools/build-unbox.py
   const CAPTION_AT = [0, 0.44, 0.8]; // progress where each caption takes over
   const FILM_END = 0.88; // the film finishes here; the last frame holds for the rest
+  const UNBOX_KEEP = 0.84; // share of the film's height always in view: boxes end at ~78%
   const uCanvas = $('#unboxCanvas');
   const uCtx = uCanvas.getContext('2d');
   const uFrames = [];
@@ -183,11 +184,18 @@
     if (i < 0) return;
     const img = uFrames[i];
     const cw = uCanvas.width, ch = uCanvas.height;
-    const s = Math.max(cw / img.naturalWidth, ch / img.naturalHeight); // cover
-    const w = img.naturalWidth * s, h = img.naturalHeight * s;
-    // On short, wide screens the frame is cropped top and bottom: keep the top of the pack in
-    // view (the sleeve lifts out of the top of the frame) and lose the plinth instead
-    uCtx.drawImage(img, (cw - w) / 2, (h > ch ? 0 : (ch - h) / 2), w, h);
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    // On short, wide screens the frame is cropped from the bottom: keep the top of the pack in
+    // view (the sleeve lifts out of the top of the frame) and lose the plinth instead, but never
+    // past the base of the boxes. Wider than that, the film shrinks to fit and its outer column
+    // is stretched sideways to fill the gap (wall and floor run level at the edges).
+    const s = Math.min(Math.max(cw / iw, ch / ih), ch / (ih * UNBOX_KEEP));
+    const w = iw * s, h = ih * s, x = (cw - w) / 2;
+    uCtx.drawImage(img, x, (h > ch ? 0 : (ch - h) / 2), w, h);
+    if (x > 0) {
+      uCtx.drawImage(img, 0, 0, 1, ih, 0, 0, Math.ceil(x) + 1, h);
+      uCtx.drawImage(img, iw - 1, 0, 1, ih, Math.floor(x + w) - 1, 0, Math.ceil(x) + 1, h);
+    }
     uDrawn = i;
     uCanvas.classList.add('is-ready');
   }
