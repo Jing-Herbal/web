@@ -26,8 +26,8 @@ const FORMULA = [
     text: 'Prized in the tradition as the five-flavour berry, its bitterness from its own lignans.' },
   { name: 'Astragalus', zh: '黃芪', latin: 'Astragalus membranaceus', mg: 11.4, form: 'Whole milled root', c: '#C46840', img: 'img/ing-astragalus.jpg',
     text: 'Traditionally used in tonics. A root that holds its own flavonoids and polysaccharides.' },
-  { name: 'Excipients', zh: '', latin: 'Maltodextrin · silicon dioxide', mg: null, form: 'Carrier and flow agent', c: '#d9d5c8', excipient: true,
-    text: 'Maltodextrin carries the powder; silicon dioxide keeps it flowing. Named, because they are in the stick too. Together they make up the balance to 5 g.' },
+  { name: 'Excipient', zh: '', latin: 'Maltodextrin', mg: null, form: 'Carrier', c: '#d9d5c8', excipient: true,
+    text: 'Maltodextrin carries the powder. Named, because it is in the stick too. It makes up the balance to 5 g.' },
 ];
 
 // Science page dossiers. Traditional use wording only (02-Research/evidence-standard.md);

@@ -42,7 +42,7 @@
   ).join('') + `<span class="marquee__item"><span class="n">Vitamin C</span><span class="mono">60 mg · 133% RDI</span></span><span class="marquee__dot">·</span>`;
   marquee.innerHTML = mItems + mItems;
 
-  // The scroll story shows the six ingredients; the excipients stay in the full ingredient list below
+  // The scroll story shows the six ingredients; the excipient stays in the full ingredient list below
   const STEPS = FORMULA.filter((f) => !f.excipient);
   const steps = $('#steps');
   steps.innerHTML = STEPS.map((f, i) => `
@@ -61,7 +61,7 @@
     </article>`).join('');
 
   const bar = $('#stageBar');
-  // Each segment is its share of the 5 g stick; the unfilled top is the carrier and flow agent
+  // Each segment is its share of the 5 g stick; the unfilled top is the carrier
   const pct = STEPS.map((f) => Math.max((f.mg / UNIT_MG) * 100, 0.6));
   bar.innerHTML = STEPS.map((f, i) => `<span class="seg" style="--h:${pct[i]}%;--c:${f.c};transition-delay:${i * 60}ms"></span>`).join('');
   const segs = $$('.seg', bar);
