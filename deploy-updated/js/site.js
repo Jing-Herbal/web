@@ -138,7 +138,7 @@
   // Unboxing sequence. Frames are drawn to a canvas; scroll position picks the frame.
   // Frames: img/unbox/f_001.webp … (extracted from the generated film, see README).
   // ---------------------------------------------------------------------------
-  const UNBOX_FRAMES = 151; // set by tools/build-unbox.py
+  const UNBOX_FRAMES = 166; // set by tools/build-unbox.py
   const CAPTION_AT = [0, 0.44, 0.8]; // progress where each caption takes over
   const FILM_END = 0.88; // the film finishes here; the last frame holds for the rest
   const UNBOX_KEEP = 0.84; // share of the film's height always in view: boxes end at ~78%
@@ -146,7 +146,7 @@
   const uCtx = uCanvas.getContext('2d');
   const uFrames = [];
   let uWant = 0, uDrawn = -1, uLoading = false;
-  const uSrc = (i) => `img/unbox/f_${String(i + 1).padStart(3, '0')}.webp?v=6`;
+  const uSrc = (i) => `img/unbox/f_${String(i + 1).padStart(3, '0')}.webp?v=7`;
   const uLoad = () => {
     if (uLoading || !UNBOX_FRAMES) return;
     uLoading = true;
@@ -560,7 +560,7 @@
     { src: 'img/box-powder.jpg', alt: 'The aura box in a mound of powder with sticks.' },
     { src: 'img/stick-pour-wide.jpg', alt: 'Powder swirling through a glass.' },
     { src: 'img/stick-mound.jpg', alt: 'An aura stick on a mound of powder.' },
-    { src: 'img/label-panel.jpg', alt: 'The back panel: nutrition information, ingredients with percentages, directions and advisory.' },
+    { src: 'img/label-panel.jpg?v=2', alt: 'The back panel: nutrition information, ingredients with percentages, directions and advisory.' },
   ];
   const thumbs = $('#thumbs');
   const main = $('#galleryMain');
