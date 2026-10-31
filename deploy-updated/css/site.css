@@ -596,6 +596,9 @@ a.card:hover .card__media img { transform: scale(1.04); }
 .footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 64px; border-bottom: .5px solid var(--line-on-clay-soft); }
 .footer__col { display: flex; flex-direction: column; gap: 12px; }
 .footer__col .label { opacity: .6; margin-bottom: 6px; }
+.footer__social { display: flex; gap: 10px; margin-top: 8px; }
+.footer__social a { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: .5px solid var(--line-on-clay-soft); transition: opacity .2s, border-color .2s; }
+.footer__social a:hover { border-color: var(--cream-50); }
 .footer__big { font-family: var(--font-sans); font-weight: 600; letter-spacing: -.06em; line-height: .78; font-size: clamp(88px, 15vw, 230px); margin: 48px 0 20px; color: var(--clay-700); user-select: none; }
 .footer__legal { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; font-size: 13px; line-height: 1.6; opacity: .72; }
 .footer__legal p { margin: 0; }
