@@ -146,7 +146,7 @@
   const uCtx = uCanvas.getContext('2d');
   const uFrames = [];
   let uWant = 0, uDrawn = -1, uLoading = false;
-  const uSrc = (i) => `img/unbox/f_${String(i + 1).padStart(3, '0')}.webp?v=5`;
+  const uSrc = (i) => `img/unbox/f_${String(i + 1).padStart(3, '0')}.webp?v=6`;
   const uLoad = () => {
     if (uLoading || !UNBOX_FRAMES) return;
     uLoading = true;
