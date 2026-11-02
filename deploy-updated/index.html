@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400&display=swap">
-<link rel="stylesheet" href="css/site.css?v=83">
+<link rel="stylesheet" href="css/site.css?v=86">
 <!-- meta:share -->
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -181,29 +181,12 @@
     <div class="rule label" data-reveal="rule"><span>01 · Inside one 5 g stick</span><span class="rule__line"></span><span>Spec RC2026057</span></div>
     <div class="formula__intro">
       <h2 class="display d-lg" data-reveal>Inside one stick, <em>by weight.</em></h2>
-      <p class="body lede" data-reveal style="--d:120ms">Six ingredients, listed by weight, to the milligram. Scroll through them in the order they fill a 5 g stick.</p>
+      <p class="body lede" data-reveal style="--d:120ms">Six ingredients, listed by weight, to the milligram.</p>
     </div>
   </div>
-  <div class="formula__pin wrap">
-    <div class="formula__grid">
-      <div class="formula__sticky">
-        <div class="stage" aria-hidden="true">
-          <div class="stage__media" id="stageMedia"></div>
-          <div class="stage__readout">
-            <div class="stage__name" id="stageName">
-              <span class="label swap" id="stageIdx">01 / 06</span>
-              <span class="display d-sm" id="stageTitle">Tremella</span>
-            </div>
-            <div>
-              <div class="stage__count"><span id="stageCount">2,000</span><small id="stageUnit">mg</small></div>
-              <div class="label stage__of" style="margin-top:14px"><span class="stage__of-lbl">Running total </span><span id="stageTotal">2,000</span> of 5,000 mg</div>
-            </div>
-          </div>
-          <div class="stage__scale label"><span>5 g</span><span>2.5 g</span><span>0</span></div>
-          <div class="stage__bar" id="stageBar"></div>
-        </div>
-      </div>
-      <div class="steps" id="steps"></div>
+  <div class="wrap">
+    <div class="spec" id="specTable" data-reveal>
+      <div class="spec__hd label"><span>No.</span><span>Ingredient</span><span>Botanical name</span><span>Form</span><span class="r">Per stick</span><span>Share of 5 g</span><span></span></div>
     </div>
   </div>
   <div class="wrap" style="padding-bottom:var(--section)">
@@ -643,9 +626,9 @@
 <div class="toast label" id="toast" role="status"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="js/data.js?v=9"></script>
+<script src="js/data.js?v=11"></script>
 <script src="js/signup.js?v=1"></script>
-<script src="js/site.js?v=49"></script>
+<script src="js/site.js?v=52"></script>
 <script src="js/analytics.js?v=8"></script>
 <script src="js/menu.js?v=2"></script>
 </body>

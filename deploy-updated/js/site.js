@@ -34,7 +34,7 @@
   $$('[data-price-was]').forEach((el) => { el.hidden = saving <= 0; });
 
   // ---------------------------------------------------------------------------
-  // Marquee, formula steps, bar, panel
+  // Marquee, formula table, panel
   // ---------------------------------------------------------------------------
   const marquee = $('#marquee');
   const mItems = FORMULA.filter((f) => !f.excipient).map((f) =>
@@ -42,76 +42,41 @@
   ).join('') + `<span class="marquee__item"><span class="n">Vitamin C</span><span class="mono">60 mg · 133% RDI</span></span><span class="marquee__dot">·</span>`;
   marquee.innerHTML = mItems + mItems;
 
-  // The scroll story shows the six ingredients; the excipient stays in the full ingredient list below
-  const STEPS = FORMULA.filter((f) => !f.excipient);
-  const steps = $('#steps');
-  steps.innerHTML = STEPS.map((f, i) => `
-    <article class="step" data-step="${i}">
-      ${f.img ? `<img class="step__img" src="${f.img}" alt="${f.name}, as the whole ingredient." loading="lazy">` : ''}
-      <span class="label" style="color:var(--ink-600)">${String(i + 1).padStart(2, '0')} / ${String(STEPS.length).padStart(2, '0')}</span>
-      <div class="step__head">
-        <h3 class="display d-md">${f.name}</h3>${f.zh ? `<span class="zh">${f.zh}</span>` : ''}
+  // Spec table: the six ingredients by weight. The excipient stays in the full ingredient list below.
+  const INGS = FORMULA.filter((f) => !f.excipient);
+  const sixMg = INGS.reduce((s, f) => s + f.mg, 0);
+  const share = (mg) => { const p = (mg / UNIT_MG) * 100; return (Number.isInteger(p) ? p : p.toFixed(1)) + '%'; };
+  const spec = $('#specTable');
+  spec.insertAdjacentHTML('beforeend', INGS.map((f, i) => {
+    const open = i === 0; // Tremella, the largest, opens by default
+    return `<div class="spec-row">
+      <button type="button" class="spec-row__btn" aria-expanded="${open}" aria-controls="spec-${i}">
+        <span class="spec__idx">${String(i + 1).padStart(2, '0')}</span>
+        <span class="spec__nm">${f.name}${f.zh ? `<span class="zh">${f.zh}</span>` : ''}</span>
+        <span class="latin spec__latin">${f.latin}</span>
+        <span class="label spec__form">${f.form}</span>
+        <span class="spec__mg">${fmtMg(f.mg)}<small>mg</small></span>
+        <span class="spec__share"><span class="spec__track"><span style="width:${(f.mg / UNIT_MG) * 100}%;--c:${f.c}"></span></span><span class="spec__pc">${share(f.mg)}</span></span>
+        <span class="spec__plus" aria-hidden="true"></span>
+      </button>
+      <div class="spec-row__note" id="spec-${i}"${open ? '' : ' hidden'}>
+        ${f.img ? `<img src="${f.img}" alt="${f.name}, as the whole ingredient." loading="lazy">` : ''}
+        <div><p class="body">${f.text}</p><dl class="spec__dl"><dt class="label">Natural constituents</dt><dd><ul class="spec__list">${f.constituents.map((c) => `<li>${c}</li>`).join('')}</ul></dd><dt class="label spec__form-m">Form</dt><dd class="spec__form-m">${f.form}</dd></dl></div>
       </div>
-      <span class="latin step__latin">${f.latin}</span>
-      <div class="step__dose">${fmtMg(f.mg)}<small>mg</small></div>
-      <p class="body" style="margin:0;max-width:460px">${f.text}</p>
-      <dl class="specs label">
-        <dt>Form</dt><dd>${f.form}</dd>
-      </dl>
-    </article>`).join('');
+    </div>`;
+  }).join('') + `<div class="spec-total"><span></span><span class="label spec-total__t">Total, six ingredients</span><span></span><span></span><span class="spec__mg">${fmtMg(sixMg)}<small>mg</small></span><span class="spec__pc">${share(sixMg)}</span><span></span></div>`);
+  spec.addEventListener('click', (e) => {
+    const b = e.target.closest('.spec-row__btn');
+    if (!b) return;
+    const open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    document.getElementById(b.getAttribute('aria-controls')).hidden = open;
+  });
 
-  const bar = $('#stageBar');
-  // Each segment is its share of the 5 g stick; the unfilled top is the carrier
-  const pct = STEPS.map((f) => Math.max((f.mg / UNIT_MG) * 100, 0.6));
-  bar.innerHTML = STEPS.map((f, i) => `<span class="seg" style="--h:${pct[i]}%;--c:${f.c};transition-delay:${i * 60}ms"></span>`).join('');
-  const segs = $$('.seg', bar);
-
-  const stageMedia = $('#stageMedia');
-  stageMedia.innerHTML = STEPS.map((f) => (f.img ? `<img src="${f.img}" alt="" loading="lazy">` : '<span></span>')).join('');
-  const stageImgs = [...stageMedia.children];
 
   $('#panelList').innerHTML = FORMULA.map((f) => `<li><span><strong style="color:var(--ink-900);font-weight:600">${f.name}</strong>${f.zh ? ` <span class="zh">${f.zh}</span>` : ''} · <span class="latin">${f.latin}</span></span><span class="mono">${f.mg ? fmtMg(f.mg) + ' mg' : 'balance'}</span></li>`).join('')
     + `<li><span>Vitamin C, from acerola</span><span class="mono">60 mg · 133% RDI</span></li>`;
 
-  // Stage readout
-  let current = -1;
-  let countFrom = 0;
-  const stageName = $('#stageName');
-  const setStage = (i) => {
-    if (i === current) return;
-    const f = STEPS[i];
-    current = i;
-    segs.forEach((s, j) => {
-      s.classList.toggle('is-filled', j <= i);
-      s.classList.toggle('is-current', j === i);
-    });
-    $$('.step', steps).forEach((s, j) => s.classList.toggle('is-active', j === i));
-    stageImgs.forEach((m, j) => m.classList.toggle('is-active', j === i));
-    stageName.classList.add('is-swapping');
-    setTimeout(() => {
-      $('#stageIdx').textContent = `${String(i + 1).padStart(2, '0')} / ${String(STEPS.length).padStart(2, '0')}`;
-      $('#stageTitle').innerHTML = f.name + (f.zh ? ` <span class="zh" style="font-size:.7em;color:var(--clay-500)">${f.zh}</span>` : '');
-      stageName.classList.remove('is-swapping');
-    }, reduced ? 0 : 220);
-    const running = STEPS.slice(0, i + 1).reduce((s, x) => s + x.mg, 0);
-    $('#stageTotal').textContent = fmtMg(running);
-    const target = f.mg;
-    tween($('#stageCount'), countFrom, target, 400, (v) => fmtMg(target % 1 ? Math.round(v * 100) / 100 : Math.round(v)));
-    countFrom = target;
-  };
-
-  function tween(el, from, to, dur, fmt) {
-    if (reduced) { el.textContent = fmt(to); return; }
-    const t0 = performance.now();
-    const ease = (t) => 1 - Math.pow(1 - t, 3);
-    cancelAnimationFrame(el._raf);
-    const tick = (now) => {
-      const t = clamp((now - t0) / dur);
-      el.textContent = fmt(from + (to - from) * ease(t));
-      if (t < 1) el._raf = requestAnimationFrame(tick);
-    };
-    el._raf = requestAnimationFrame(tick);
-  }
 
   // ---------------------------------------------------------------------------
   // Reveal + split headings + count-up
@@ -372,7 +337,6 @@
   const hero = $('.hero');
   const shop = $('#shop');
   const finalCta = $('.final2');
-  const stepEls = $$('.step', steps);
   const navLinks = $$('.nav__links a');
   const sections = navLinks.map((a) => $(a.getAttribute('href')));
   let lastY = scrollY;
@@ -445,14 +409,6 @@
     const lit = Math.round(sp * words.length);
     words.forEach((w, i) => w.classList.toggle('is-lit', i < lit || reduced));
 
-    // Formula: the step nearest the viewport centre is active
-    let best = 0, bestD = Infinity;
-    stepEls.forEach((s, i) => {
-      const r = s.getBoundingClientRect();
-      const d = Math.abs(r.top + r.height / 2 - vh * 0.55);
-      if (d < bestD) { bestD = d; best = i; }
-    });
-    setStage(best);
 
     // What to expect: light one dot per stick as the field crosses the screen
     if (field) {

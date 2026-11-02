@@ -13,18 +13,20 @@ const PRICE = { single: 69, sub: 69, freeShipOver: 70, sticks: 30 }; // subscrip
 const SHOP = { domain: 'zymt0d-az.myshopify.com', handle: 'aura', variants: { single: '56071784792232', sub: '' }, sellingPlan: '', open: false };
 
 // Herb descriptions: claims register rows 14-19 (accepted 2026-09-28).
+// constituents: the formula table's dropdown, claims register rows 25-30 (accepted 2026-11-02). Named, never
+// quantified (bar acerola's vitamin C), and no vitamin or mineral beside a botanical.
 const FORMULA = [
-  { name: 'Tremella', zh: '銀耳', latin: 'Tremella fuciformis', mg: 2000, form: 'Whole milled fruiting body', c: '#4A2418', img: 'img/ing-tremella.jpg',
-    text: 'Prized in the tradition for its water-holding polysaccharides. The heart of the blend, and 40% of every stick by weight.' },
-  { name: 'Longan', zh: '龍眼', latin: 'Dimocarpus longan', mg: 1500, form: 'Whole milled fruit', c: '#6E3523', img: 'img/ing-longan.jpg',
+  { name: 'Tremella', zh: '銀耳', latin: 'Tremella fuciformis', mg: 2000, form: 'Whole milled fruiting body', c: '#4A2418', img: 'img/ing-tremella.jpg', constituents: ['Polysaccharides', 'Phenolic compounds', 'Flavonoids'],
+    text: 'Prized in the tradition for its water-holding polysaccharides. The heart of the blend.' },
+  { name: 'Longan', zh: '龍眼', latin: 'Dimocarpus longan', mg: 1500, form: 'Whole milled fruit', c: '#6E3523', img: 'img/ing-longan.jpg', constituents: ['Polysaccharides', 'Polyphenols, including gallic acid', 'Flavonoids'],
     text: 'Prized in the tradition for its dried flesh, darkened and sweetened by its own sugars.' },
-  { name: 'Goji', zh: '枸杞', latin: 'Lycium barbarum', mg: 500, form: 'Powder', c: '#8A4530', img: 'img/ing-goji.jpg',
+  { name: 'Goji', zh: '枸杞', latin: 'Lycium barbarum', mg: 500, form: 'Powder', c: '#8A4530', img: 'img/ing-goji.jpg', constituents: ['Polysaccharides', 'Carotenoids, mainly zeaxanthin', 'Betaine'],
     text: 'Prized in the tradition as the scarlet berry of the classical tonics, coloured by its own carotenoids.' },
-  { name: 'Acerola', zh: '', latin: 'Malpighia emarginata', mg: 431.25, form: 'Juice powder', c: '#A3512F', claim: true, img: 'img/ing-acerola.jpg',
+  { name: 'Acerola', zh: '', latin: 'Malpighia emarginata', mg: 431.25, form: 'Juice powder', c: '#A3512F', claim: true, img: 'img/ing-acerola.jpg', constituents: ['Vitamin C, 60 mg per stick', 'Anthocyanins', 'Carotenoids'],
     text: 'A West Indian cherry, naturally a good source of vitamin C. 60 mg per stick, 133% of the recommended dietary intake.' },
-  { name: 'Schisandra', zh: '五味子', latin: 'Schisandra chinensis', mg: 150, form: 'Powder', c: '#B55C37', img: 'img/ing-schisandra.jpg',
+  { name: 'Schisandra', zh: '五味子', latin: 'Schisandra chinensis', mg: 150, form: 'Powder', c: '#B55C37', img: 'img/ing-schisandra.jpg', constituents: ['Lignans, mainly schisandrin', 'Triterpenoids', 'Polysaccharides'],
     text: 'Prized in the tradition as the five-flavour berry, its bitterness from its own lignans.' },
-  { name: 'Astragalus', zh: '黃芪', latin: 'Astragalus membranaceus', mg: 11.4, form: 'Whole milled root', c: '#C46840', img: 'img/ing-astragalus.jpg',
+  { name: 'Astragalus', zh: '黃芪', latin: 'Astragalus membranaceus', mg: 11.4, form: 'Whole milled root', c: '#C46840', img: 'img/ing-astragalus.jpg', constituents: ['Polysaccharides', 'Saponins (astragalosides)', 'Flavonoids, including calycosin and formononetin'],
     text: 'Traditionally used in tonics. A root that holds its own flavonoids and polysaccharides.' },
   { name: 'Excipient', zh: '', latin: 'Maltodextrin', mg: null, form: 'Carrier', c: '#d9d5c8', excipient: true,
     text: 'Maltodextrin carries the powder. Named, because it is in the stick too. It makes up the balance to 5 g.' },
