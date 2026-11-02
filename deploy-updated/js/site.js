@@ -65,7 +65,7 @@
         <div><p class="body">${f.text}</p><dl class="spec__dl"><dt class="label">Natural constituents</dt><dd><ul class="spec__list">${f.constituents.map((c) => `<li>${c}</li>`).join('')}</ul></dd><dt class="label spec__form-m">Form</dt><dd class="spec__form-m">${f.form}</dd></dl></div>
       </div>
     </div>`;
-  }).join('') + `<div class="spec-total"><span></span><span class="label spec-total__t">Total, six ingredients</span><span></span><span></span><span class="spec__mg">${fmtMg(sixMg)}<small>mg</small></span><span class="spec__pc">${share(sixMg)}</span><span></span></div>`);
+  }).join(''));
   spec.addEventListener('click', (e) => {
     const b = e.target.closest('.spec-row__btn');
     if (!b) return;
@@ -332,8 +332,50 @@
     const fmt = (d) => d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long' });
     const today = new Date(), by = new Date(today); by.setDate(by.getDate() + 35);
     $('#fieldStart').innerHTML = `Order today, ${fmt(today)}, and reorder by <strong>${fmt(by)}</strong>: box 2 comes with a gua sha.`;
+    if ($('#earnedNote')) $('#earnedNote').textContent = `Reorder by ${fmt(by)} and it ships inside box 2.`;
   }
   let fieldLit = -1;
+  const earned = $('#earned');
+  let earnedShown = false, earnedTimer = 0;
+  const hideEarned = () => { clearTimeout(earnedTimer); earned.classList.remove('is-shown'); setTimeout(() => { earned.hidden = true; }, 480); };
+  const GIFT_SRC = 'img/gift-gua-sha.png?v=2';
+  // Once earned, box 2's tag keeps a small picture of the tool in place of the gift icon
+  const keepThumb = (tag) => {
+    if (!tag || tag.classList.contains('has-thumb')) return;
+    const t = document.createElement('img');
+    t.className = 'fbox__thumb'; t.src = GIFT_SRC; t.alt = '';
+    $('.fbox__icon', tag)?.replaceWith(t);
+    tag.classList.add('has-thumb');
+  };
+  // The gua sha rises out of box 2's tag and lands in the card; then light sweeps across the steel
+  const flyGift = () => {
+    const tag = boxEls[1] && $('.fbox__gift', boxEls[1].li);
+    const media = $('.earned__media', earned);
+    const land = () => { earned.classList.add('is-landed'); keepThumb(tag); };
+    const a = tag && tag.getBoundingClientRect();
+    if (!a || reduced || !media.animate || a.bottom < 0 || a.top > innerHeight) return land();
+    // Where the picture rests, from layout offsets (the card is still mid-transition)
+    const W = media.offsetWidth;
+    const tx = earned.offsetLeft + media.offsetLeft, ty = earned.offsetTop + media.offsetTop;
+    const sx = a.left + 14 - W / 2, sy = a.top + a.height / 2 - W / 2;
+    const fly = document.createElement('img');
+    fly.className = 'earned__fly'; fly.src = GIFT_SRC; fly.alt = '';
+    fly.style.width = fly.style.height = `${W}px`;
+    document.body.append(fly);
+    fly.animate([
+      { transform: `translate(${sx}px, ${sy}px) scale(.2) rotate(0deg)`, opacity: 0 },
+      { transform: `translate(${sx}px, ${sy - 40}px) scale(.45) rotate(6deg)`, opacity: 1, offset: .18 },
+      { transform: `translate(${(sx + tx) / 2}px, ${Math.min(sy, ty) - 90}px) scale(.85) rotate(-18deg)`, offset: .55 },
+      { transform: `translate(${tx}px, ${ty}px) scale(1) rotate(-8deg)` },
+    ], { duration: 1000, easing: 'cubic-bezier(.35, .1, .25, 1)', fill: 'forwards' }).onfinish = () => { land(); fly.remove(); };
+  };
+  const showEarned = () => {
+    earnedShown = true;
+    earned.hidden = false;
+    requestAnimationFrame(() => requestAnimationFrame(() => { earned.classList.add('is-shown'); flyGift(); }));
+    earnedTimer = setTimeout(hideEarned, 8000);
+  };
+  if (earned) $('.earned__x', earned).addEventListener('click', hideEarned);
   const buybar = $('#buybar');
   const hero = $('.hero');
   const shop = $('#shop');
@@ -414,11 +456,14 @@
     // What to expect: light one dot per stick as the field crosses the screen
     if (field) {
       const fr = field.getBoundingClientRect();
-      const fp = reduced ? 1 : clamp((vh * 0.9 - fr.top) / (fr.height + vh * 0.45));
+      // Starts once the field is well on screen (top at 55% of the viewport), so box 2 and its gua sha are seen before they fill
+      const fp = reduced ? 1 : clamp((vh * 0.55 - fr.top) / (fr.height + vh * 0.05));
       const n = Math.round(fp * DAYS);
       if (n !== fieldLit) {
         dots.forEach((d, i) => d.classList.toggle('is-lit', i < n));
         boxEls.forEach(({ li, first }) => li.classList.toggle('is-reached', n > first));
+        // The first time the fill reaches box 2, the gua sha pops up as earned (once per visit)
+        if (earned && !earnedShown && n > boxEls[1].first && fr.top < vh && fr.bottom > 0) showEarned();
         fieldN.textContent = Math.max(1, n);
         fieldLit = n;
       }

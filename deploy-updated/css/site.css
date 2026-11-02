@@ -1574,6 +1574,36 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 .field__start strong { font-weight: 500; color: var(--clay-300); }
 .expect__fine { margin: 16px 0 0; font-size: 13px; line-height: 1.6; opacity: .7; }
 .expect__fine a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+/* Gift earned: pops up the first time the field's fill reaches box 2 */
+.earned { position: fixed; right: max(24px, env(safe-area-inset-right, 0px)); bottom: 104px; z-index: 45; width: min(380px, calc(100vw - 32px)); display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 16px; align-items: center; padding: 14px 44px 14px 14px; border-radius: var(--radius-lg); background: var(--cream-50); color: var(--ink-900); box-shadow: 0 24px 60px -18px rgba(26, 16, 10, .55); opacity: 0; transform: translateY(18px) scale(.96); transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease); }
+.earned.is-shown { opacity: 1; transform: none; }
+.earned__media { position: relative; display: block; width: 104px; height: 104px; border-radius: var(--radius-md); background: var(--cream-100); transform: rotate(-8deg) scale(.9); transition: transform var(--dur-slow) var(--ease); }
+.earned.is-shown .earned__media { transform: rotate(-8deg); }
+.earned__media img { display: block; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
+.earned.is-landed .earned__media img { opacity: 1; }
+.earned.is-landed .earned__media { animation: earned-land 520ms cubic-bezier(.3, 1.6, .5, 1); }
+/* One sweep of light across the polished face, masked to the tool's own outline */
+.earned__media::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, .55) 50%, transparent 58%) 160% 0 / 260% 100% no-repeat;
+  -webkit-mask: url(../img/gift-gua-sha.png?v=2) center / contain no-repeat; mask: url(../img/gift-gua-sha.png?v=2) center / contain no-repeat; }
+.earned.is-landed .earned__media::after { animation: earned-sheen 1200ms var(--ease) 160ms both; }
+@keyframes earned-land { 0% { transform: rotate(-8deg) scale(.94); } 60% { transform: rotate(-8deg) scale(1.05); } 100% { transform: rotate(-8deg); } }
+@keyframes earned-sheen { from { opacity: 1; background-position: 160% 0; } to { opacity: 1; background-position: -60% 0; } }
+.earned__fly { position: fixed; left: 0; top: 0; z-index: 46; pointer-events: none; object-fit: contain; transform-origin: center; filter: drop-shadow(0 14px 18px rgba(20, 10, 6, .4)); }
+.fbox__thumb { width: 22px; height: 22px; margin: -4px 0; flex: none; object-fit: contain; transform: rotate(-8deg); }
+.earned__txt { display: grid; gap: 4px; min-width: 0; }
+.earned__tag { color: var(--clay-500); }
+.earned__title { font: 400 26px/1.05 var(--font-serif); letter-spacing: -.025em; }
+.earned__note { margin: 2px 0 0; font-size: 14px; line-height: 1.45; color: var(--ink-600); }
+.earned__x { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border: 0; border-radius: 50%; background: none; font: 400 20px/1 var(--font-sans); color: var(--ink-600); cursor: pointer; }
+.earned__x:hover { background: var(--cream-200); }
+.earned__x:focus-visible { outline: 2px solid var(--clay-500); outline-offset: 2px; }
+@media (max-width: 760px) {
+  /* On phones it drops from the top, so box 2's gift label below stays in view */
+  .earned { left: 16px; right: 16px; width: auto; top: calc(14px + env(safe-area-inset-top, 0px)); bottom: auto; transform: translateY(-18px) scale(.96); grid-template-columns: 84px minmax(0, 1fr); gap: 12px; }
+  .earned__media { width: 84px; height: 84px; }
+  .earned__title { font-size: 22px; }
+}
 @media (max-width: 1100px) { .field__boxes { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; } }
 @media (max-width: 860px) {
   .field__top { grid-template-columns: minmax(0, 1fr); gap: 16px; }
@@ -1592,7 +1622,7 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 .fbox.is-reached .fbox__lid { animation: gift-pop 900ms cubic-bezier(.34, 1.56, .64, 1) 200ms both; }
 @keyframes gift-pop { 0% { transform: none; } 35% { transform: translateY(-4px) rotate(-8deg); } 65% { transform: translateY(-1px) rotate(4deg); } 100% { transform: none; } }
 .fbox__gift { white-space: nowrap; }
-@media (max-width: 860px) { .fbox__gift { font-size: 11.5px; gap: 5px; padding: 4px 9px 4px 6px; } .fbox__icon { width: 14px; height: 14px; } }
+@media (max-width: 860px) { .fbox__gift { font-size: 11.5px; gap: 5px; padding: 4px 9px 4px 6px; } .fbox__icon { width: 14px; height: 14px; } .fbox__thumb { width: 17px; height: 17px; margin: -3px 0; } }
 
 /* Mystery gifts: the same tag, wrapped in a dashed outline instead of cream */
 .fbox__gift.is-mystery { background: transparent; color: var(--cream-50); box-shadow: inset 0 0 0 1px var(--line-on-clay-strong); }

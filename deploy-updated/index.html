@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400&display=swap">
-<link rel="stylesheet" href="css/site.css?v=87">
+<link rel="stylesheet" href="css/site.css?v=89">
 <!-- meta:share -->
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -618,6 +618,16 @@
 </div>
 
 <!-- Sticky buy bar -->
+<div class="earned" id="earned" role="status" aria-live="polite" hidden>
+  <span class="earned__media"><img src="img/gift-gua-sha.png?v=2" alt="A polished steel gua sha, engraved with the Jing J." width="480" height="480"></span>
+  <div class="earned__txt">
+    <span class="label earned__tag">Box 2 · Yours on day 31</span>
+    <strong class="earned__title">A gua sha</strong>
+    <p class="earned__note" id="earnedNote">Reorder within 35 days and it ships inside box 2.</p>
+  </div>
+  <button type="button" class="earned__x" aria-label="Close">×</button>
+</div>
+
 <div class="buybar" id="buybar">
   <div class="buybar__meta"><span class="wordmark">aura</span><span class="label">30 sticks · from <span data-price="sub"></span></span></div>
   <a href="#shop" class="btn">Shop <span class="arr">→</span></a>
@@ -628,7 +638,7 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="js/data.js?v=11"></script>
 <script src="js/signup.js?v=1"></script>
-<script src="js/site.js?v=53"></script>
+<script src="js/site.js?v=55"></script>
 <script src="js/analytics.js?v=8"></script>
 <script src="js/menu.js?v=2"></script>
 </body>
