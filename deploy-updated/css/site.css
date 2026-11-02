@@ -1594,6 +1594,8 @@ body:has(#finalNews) .footer__join { display: inline-flex; }
 .earned__txt { display: grid; gap: 4px; min-width: 0; }
 .earned__tag { color: var(--clay-500); }
 .earned__title { font: 400 26px/1.05 var(--font-serif); letter-spacing: -.025em; }
+.earned__title .zh { font-size: .64em; letter-spacing: .02em; color: var(--clay-500); }
+.earned__title .nw { white-space: nowrap; }
 .earned__note { margin: 2px 0 0; font-size: 14px; line-height: 1.45; color: var(--ink-600); }
 .earned__x { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border: 0; border-radius: 50%; background: none; font: 400 20px/1 var(--font-sans); color: var(--ink-600); cursor: pointer; }
 .earned__x:hover { background: var(--cream-200); }
