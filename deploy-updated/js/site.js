@@ -42,10 +42,11 @@
   ).join('') + `<span class="marquee__item"><span class="n">Vitamin C</span><span class="mono">60 mg · 133% RDI</span></span><span class="marquee__dot">·</span>`;
   marquee.innerHTML = mItems + mItems;
 
-  // Spec table: the six ingredients by weight. The excipient stays in the full ingredient list below.
+  // Spec table: the six ingredients by weight. Shares are of the six (the botanicals), not of the 5 g stick;
+  // the excipient is left out of the table and stays in the full ingredient list below.
   const INGS = FORMULA.filter((f) => !f.excipient);
   const sixMg = INGS.reduce((s, f) => s + f.mg, 0);
-  const share = (mg) => { const p = (mg / UNIT_MG) * 100; return (Number.isInteger(p) ? p : p.toFixed(1)) + '%'; };
+  const share = (mg) => { const p = (mg / sixMg) * 100; return (Number.isInteger(p) ? p : p.toFixed(1)) + '%'; };
   const spec = $('#specTable');
   spec.insertAdjacentHTML('beforeend', INGS.map((f, i) => {
     const open = i === 0; // Tremella, the largest, opens by default
@@ -56,7 +57,7 @@
         <span class="latin spec__latin">${f.latin}</span>
         <span class="label spec__form">${f.form}</span>
         <span class="spec__mg">${fmtMg(f.mg)}<small>mg</small></span>
-        <span class="spec__share"><span class="spec__track"><span style="width:${(f.mg / UNIT_MG) * 100}%;--c:${f.c}"></span></span><span class="spec__pc">${share(f.mg)}</span></span>
+        <span class="spec__share"><span class="spec__track"><span style="width:${(f.mg / sixMg) * 100}%;--c:${f.c}"></span></span><span class="spec__pc">${share(f.mg)}<span class="spec__pc-of"> of botanicals</span></span></span>
         <span class="spec__plus" aria-hidden="true"></span>
       </button>
       <div class="spec-row__note" id="spec-${i}"${open ? '' : ' hidden'}>
